@@ -1,6 +1,18 @@
 # MyStore Project Overview
 
-MyStore is Angular application that allows users to view a list of available products to purchase, add them to a shopping cart, and ultimately complete the checkout process. 
+## Goal
+This project aims to solidify skills in designing and creating interactive CRUD applications in the real world.
+
+## Description
+MyStore is Angular application that allows users to view a list of available products to purchase, add them to a shopping cart, and ultimately complete the checkout process.
+
+## Creation Date
+
+> 5/7/2026
+
+## Project Status
+
+> Active
 
 ## Getting Started
 
@@ -67,6 +79,60 @@ Feel free to use this overview and the rubric specifications to create this proj
 7. **Generate and create other components**. How do these components interact, if at all, with the component you first created? How can we facilitate sharing information between them?
 8. **Create routing** between components. Which components are linked by the router? How is the app routing module set up and configured to make sure the page doesn't reload during navigation?
 9. **Ensure that inputs are validated** in the client. For example, your checkout form needs to collect information from the user in order for them to complete the checkout process. How do you ensure that you are collecting accurate information from the user?
+
+## How to Install and Run the Project
+1. 
+
+## How to Use the Project
+1. 
+
+## Challenges Faced During Project
+
+## Udacity Mentors Who Have Answered Questions In Knowledge To Help With Project
+- 
+
+## Languages
+
+**Angular**
+
+<a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40"/> </a>
+
+**Jasmine**
+
+<a href="https://jasmine.github.io/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/jasmine/jasmine-icon.svg" alt="jasmine" width="40" height="40"/> </a> 
+
+**JavaScript**
+
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a>
+
+**TypeScript**
+
+<a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a>
+
+
+## Tools
+
+**Visual Studio Code** - The application software where the project is edited.
+
+<p align="left"> <img width="43" height="46" alt="VSCode_logo" src="https://github.com/user-attachments/assets/0f8d15c4-276a-46ef-92cd-80a2f1958e76" /> </p>
+
+**GitHub Desktop** - The application software that gives access to the project from _GitHub_ and allows it to be edited in _Visual Studio Code_.
+
+<p align="left"> <img width="46" height="46" alt="GitHub_Desktop_logo" src="https://github.com/user-attachments/assets/bbd2a72d-0953-499e-ab28-e55b11171b83" /> </p>
+
+**ChatGPT** - The application software that answers specific questions of why project has specific problems or why project failed to achieve intended results.
+
+<p align="left"> <img width="49" height="42" alt="ChatGPT_logo" src="https://github.com/user-attachments/assets/34fd410d-3e92-4fc6-8dc7-1be521a8d2a6" /> </p>
+
+
+## Credits
+###### References used while making project
+
+“GitHub Profile README Generator.” _GitHub Profile Readme Generator | GitHub Profile Readme Generator_, rahuldkjain.github.io/gh-profile-readme-generator/. Accessed 7 May 2026.
+
+“MLA Works Cited: Electronic Sources (Web Publications).” _MLA Works Cited: Electronic Sources - Purdue OWL® - Purdue University_, owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_works_cited_electronic_sources.html. Accessed 7 May 2026.
+
+Udacity. “Nd-0067-C3-Angular-Fundamentals-Project-Starter.” _GitHub_, github.com/udacity/nd-0067-c3-angular-fundamentals-project-starter. Accessed 7 May 2026.
 
 ## License
 
