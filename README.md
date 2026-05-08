@@ -81,7 +81,17 @@ Feel free to use this overview and the rubric specifications to create this proj
 9. **Ensure that inputs are validated** in the client. For example, your checkout form needs to collect information from the user in order for them to complete the checkout process. How do you ensure that you are collecting accurate information from the user?
 
 ## How to Install and Run the Project
-1. 
+1. Open **Visual Studio Code**
+2. Open **terminal** in _Visual Studio Code_
+3. _If **Angular** is **not installed**,_ input the following command into the terminal
+```
+npm install -g @angular/cli
+```
+4. Input the command shown below to confirm successful _Angular_ installation
+```
+ng --version
+```
+5. 
 
 ## How to Use the Project
 1. 
