@@ -87,22 +87,42 @@ Feel free to use this overview and the rubric specifications to create this proj
 ```
 npm install -g @angular/cli
 ```
+The command shown above installs _Angular_ **globally**. Therefore, the command can be run in the command prompt.
+
 4. Input the command shown below to confirm successful _Angular_ installation
 ```
 ng --version
 ```
-5. 
+5. Ensure that the path in the terminal ends with ```___```
+6. _If path does **not exist**_, ensure that the path in the terminal ends with ```My_Store```
+7. Input the following command into the terminal to create **shopping-app** project with _Angular_
+```
+ng new shopping-app
+```
+This will fix ```Error: This command is not available when running the Angular CLI outside a workspace.```
+
+8. Choose ```CSS``` for the **stylesheet system**
+9. Choose ```N``` for **enabling Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)**
+10. Choose ```N``` for **AI tools to configure with Angular best practices**
+11. Change the terminal directory to ```shopping-app```
+12. Input the following command into the terminal to test if the project will run on ```port 4200```
+```
+ng serve
+```
+13. Choose ```N``` for **sharing pseudonymous usage data about this project with the Angular Team at Google under Google's Privacy Policy**
+14. Open a web browser
+15. Type ```http://localhost:4200/``` into the search bar
 
 ## How to Use the Project
 1. _If Visual Studio Code is <ins>not open</ins>,_ skip to _Step 2_
 2. Open **Visual Studio Code**
 3. Open **terminal** in _Visual Studio Code_
-4. Ensure that the path in the terminal ends with ```___```
-5. Input the following command into the terminal to run the project on ```port 4200```
+4. Input the following command into the terminal to run the project on ```port 4200```
 ```
 ng serve
 ```
-6. 
+5. Open a web browser
+6. Type ```http://localhost:4200/``` into the search bar
 
 ## Challenges Faced During Project
 
