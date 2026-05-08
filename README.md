@@ -94,7 +94,15 @@ ng --version
 5. 
 
 ## How to Use the Project
-1. 
+1. _If Visual Studio Code is <ins>not open</ins>,_ skip to _Step 2_
+2. Open **Visual Studio Code**
+3. Open **terminal** in _Visual Studio Code_
+4. Ensure that the path in the terminal ends with ```___```
+5. Input the following command into the terminal to run the project on ```port 4200```
+```
+ng serve
+```
+6. 
 
 ## Challenges Faced During Project
 
