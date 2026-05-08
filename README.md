@@ -111,7 +111,10 @@ ng serve
 ```
 13. Choose ```N``` for **sharing pseudonymous usage data about this project with the Angular Team at Google under Google's Privacy Policy**
 14. Open a web browser
-15. Type ```http://localhost:4200/``` into the search bar
+15. Input the following URL into the search bar to run the project on ```port 4200```
+```
+http://localhost:4200/
+```
 
 ## How to Use the Project
 1. _If Visual Studio Code is <ins>not open</ins>,_ skip to _Step 2_
@@ -122,7 +125,10 @@ ng serve
 ng serve
 ```
 5. Open a web browser
-6. Type ```http://localhost:4200/``` into the search bar
+6. Input the following URL into the search bar to use the project on ```port 4200```
+```
+http://localhost:4200/
+```
 
 ## Challenges Faced During Project
 
