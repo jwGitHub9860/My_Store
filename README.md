@@ -93,7 +93,7 @@ The command shown above installs _Angular_ **globally**. Therefore, the command 
 ```
 ng --version
 ```
-5. Ensure that the path in the terminal ends with ```___```
+5. Ensure that the path in the terminal ends with ```My_Store\shopping-app```
 6. _If path does **not exist**_, ensure that the path in the terminal ends with ```My_Store```
 7. Input the following command into the terminal to create **shopping-app** project with _Angular_
 ```
@@ -115,6 +115,9 @@ ng serve
 ```
 http://localhost:4200/
 ```
+16. Move the ```src``` folder and all its contents into the respective places in the ```shopping-app``` folder
+17. _If the previous web browser is <ins>closed</ins>,_ repeat _Steps 14-15_
+18. Refresh web browser
 
 ## How to Use the Project
 1. _If Visual Studio Code is <ins>not open</ins>,_ skip to _Step 2_
