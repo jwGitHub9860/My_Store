@@ -175,9 +175,15 @@ http://localhost:4200/
 ## Credits
 ###### References used while making project
 
-bensalerno, et al. “Running Angular App Only Shows Angular Default Homepage.” _Stack Overflow_, https://stackoverflow.com/#organization, 1 June 1964, stackoverflow.com/questions/64215177/running-angular-app-only-shows-angular-default-homepage. Accessed 8 May 2026.
+bensalerno, et al. “Running Angular App Only Shows Angular Default Homepage.” _Stack Overflow_, stackoverflow.com/#organization, 1 June 1964, stackoverflow.com/questions/64215177/running-angular-app-only-shows-angular-default-homepage. Accessed 8 May 2026.
+
+Danioss, and Robin Dijkhof. “Angular 2 ‘component’ Is Not a Known Element.” _Stack Overflow_, stackoverflow.com/#organization, 2 May 2019, stackoverflow.com/questions/44429996/angular-2-component-is-not-a-known-element/44430230#44430230. Accessed 8 May 2026.
+
+ErinDab, and Jignesh Panchal. “ERROR NG8001: ‘courses’ Is Not a Known Element.” Edited by ErinDab and Jignesh Panchal, _Stack Overflow_, stackoverflow.com/#organization, 13 May 2024, stackoverflow.com/questions/78472566/error-ng8001-courses-is-not-a-known-element. Accessed 8 May 2026.
 
 “GitHub Profile README Generator.” _GitHub Profile Readme Generator | GitHub Profile Readme Generator_, rahuldkjain.github.io/gh-profile-readme-generator/. Accessed 7 May 2026.
+
+Leichtos, and Mojtaba Nejad Poor Esmaeili. “Angular-NG8001 Not Known Element Error. How Solve It?” _Stack Overflow_, stackoverflow.com/#organization, 12 Jan. 2024, stackoverflow.com/questions/77808592/angular-ng8001-not-known-element-error-how-solve-it. Accessed 8 May 2026.
 
 “MLA Works Cited: Electronic Sources (Web Publications).” _MLA Works Cited: Electronic Sources - Purdue OWL® - Purdue University_, owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_works_cited_electronic_sources.html. Accessed 7 May 2026.
 
