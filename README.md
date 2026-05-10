@@ -123,12 +123,18 @@ http://localhost:4200/
 1. _If Visual Studio Code is <ins>not open</ins>,_ skip to _Step 2_
 2. Open **Visual Studio Code**
 3. Open **terminal** in _Visual Studio Code_
-4. Input the following command into the terminal to run the project on ```port 4200```
+4. Ensure that the path in the terminal ends with ```My_Store\shopping-app```
+```
+cd shopping-app
+```
+The path required for the command above may differ.
+
+5. Input the following command into the terminal to run the project on ```port 4200```
 ```
 ng serve
 ```
-5. Open a web browser
-6. Input the following URL into the search bar to use the project on ```port 4200```
+6. Open a web browser
+7. Input the following URL into the search bar to use the project on ```port 4200```
 ```
 http://localhost:4200/
 ```
