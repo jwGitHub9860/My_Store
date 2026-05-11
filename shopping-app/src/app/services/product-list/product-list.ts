@@ -1,13 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
+// Allows Requests to be Made
+import { HttpClient } from "@angular/common/http";
+
+import { Observable } from 'rxjs';
+import { Item } from '../../models/Item';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ProductList {
+export class ProductListService {
   constructor(private http: HttpClient) { }
 
-  getItemList() {
-    return this.http.get<[]>('../../../assets/data.json');
+  getItemList(): Observable<Item[]> {
+    return this.http.get<Item[]>('../../../assets/data.json');
   }
 }
