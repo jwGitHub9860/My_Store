@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-confirmation',
@@ -6,4 +6,12 @@ import { Component } from '@angular/core';
   templateUrl: './confirmation.html',
   styleUrl: './confirmation.component.css',
 })
-export class Confirmation {}
+export class Confirmation implements OnInit {
+  constructor() { }
+
+  ngOnInit(): void {
+    //
+  }
+
+  returnToProductList() {}
+}
