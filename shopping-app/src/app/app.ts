@@ -14,7 +14,14 @@ import { ProductList } from './components/product-list/product-list';
 
   // MUST Import ALL Components to Define -> templateUrl: './app.html'
   // PREVENTS "[ERROR] NG8001: 'app-product-list' is not a known element"
-  imports: [RouterOutlet, ProductList],
+  imports: [
+    RouterOutlet,
+    Cart,
+    Confirmation,
+    ProductItem,
+    ProductItemDetail,
+    ProductList
+  ],
   
   templateUrl: './app.html',
   styleUrl: './app.css'
