@@ -5,9 +5,17 @@
         <ul *ngFor="let item of items">
             <img src="{{ item.url }}" alt="Image URL" style="width: 300px;">
             <br>
-            <a>{{ item.name }}</a>
-            <br>
-            <a>${{ item.price }}</a>
+
+            <!--MUST USE "<div class="product-container">" for item Name & Price SEPARATELY-->
+            <!--Otherwise Item Name & Price will be on Same Line-->
+            <!--Or Only Item Name will Only Be Centered whereas Price will be Aligned to the Left-->
+            <div class="product-container">
+                <a>{{ item.name }}</a>
+                <br>
+            </div>
+            <div class="product-container">
+                <a>${{ item.price }}</a>
+            </div>
         </ul>
     </div>
 </div>
