@@ -1,11 +1,15 @@
 <!--TEMP: use "app-product-item" or "app-product-item-detail"?-->
 
-<ul *ngFor="let item of items">
-    <a>{{ item.url }}</a>
-    <br>
-    <a>{{ item.name }}</a>
-    <br>
-    <a>${{ item.price }}</a>
-</ul>
+<div class="product-container">
+    <div class="product-index">
+        <ul *ngFor="let item of items">
+            <img src="{{ item.url }}" alt="Image URL" style="width: 300px;">
+            <br>
+            <a>{{ item.name }}</a>
+            <br>
+            <a>${{ item.price }}</a>
+        </ul>
+    </div>
+</div>
 
 <!--TEMP: use "button" for Increasing & Decreasing items for cart?-->
