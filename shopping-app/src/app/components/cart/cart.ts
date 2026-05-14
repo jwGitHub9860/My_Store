@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cart',
@@ -6,4 +6,14 @@ import { Component } from '@angular/core';
   templateUrl: './cart.html',
   styleUrl: './cart.component.css',
 })
-export class Cart {}
+export class Cart implements OnInit {
+  full_name: string = '';
+  address: string = '';
+  credit_card_number: string = '';
+
+  constructor() {}
+
+  ngOnInit(): void {
+    //
+  }
+}
