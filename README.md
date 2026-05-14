@@ -189,6 +189,8 @@ ErinDab, and Jignesh Panchal. “ERROR NG8001: ‘courses’ Is Not a Known Elem
 
 “GitHub Profile README Generator.” _GitHub Profile Readme Generator | GitHub Profile Readme Generator_, rahuldkjain.github.io/gh-profile-readme-generator/. Accessed 7 May 2026.
 
+“HTML <small> Tag</Small>.” _W3Schools.com_, www.w3schools.com/tags/tag_small.asp. Accessed 13 May 2026.
+
 “HTML Images.” _W3Schools.com_, www.w3schools.com/html/html_images.asp. Accessed 13 May 2026.
 
 Krunals. “Different Ways To Read Local JSON Files In Angular Application.” _Medium_, 2 Oct. 2024, medium.com/@krunals/different-ways-to-read-local-json-files-in-angular-application-c3ecd545fd37. Accessed 10 May 2026.
