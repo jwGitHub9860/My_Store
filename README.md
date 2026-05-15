@@ -195,6 +195,8 @@ ErinDab, and Jignesh Panchal. “ERROR NG8001: ‘courses’ Is Not a Known Elem
 
 Krunals. “Different Ways To Read Local JSON Files In Angular Application.” _Medium_, 2 Oct. 2024, medium.com/@krunals/different-ways-to-read-local-json-files-in-angular-application-c3ecd545fd37. Accessed 10 May 2026.
 
+Kumari, Anni. “How to Turn an Image into a Link in HTML?” _GeeksforGeeks_, GeeksforGeeks, 23 July 2025, www.geeksforgeeks.org/html/how-to-turn-an-image-into-a-link-in-html/. Accessed 14 May 2026.
+
 Leichtos, and Mojtaba Nejad Poor Esmaeili. “Angular-NG8001 Not Known Element Error. How Solve It?” _Stack Overflow_, stackoverflow.com/#organization, 12 Jan. 2024, stackoverflow.com/questions/77808592/angular-ng8001-not-known-element-error-how-solve-it. Accessed 8 May 2026.
 
 mahalaxmi. “How to Link a Button to Another Page in HTML?” _GeeksforGeeks_, GeeksforGeeks, 23 July 2025, www.geeksforgeeks.org/html/how-to-link-a-button-to-another-page-in-html/. Accessed 12 May 2026.
