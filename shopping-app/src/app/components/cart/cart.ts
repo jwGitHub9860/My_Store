@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from "@angular/forms";
 
 @Component({
   selector: 'app-cart',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './cart.html',
   styleUrl: './cart.component.css',
 })
