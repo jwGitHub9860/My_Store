@@ -1,0 +1,26 @@
+<!--TEMP: use "app-product-item" or "app-product-item-detail"?-->
+
+<div class="product-container">
+    <div class="product-index">
+        <ul *ngFor="let item of items">
+            <!--Links item images to "product-item-detail" Webpage-->
+            <a href="http://localhost:4200/item-details" routerLink="/item-details">
+                <img src="{{ item.url }}" alt="Image URL" style="width: 300px;">
+            </a>
+            <br>
+
+            <!--MUST USE "<div class="product-container">" for item Name & Price SEPARATELY-->
+            <!--Otherwise Item Name & Price will be on Same Line-->
+            <!--Or Only Item Name will Only Be Centered whereas Price will be Aligned to the Left-->
+            <div class="product-container">
+                <a>{{ item.name }}</a>
+                <br>
+            </div>
+            <div class="product-container">
+                <a>${{ item.price }}</a>
+            </div>
+        </ul>
+    </div>
+</div>
+
+<!--TEMP: use "button" for Increasing & Decreasing items for cart?-->
