@@ -1,14 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { Billing_Info } from "../../models/Billing-Info";
 import { BillingInformation } from "../../components/billing-information/billing-information";
+import { Item } from '../../models/Item';
+import { ProductItem } from "../../components/product-item/product-item";
 
 @Component({
   selector: 'app-cart',
-  imports: [BillingInformation],
+  imports: [BillingInformation, ProductItem],
   templateUrl: './cart.html',
   styleUrl: './cart.component.css',
 })
 export class Cart implements OnInit {
+  // Parent Component of "billing-information" & "product-item" Components
+  chosenItem: Item[] = [];
+
   full_name: string = '';
   thankYouMessage: string = "Thank you, " + this.full_name + " !";
 
@@ -23,5 +28,11 @@ export class Cart implements OnInit {
 
     // Resets "full_name" Back to Empty String
     this.full_name = '';
+  }
+
+  // TEMP: function is UNFINISHED
+  // TEMP: figure out how to Obtain item ID First
+  itemPurchaseAmount(/*chosenItem: Item[]*/): void {
+    //this.chosenItem = chosenItem;
   }
 }

@@ -65,4 +65,6 @@ export class ProductListService {
       }
     ]
   }
+
+  // TEMP: obtain Entire Item through ID Input? "getItem(id: number): Item {}" OR "getItem(id: number): number {}"
 }
