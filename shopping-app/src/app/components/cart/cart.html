@@ -2,4 +2,17 @@
 <app-product-item (itemPurchaseAmount)="itemPurchaseAmount()"></app-product-item>
 <!--<app-product-item (itemPurchaseAmount)="itemPurchaseAmount($event)"></app-product-item>-->
 
-<app-billing-information (obtainBillingInfo)="obtainBillingInfo($event)"></app-billing-information>
+<app-billing-information (obtainBillingInfo)="obtainBillingInfo($event)">
+    <!--MUST be Put Inside "app-billing-information" Tags to Prevent "confirmation" Page from Appearing IN "cart" Page -->
+
+    <!--Sends Customer Name to "confirmation" Component
+    <app-confirmation [thankYouMessage]="message"></app-confirmation>-->
+
+    <!--TESTING CODE (delete later)-->
+    <!--Does NOT APPEAR
+    <p>Current customer_full_name: {{ customer_full_name }}</p>
+    <p>Current message: {{ message }}</p>-->
+</app-billing-information>
+
+<!--Sends Customer Name to "confirmation" Component
+<app-confirmation [thankYouMessage]="message"></app-confirmation>-->
