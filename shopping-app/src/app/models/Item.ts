@@ -1,0 +1,16 @@
+// TEMP: Rename to "Product-list.ts" or Keep as "Item.ts"?
+export class Item {
+    id: number;
+    name: string;
+    price: number;
+    url: string;
+    description: string;
+
+    constructor() {
+        this.id = 1;
+        this.name = '';
+        this.price = 1;
+        this.url = '';
+        this.description = '';
+    }
+}

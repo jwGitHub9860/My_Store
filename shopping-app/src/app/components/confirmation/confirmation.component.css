@@ -18,3 +18,14 @@
 .confirmation-item {
   margin-bottom: 30px;
 }
+
+.button {
+  text-align: center;
+  background: #33B5E5;
+  color: #fff;
+  padding: 6px;
+}
+
+a {
+  color: #ffffff;
+}

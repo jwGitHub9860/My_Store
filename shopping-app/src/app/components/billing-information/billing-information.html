@@ -1,0 +1,32 @@
+<div class="cart-container">
+    <div class="cart-panel">
+        <div class="cart-panel">
+            <form #form="ngForm">
+                <div class="form-margin">
+                    <p>Full name</p>
+                    <div class="number-item">
+                        <input type="text" name="full_name" required minlength="3" placeholder="(minimum 3 characters)" [(ngModel)]="full_name">
+                    </div>
+                </div>
+                <div class="form-margin">
+                    <p>Address</p>
+                    <div class="number-item">
+                        <input type="text" name="address" required minlength="6" placeholder="(minimum 6 characters)" [(ngModel)]="address">
+                    </div>
+                </div>
+                <div class="form-margin">
+                    <p>Credit card number</p>
+                    <div class="number-item">
+                        <input type="text" name="credit_card_number" required minlength="16" required maxlength="16" placeholder="(16-digit characters)" [(ngModel)]="credit_card_number">
+                    </div>
+                </div>
+                <div class="form-margin">
+                    <p><small>We'll never share your payment details with anyone else.</small></p>
+                </div>
+                <div class="form-margin">
+                    <input type="submit" [disabled]="form.invalid" class="btn btn-primary" onclick="location.href='http://localhost:4200/confirmation'" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
