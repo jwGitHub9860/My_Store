@@ -1,11 +1,10 @@
-<!--TEMP: use "app-product-item" or "app-product-item-detail"?-->
-
 <div class="product-container">
     <div class="product-index">
         <ul *ngFor="let item of items">
             <!--Links item images to "product-item-detail" Webpage-->
             <a href="http://localhost:4200/item-details" routerLink="/item-details">
                 <img src="{{ item.url }}" alt="Image URL" style="width: 300px;">
+                <app-product-item [chosenItem]="item"></app-product-item>
             </a>
             <br>
 

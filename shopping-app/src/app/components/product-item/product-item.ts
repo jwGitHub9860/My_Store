@@ -9,7 +9,17 @@ import { Item } from "../../models/Item";
   styleUrl: './product-item.component.css',
 })
 export class ProductItem implements OnInit {
-  // Child Component of "cart" & "product-item-detail" Parent Components
+  // Child Component of "cart", "product-item-detail", and "product-list" Parent Components
+
+  // Receives Input from Parent Component
+  // Initializes "chosenItem" to ONE Empty Item
+  @Input() chosenItem: Item = {
+    id: 0,
+    name: '',
+    price: 1,
+    url: '',
+    description: ''
+  };
 
   // TEMP: use "Item" model or Create new item model (Only has "url", "name", & "price")
   // Sends Data to "cart" Component
@@ -21,14 +31,9 @@ export class ProductItem implements OnInit {
   
   allItems: Item[] = [];
 
-  // Identifies Which Item to Display
-  itemId: number = 0;
-
   constructor() {}
 
-  ngOnInit() {
-    //
-  }
+  ngOnInit() { }
 
   // TEMP: function is UNFINISHED
   // TEMP: figure out how to Obtain item ID First
