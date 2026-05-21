@@ -189,6 +189,8 @@ ErinDab, and Jignesh Panchal. “ERROR NG8001: ‘courses’ Is Not a Known Elem
 
 “GitHub Profile README Generator.” _GitHub Profile Readme Generator | GitHub Profile Readme Generator_, rahuldkjain.github.io/gh-profile-readme-generator/. Accessed 7 May 2026.
 
+Habib, Ahmad, et al. “Passing Parameter Onclick, in a Loop Using Angular8.” Edited by Ahmad Habib and Mihai Alexandru-Ionut, _Stack Overflow_, stackoverflow.com/#organization, 8 Jan. 2020, stackoverflow.com/questions/59640400/passing-parameter-onclick-in-a-loop-using-angular8. Accessed 20 May 2026.
+
 “HTML <small> Tag</Small>.” _W3Schools.com_, www.w3schools.com/tags/tag_small.asp. Accessed 13 May 2026.
 
 “HTML Images.” _W3Schools.com_, www.w3schools.com/html/html_images.asp. Accessed 13 May 2026.
