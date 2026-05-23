@@ -9,8 +9,8 @@ import { ProductItem } from "../../components/product-item/product-item";
   styleUrl: './product-item-detail.component.css',
 })
 export class ProductItemDetail implements OnInit {
-  // Parent Component of "product-item" Child Component
-  // TEMP: does "chosenItem" need to be Changed?
+  // Child Component of "product-item" Parent Component
+  // TEMP: use "chosenItem" as "@Input"?
   chosenItem: Item[] = [];
 
   constructor() {}
