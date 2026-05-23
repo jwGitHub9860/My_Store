@@ -6,8 +6,9 @@ export class Item {
     url: string;
     description: string;
 
+    // Initializes "Item" to ONE Empty NONEXISTENT Item
     constructor() {
-        this.id = 1;
+        this.id = 0;
         this.name = '';
         this.price = 1;
         this.url = '';

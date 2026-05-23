@@ -1,1 +1,4 @@
-<!--Leave Empty to Prevent "product-item.html" File from Displaying Unused code-->
+<!--Leave Empty, EXCEPT for Child Selector Tags, to Prevent "product-item.html" File from Displaying Unused code-->
+<!--Child HTML Files ALWAYS Display Content for Parent HTML Files-->
+<!--Parent HTML Files Access Child HTML Files to Display their Content-->
+<app-product-list (chosenItemDetails)="submitChosenItem($event)"></app-product-list>
