@@ -181,6 +181,8 @@ http://localhost:4200/
 ## Credits
 ###### References used while making project
 
+Amrmsmb, et al. “Argument of Type ‘Event’ Is Not Assignable to Parameter of Type ‘String.’” Edited by Yuri and Ramanathan Chockalingam, _Stack Overflow_, stackoverflow.com/#organization, 6 Jan. 2022, stackoverflow.com/questions/66938398/argument-of-type-event-is-not-assignable-to-parameter-of-type-string. Accessed 22 May 2026.
+
 bensalerno, et al. “Running Angular App Only Shows Angular Default Homepage.” _Stack Overflow_, stackoverflow.com/#organization, 1 June 1964, stackoverflow.com/questions/64215177/running-angular-app-only-shows-angular-default-homepage. Accessed 8 May 2026.
 
 Danioss, and Robin Dijkhof. “Angular 2 ‘component’ Is Not a Known Element.” _Stack Overflow_, stackoverflow.com/#organization, 2 May 2019, stackoverflow.com/questions/44429996/angular-2-component-is-not-a-known-element/44430230#44430230. Accessed 8 May 2026.
@@ -194,6 +196,8 @@ Habib, Ahmad, et al. “Passing Parameter Onclick, in a Loop Using Angular8.” 
 “HTML <small> Tag</Small>.” _W3Schools.com_, www.w3schools.com/tags/tag_small.asp. Accessed 13 May 2026.
 
 “HTML Images.” _W3Schools.com_, www.w3schools.com/html/html_images.asp. Accessed 13 May 2026.
+
+Jaouadirabeb. “Passing Data Between Angular Components: Mastering @Input, @Output, and Signal-Based Inputs.” _Medium_, 7 Nov. 2025, medium.com/@jaouadirabeb/passing-data-between-angular-components-mastering-input-output-and-signal-based-inputs-decee874a609. Accessed 22 May 2026.
 
 Krunals. “Different Ways To Read Local JSON Files In Angular Application.” _Medium_, 2 Oct. 2024, medium.com/@krunals/different-ways-to-read-local-json-files-in-angular-application-c3ecd545fd37. Accessed 10 May 2026.
 
