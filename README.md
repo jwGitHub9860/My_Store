@@ -141,6 +141,8 @@ http://localhost:4200/
 
 ## Challenges Faced During Project
 
+One challenge faced was sending ID of item that was clicked on in the webpage to the ```item-details``` webpage. When the item image was clicked on, the ID of the chosen item was reset back to the default value of zero before it reached the ```product-item-detail``` component. This was resolved by creating a service file called ```product-item.ts``` in the ```services``` folder that stores the ID while the ```product-list``` component and all of its values reset after the code exits the component and adding navigation code that opens ```item-details``` webpage when the item image is clicked on.
+
 ## Udacity Mentors Who Have Answered Questions In Knowledge To Help With Project
 - 
 
