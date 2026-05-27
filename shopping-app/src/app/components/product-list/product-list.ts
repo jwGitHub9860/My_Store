@@ -13,6 +13,7 @@ import { Item } from '../../models/Item';
 })
 export class ProductList implements OnInit {
   items: Item[] = [];
+  itemAmount: number = 0;
 
   // ONLY WAY to Move from "product-list" Webpage to "product-item-detail" Webpage WITHOUT RESETTING Chosen Item ID
   private route = inject(ActivatedRoute);
@@ -29,6 +30,8 @@ export class ProductList implements OnInit {
     /*this.productListService.getItemList().subscribe(res => {
       this.items = res;
     });*/
+
+    this.itemAmount = this.productItemService.getItemPurchaseAmount();
   }
 
   // Submits Chosen Item to "product-item" Component

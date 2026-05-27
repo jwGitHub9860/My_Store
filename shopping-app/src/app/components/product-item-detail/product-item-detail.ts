@@ -12,6 +12,7 @@ import { ProductListService } from "../../services/product-list/product-list";
 export class ProductItemDetail implements OnInit {
   chosenItemId: number = 0;
   chosenItem: Item;
+  itemAmount: number = 0;
   allItems: Item[] = [];
 
   constructor(private productItemService: ProductItemService, private productListService: ProductListService) {
@@ -26,6 +27,7 @@ export class ProductItemDetail implements OnInit {
 
   ngOnInit(): void {
     this.allItems = this.productListService.getItemList();
+    this.itemAmount = this.productItemService.getItemPurchaseAmount();
     
     // Obtains Chosen Item ID
     this.chosenItemId = this.productItemService.getChosenItemId();
