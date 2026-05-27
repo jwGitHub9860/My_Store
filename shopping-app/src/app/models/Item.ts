@@ -5,7 +5,6 @@ export class Item {
     price: number;
     url: string;
     description: string;
-    item_purchase_amount: number;
 
     // Initializes "Item" to ONE Empty NONEXISTENT Item
     constructor() {
@@ -14,6 +13,5 @@ export class Item {
         this.price = 1;
         this.url = '';
         this.description = '';
-        this.item_purchase_amount = 0;
     }
 }
