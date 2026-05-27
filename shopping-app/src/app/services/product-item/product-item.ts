@@ -13,15 +13,20 @@ import { Item } from '../../models/Item';
 })
 export class ProductItemService {
   chosenItemId: number;
+  totalPurchaseCost: number;
 
   // TEMP: use "Observable" or Not?
-  constructor(private http: HttpClient) { this.chosenItemId = 0; }
+  constructor(private http: HttpClient) {
+    this.chosenItemId = 0;
+    this.totalPurchaseCost = 0;
+  }
 
-  // TEMP: use "Observable" or Not?
   setChosenItemId(id: number): void { this.chosenItemId = id; }
 
-  // TEMP: use "Observable" or Not?
   getChosenItemId(): number { return this.chosenItemId; }
-  
-  // TEMP: Get AND Set item Purchase Amount HERE
+
+  // TEMP: CALCULATE Total Item Purchase Amount in This Function?
+  setTotalPurchaseCost(cost: number) { this.totalPurchaseCost = cost; }
+
+  getTotalPurchaseCost(): number { return this.totalPurchaseCost; }
 }
