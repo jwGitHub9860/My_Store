@@ -17,7 +17,7 @@ export class BillingInformation {
   // TEMP: use "Observable" or Not?
   constructor(private http: HttpClient) { this.customerName = ''; }
 
-  setCustomerName(name: string) { this.customerName = name; }
+  setCustomerName(name: string): void { this.customerName = name; }
 
   getCustomerName(): string { return this.customerName; }
 }

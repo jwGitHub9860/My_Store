@@ -27,7 +27,7 @@ export class ProductItemService {
 
   getChosenItemId(): number { return this.chosenItemId; }
 
-  setItemPurchaseAmount(amount: number) { this.itemPurchaseAmount = amount; }
+  setItemPurchaseAmount(amount: number): void { this.itemPurchaseAmount = amount; }
 
   getItemPurchaseAmount(): number { return this.itemPurchaseAmount; }
 
@@ -36,7 +36,7 @@ export class ProductItemService {
   decreaseItemPurchaseAmount(): void { this.itemPurchaseAmount -= 1; }
 
   // TEMP: CALCULATE Total Item Purchase Amount in This Function?
-  setTotalPurchaseCost(cost: number) { this.totalPurchaseCost = cost; }
+  setTotalPurchaseCost(cost: number): void { this.totalPurchaseCost = cost; }
 
   getTotalPurchaseCost(): number { return this.totalPurchaseCost; }
 }

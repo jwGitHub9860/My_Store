@@ -16,6 +16,7 @@ export class ProductListService {
   constructor(private http: HttpClient) { }
 
   // TEMP: use "Observable" or Not?
+  // Return Item List AS IT IS
   getItemList() {//: Observable<Item[]> {
     // TEMP: use "Observable" or Not?
     //return this.http.get<Item[]>('assets/data.json');
