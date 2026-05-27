@@ -3,7 +3,7 @@
         <ul *ngFor="let item of items">
             <!--Links item images to "product-item-detail" Webpage-->
             <!--(click)="submitChosenItem(item.id)" - Submits Chosen Item to "product-item" Component once item Image is Clicked On-->
-            <a href="http://localhost:4200/item-details" routerLink="/item-details" (click)="submitChosenItem(item.id)">
+            <a (click)="submitChosenItem(item.id)" routerLink="/item-details">
                 <img src="{{ item.url }}" alt="Image URL" style="width: 300px;">
             </a>
             <br>

@@ -1,6 +1,8 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from "@angular/common";
+import { Router, ActivatedRoute } from "@angular/router";
 import { ProductListService } from "../../services/product-list/product-list";
+import { ProductItemService } from "../../services/product-item/product-item";
 import { Item } from '../../models/Item';
 
 @Component({
@@ -12,10 +14,11 @@ import { Item } from '../../models/Item';
 export class ProductList implements OnInit {
   items: Item[] = [];
 
-  // Sends Chosen Item to "product-item" Parent Component
-  @Output() chosenItemDetails: EventEmitter<Item> = new EventEmitter();
+  // ONLY WAY to Move from "product-list" Webpage to "product-item-detail" Webpage WITHOUT RESETTING Chosen Item ID
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
 
-  constructor(private productListService: ProductListService) { }
+  constructor(private productItemService: ProductItemService, private productListService: ProductListService) { }
   
   ngOnInit() {
     this.items = this.productListService.getItemList();
@@ -30,20 +33,12 @@ export class ProductList implements OnInit {
 
   // Submits Chosen Item to "product-item" Component
   submitChosenItem(id: number): void {
-    for (let index = 0; index < this.items.length; index++) {
-      const currentItem = this.items[index];
-      if (currentItem.id === id) {
-        // MUST Obtain Chosen Item DIRECTLY From Item List or Chosen Item will FAIL to Send Correctly
-        const chosenItem: Item = {
-          id: currentItem.id,
-          name: currentItem.name,
-          price: currentItem.price,
-          url: currentItem.url,
-          description: currentItem.description
-        };
+    // Stores Chosen Item ID in "product-item" Service File
+    this.productItemService.setChosenItemId(id);
 
-        this.chosenItemDetails.emit(chosenItem);
-      }
-    }
+    // Navigates to Item Details Webpage
+    // Ensures "item-details" Webpage Opens WHEN Item Image is Clicked On
+    // ONLY WAY to Move from "product-list" Webpage to "product-item-detail" Webpage WITHOUT RESETTING Chosen Item ID
+    this.router.navigate(['item-details'], {relativeTo: this.route});
   }
 }

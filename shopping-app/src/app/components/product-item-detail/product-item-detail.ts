@@ -1,27 +1,47 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from "../../models/Item";
-import { ProductItem } from "../../components/product-item/product-item";
+import { ProductItemService } from "../../services/product-item/product-item";
+import { ProductListService } from "../../services/product-list/product-list";
 
 @Component({
   selector: 'app-product-item-detail',
-  imports: [ProductItem],
+  imports: [],
   templateUrl: './product-item-detail.html',
   styleUrl: './product-item-detail.component.css',
 })
 export class ProductItemDetail implements OnInit {
-  // Child Component of "product-item" Parent Component
-  // TEMP: use "chosenItem" as "@Input"?
-  chosenItem: Item[] = [];
+  chosenItemId: number = 0;
+  chosenItem: Item;
+  allItems: Item[] = [];
 
-  constructor() {}
-
-  ngOnInit(): void {
-    //
+  constructor(private productItemService: ProductItemService, private productListService: ProductListService) {
+    this.chosenItem = {
+      id: 0,
+      name: '',
+      price: 1,
+      url: '',
+      description: ''
+    };
   }
 
-  // TEMP: function is UNFINISHED
-  // TEMP: figure out how to Obtain item ID First
-  chosenItemDetails(/*chosenItem: Item[]*/): void {
-    //this.chosenItem = chosenItem;
+  ngOnInit(): void {
+    this.allItems = this.productListService.getItemList();
+    
+    // Obtains Chosen Item ID
+    this.chosenItemId = this.productItemService.getChosenItemId();
+
+    // Prevents "chosenItem" from Resetting
+    for (let index = 0; index < this.allItems.length; index++) {
+      const currentItem = this.allItems[index];
+      if (currentItem.id === this.chosenItemId) {
+        this.chosenItem = {
+          id: currentItem.id,
+          name: currentItem.name,
+          price: currentItem.price,
+          url: currentItem.url,
+          description: currentItem.description
+        };
+      };
+    };
   }
 }
