@@ -1,13 +1,26 @@
-<p> chosenItemId: {{ chosenItemId }}</p>
-<p> chosenItem.id: {{ chosenItem.id }}</p>
-<p> chosenItem.name: {{ chosenItem.name }}</p>
-<p> chosenItem.price: {{ chosenItem.price }}</p>
-<p> chosenItem.url: {{ chosenItem.url }}</p>
-<p> chosenItem.description: {{ chosenItem.description }}</p><!---->
-
 <!--Child HTML Files ALWAYS Display Content for Parent HTML Files-->
 <!--Parent HTML Files Access Child HTML Files to Display their Content-->
 
-<!--TEMP: use "button" for Increasing & Decreasing items for cart?-->
+<div class="detail-container">
+    <div class="img">
+        <img src="{{ chosenItem.url }}" alt="Image URL">
+    </div>
+    
+    <!--MUST KEEP Image & Details WITHIN SAME class="detail-container" to Display Webpage as Shown-->
+    <div class="detail-item">
+        <div class="select-input">
+            <h2>{{ chosenItem.name }}</h2>
+        </div>
+        <div class="select-input">
+            <h6>${{ chosenItem.price }}</h6>
+        </div>
+        <h6>{{ chosenItem.description }}</h6>
+        
+        <!--TEMP: use "button" for Increasing & Decreasing items for cart?-->
+        <!--TEMP: Use "select-input" to HOLD "button" for Increasing & Decreasing items for cart-->
 
-<a href="http://localhost:4200/" routerLink="/">Back to product list</a>
+        <div class="back-link">
+            <a href="http://localhost:4200/" routerLink="/">Back to product list</a>
+        </div>
+    </div>
+</div>
