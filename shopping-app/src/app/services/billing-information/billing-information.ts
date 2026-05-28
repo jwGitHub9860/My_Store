@@ -11,7 +11,7 @@ import { Item } from '../../models/Item';
 @Injectable({
   providedIn: 'root',
 })
-export class BillingInformation {
+export class BillingInformationService {
   customerName: string;
 
   // TEMP: use "Observable" or Not?

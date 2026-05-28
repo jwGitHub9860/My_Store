@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from "@angular/forms";
+import { Router } from "@angular/router";
 import { Billing_Info } from "../../models/Billing-Info";
+import { BillingInformationService } from "../../services/billing-information/billing-information";
 
 @Component({
   selector: 'app-billing-information',
@@ -15,9 +17,10 @@ export class BillingInformation implements OnInit {
 
   @Output() obtainBillingInfo: EventEmitter<Billing_Info> = new EventEmitter();
 
-  constructor() {}
+  // "private router: Router" -> ONLY WAY to Move from "cart" Webpage to "confirmation" Webpage WITHOUT RESETTING Customer Name & Credit Card Number
+  constructor(private billingInformationService: BillingInformationService, private router: Router) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void { this.full_name = this.billingInformationService.getCustomerName(); }
   
   submitBillingInfo(): void {
     const customerInfo = {
@@ -25,6 +28,14 @@ export class BillingInformation implements OnInit {
       address: this.address,
       credit_card_number: this.credit_card_number
     }
+
+    // Sends Customer Name & Credit Card Number to "billing-information" Service File
+    this.billingInformationService.setCustomerName(this.full_name);
+
+    // Navigates to Confirmation Webpage
+    // Ensures "confirmation" Webpage Opens WHEN "Submit" Button is Clicked On
+    // ONLY WAY to Move from "cart" Webpage to "confirmation" Webpage WITHOUT RESETTING Customer Name & Credit Card Number
+    this.router.navigate(['confirmation']);
 
     this.obtainBillingInfo.emit(customerInfo);
     

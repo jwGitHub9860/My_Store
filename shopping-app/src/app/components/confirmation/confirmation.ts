@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BillingInformationService } from "../../services/billing-information/billing-information";
 
 @Component({
   selector: 'app-confirmation',
@@ -7,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './confirmation.component.css',
 })
 export class Confirmation implements OnInit {
-  constructor() { }
-
-  ngOnInit(): void {
-    //
+  customerName: string;
+  
+  constructor(private billingInformationService: BillingInformationService) {
+    this.customerName = '';
   }
 
-  returnToProductList() {}
+  ngOnInit(): void {
+    this.customerName = this.billingInformationService.getCustomerName();
+
+    // TEMP: get "total_purchase_cost" HERE
+  }
 }
