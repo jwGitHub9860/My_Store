@@ -21,6 +21,9 @@ export class Cart implements OnInit {
 
   ngOnInit(): void { }
 
+  // TEMP: Change into "findAllPurchaseItems()" Function
+  // TEMP: Use as Function to Make Parent-Child Relationship with "cart" & "product-item" Components?
+  // TEMP: Send "purchaseItemList" Array IF Making Parent-Child Relationship
   // Obtains Customer Name to Use in "confirmation" Webpage
   obtainBillingInfo(customerInfo: Billing_Info): void {
     this.full_name = customerInfo.full_name;
@@ -30,8 +33,10 @@ export class Cart implements OnInit {
     this.full_name = '';
   }
 
-  // TEMP: function is UNFINISHED
-  // TEMP: figure out how to Obtain item ID First
+    
+  // TEMP: Change into "addToCart()" Function
+  // TEMP: Use as Function to Make Parent-Child Relationship with "cart" & "product-item" Components?
+  // TEMP: OR use in Service File?
   itemPurchaseAmount(/*chosenItem: Item[]*/): void {
     //this.chosenItem = chosenItem;
   }
