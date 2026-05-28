@@ -31,9 +31,24 @@ export class ProductItemService {
 
   getItemPurchaseAmount(): number { return this.itemPurchaseAmount; }
 
-  increaseItemPurchaseAmount(): void { this.itemPurchaseAmount += 1; }
+  increaseItemPurchaseAmount(): void {
+    // Ensures "currentItemAmount" is NOT Changed during Increasing Process
+    let currentItemAmount = this.getItemPurchaseAmount();
+    currentItemAmount += 1;
+    this.setItemPurchaseAmount(currentItemAmount);
+  }
 
-  decreaseItemPurchaseAmount(): void { this.itemPurchaseAmount -= 1; }
+  decreaseItemPurchaseAmount(): void {
+    // Ensures "currentItemAmount" is NOT Changed during Decreasing Process
+    let currentItemAmount = this.getItemPurchaseAmount();
+    
+    // CANNOT be NEGATIVE Item Amount
+    if (currentItemAmount > 0) {
+      currentItemAmount -= 1;
+    }
+
+    this.setItemPurchaseAmount(currentItemAmount);
+  }
 
   // TEMP: CALCULATE Total Item Purchase Amount in This Function?
   setTotalPurchaseCost(cost: number): void { this.totalPurchaseCost = cost; }

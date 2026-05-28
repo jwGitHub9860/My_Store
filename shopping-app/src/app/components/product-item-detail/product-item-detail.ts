@@ -46,4 +46,14 @@ export class ProductItemDetail implements OnInit {
       };
     };
   }
+
+  increaseAmount(): void {
+    this.productItemService.increaseItemPurchaseAmount();
+    this.itemAmount = this.productItemService.getItemPurchaseAmount();
+  }
+
+  decreaseAmount(): void {
+    this.productItemService.decreaseItemPurchaseAmount();
+    this.itemAmount = this.productItemService.getItemPurchaseAmount();
+  }
 }

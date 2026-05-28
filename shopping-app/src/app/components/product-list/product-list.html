@@ -22,8 +22,13 @@
             <div class="product-container">
                 <a>Purchase Amount: {{ itemAmount }}</a>
             </div>
+
+            <!--TEMP: Figure out how to SEPARATE Specific Item Amounts FROM EACH OTHER-->
+            <!--TEMP: KEEP "button" for Increasing & Decreasing items for cart OR CHANGE it?-->
+            <div class="product-container">
+                <button class="btn btn-primary" (click)="increaseAmount()">+</button>
+                <button class="btn btn-primary" (click)="decreaseAmount()">-</button>
+            </div>
         </ul>
     </div>
 </div>
-
-<!--TEMP: use "button" for Increasing & Decreasing items for cart?-->

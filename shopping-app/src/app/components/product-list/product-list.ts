@@ -44,4 +44,14 @@ export class ProductList implements OnInit {
     // ONLY WAY to Move from "product-list" Webpage to "product-item-detail" Webpage WITHOUT RESETTING Chosen Item ID
     this.router.navigate(['item-details'], {relativeTo: this.route});
   }
+
+  increaseAmount(): void {
+    this.productItemService.increaseItemPurchaseAmount();
+    this.itemAmount = this.productItemService.getItemPurchaseAmount();
+  }
+
+  decreaseAmount(): void {
+    this.productItemService.decreaseItemPurchaseAmount();
+    this.itemAmount = this.productItemService.getItemPurchaseAmount();
+  }
 }

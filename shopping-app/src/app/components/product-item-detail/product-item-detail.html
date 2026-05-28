@@ -18,8 +18,11 @@
         
         <a>Purchase Amount: {{ itemAmount }}</a>
         
-        <!--TEMP: use "button" for Increasing & Decreasing items for cart?-->
-        <!--TEMP: Use "select-input" to HOLD "button" for Increasing & Decreasing items for cart-->
+        <!--TEMP: KEEP "button" for Increasing & Decreasing items for cart OR CHANGE it?-->
+        <div class="select-input">
+            <button class="btn btn-primary" (click)="increaseAmount()">+</button>
+            <button class="btn btn-primary" (click)="decreaseAmount()">-</button>
+        </div>
 
         <div class="back-link">
             <a href="http://localhost:4200/" routerLink="/">Back to product list</a>
