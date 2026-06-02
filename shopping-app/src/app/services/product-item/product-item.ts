@@ -39,14 +39,7 @@ export class ProductItemService {
 
   getItemPurchaseAmountList(): number[] { return this.itemPurchaseAmountList; }
 
-  // Assigns "itemPurchaseAmount" to "itemPurchaseAmountList" Array ELEMENT
-  setItemPurchaseAmount(amount: number, id: number): void {
-    // TEMP: do I still Need this?
-    // Ensures "itemPurchaseAmount" is NOT Changed during Setting Process
-    this.itemPurchaseAmount = amount;
-
-    this.itemPurchaseAmountList[id - 1] = this.itemPurchaseAmount;
-  }
+  setItemPurchaseAmount(amount: number, id: number): void { this.itemPurchaseAmountList[id - 1] = amount; }
 
   // TEMP: use in "addToCart()" Function to Obtain Items in "cart" Webpage?
   getItemPurchaseAmount(id: number): number {
@@ -62,25 +55,17 @@ export class ProductItemService {
   // TEMP: Create NEW FUNCTION that Resets "itemPurchaseAmountList" Elements Back to Zero
 
   increaseItemPurchaseAmount(id: number): number {
-    // TEMP: do I still Need this?
-    // Ensures "currentItemAmount" is NOT CHANGED during Increasing Process
-    let currentItemAmount = this.itemPurchaseAmountList[id - 1];
-
-    currentItemAmount += 1;
-    return currentItemAmount;
+    this.itemPurchaseAmountList[id - 1] += 1;
+    return this.itemPurchaseAmountList[id - 1];
   }
 
   decreaseItemPurchaseAmount(id: number): number {
-    // TEMP: do I still Need this?
-    // Ensures "currentItemAmount" is NOT CHANGED during Decreasing Process
-    let currentItemAmount = this.itemPurchaseAmountList[id - 1];
-
     // CANNOT be NEGATIVE Item Amount
-    if (currentItemAmount > 0) {
-      currentItemAmount -= 1;
+    if (this.itemPurchaseAmountList[id - 1] > 0) {
+      this.itemPurchaseAmountList[id - 1] -= 1;
     }
     
-    return currentItemAmount;
+    return this.itemPurchaseAmountList[id - 1];
   }
 
   // TEMP: CALCULATE Total Item Purchase Amount in This Function?
