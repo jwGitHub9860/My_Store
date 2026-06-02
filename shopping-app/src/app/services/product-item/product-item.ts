@@ -16,38 +16,69 @@ export class ProductItemService {
   itemPurchaseAmount: number;
   totalPurchaseCost: number;
 
+  // Keep SEPARATE from ORIGINAL Item List Data to Prevent Accidental Changes to Item List
+  itemPurchaseAmountList: number[];
+
   // TEMP: use "Observable" or Not?
   constructor(private http: HttpClient) {
     this.chosenItemId = 0;
-    this.itemPurchaseAmount = 0;
     this.totalPurchaseCost = 0;
+
+    // Used for "item-details" Webpage
+    this.itemPurchaseAmount = 0;
+    
+    // Used for "product-list" Webpage
+    this.itemPurchaseAmountList = [ 0, 0, 0, 0, 0, 0 ];
   }
 
   setChosenItemId(id: number): void { this.chosenItemId = id; }
 
   getChosenItemId(): number { return this.chosenItemId; }
 
-  setItemPurchaseAmount(amount: number): void { this.itemPurchaseAmount = amount; }
+  // TEMP: will I Need Setter for "itemPurchaseAmountList"?
 
-  getItemPurchaseAmount(): number { return this.itemPurchaseAmount; }
+  getItemPurchaseAmountList(): number[] { return this.itemPurchaseAmountList; }
 
-  increaseItemPurchaseAmount(): void {
-    // Ensures "currentItemAmount" is NOT Changed during Increasing Process
-    let currentItemAmount = this.getItemPurchaseAmount();
-    currentItemAmount += 1;
-    this.setItemPurchaseAmount(currentItemAmount);
+  // TEMP: use in "recordItemPurchaseAmount()" Function for "Add to cart" Button
+  // Assign "itemPurchaseAmount" to "itemPurchaseAmountList" Array ELEMENT
+  setItemPurchaseAmount(amount: number, id: number): void {
+    // TEMP: do I still Need this?
+    // Ensures "itemPurchaseAmount" is NOT Changed during Setting Process
+    this.itemPurchaseAmount = amount;
+
+    // TEMP: figure out how to Reset "itemPurchaseAmountList" Elements Back to Zero LATER
+    this.itemPurchaseAmountList[id - 1] = this.itemPurchaseAmount;
   }
 
-  decreaseItemPurchaseAmount(): void {
-    // Ensures "currentItemAmount" is NOT Changed during Decreasing Process
-    let currentItemAmount = this.getItemPurchaseAmount();
-    
+  // TEMP: use in "recordItemPurchaseAmount()" Function for "Add to cart" Button?
+  getItemPurchaseAmount(id: number): number {
+    for (let index = 0; index < this.itemPurchaseAmountList.length; index++) {
+      const currentAmountElement = this.itemPurchaseAmountList[index];
+      if (index === (id - 1)) {
+        this.itemPurchaseAmount = currentAmountElement;
+      }
+    }
+    return this.itemPurchaseAmount;
+  }
+
+  increaseItemPurchaseAmount(id: number): number {
+    // Ensures "currentItemAmount" is NOT CHANGED during Increasing Process
+    let currentItemAmount = this.itemPurchaseAmountList[id - 1];
+
+    currentItemAmount += 1;
+    return currentItemAmount;
+  }
+
+  decreaseItemPurchaseAmount(id: number): number {
+    // Ensures "currentItemAmount" is NOT CHANGED during Decreasing Process
+    let currentItemAmount = this.itemPurchaseAmountList[id - 1];
+
     // CANNOT be NEGATIVE Item Amount
     if (currentItemAmount > 0) {
       currentItemAmount -= 1;
     }
-
-    this.setItemPurchaseAmount(currentItemAmount);
+    
+    return currentItemAmount;
   }
 
   // TEMP: CALCULATE Total Item Purchase Amount in This Function?

@@ -27,7 +27,6 @@ export class ProductItemDetail implements OnInit {
 
   ngOnInit(): void {
     this.allItems = this.productListService.getItemList();
-    this.itemAmount = this.productItemService.getItemPurchaseAmount();
     
     // Obtains Chosen Item ID
     this.chosenItemId = this.productItemService.getChosenItemId();
@@ -47,13 +46,21 @@ export class ProductItemDetail implements OnInit {
     };
   }
 
-  increaseAmount(): void {
-    this.productItemService.increaseItemPurchaseAmount();
-    this.itemAmount = this.productItemService.getItemPurchaseAmount();
+  // TEMP: find Way to JUST INCREASE "itemAmount", NOT RECORD
+  // Defaults Back to Zero IF "Add to cart" Button is NOT PRESSED
+  increaseAmount(id: number): void {
+    const newAmount = this.productItemService.increaseItemPurchaseAmount(id);
+    this.productItemService.setItemPurchaseAmount(newAmount, id);
+    this.itemAmount = this.productItemService.getItemPurchaseAmount(id);
   }
 
-  decreaseAmount(): void {
-    this.productItemService.decreaseItemPurchaseAmount();
-    this.itemAmount = this.productItemService.getItemPurchaseAmount();
+  // TEMP: find Way to JUST INCREASE "itemAmount", NOT RECORD
+  // Defaults Back to Zero IF "Add to cart" Button is NOT PRESSED
+  decreaseAmount(id: number): void {
+    const newAmount = this.productItemService.decreaseItemPurchaseAmount(id);
+    this.productItemService.setItemPurchaseAmount(newAmount, id);
+    this.itemAmount = this.productItemService.getItemPurchaseAmount(id);
   }
+
+  // TEMP: Create "recordItemPurchaseAmount()" Function to RECORD Item Purchase Amount
 }

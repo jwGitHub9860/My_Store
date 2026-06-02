@@ -13,7 +13,7 @@ import { Item } from '../../models/Item';
 })
 export class ProductList implements OnInit {
   items: Item[] = [];
-  itemAmount: number = 0;
+  itemAmountList: number[] = [ 0, 0, 0, 0, 0, 0 ];
 
   // ONLY WAY to Move from "product-list" Webpage to "product-item-detail" Webpage WITHOUT RESETTING Chosen Item ID
   private route = inject(ActivatedRoute);
@@ -31,7 +31,7 @@ export class ProductList implements OnInit {
       this.items = res;
     });*/
 
-    this.itemAmount = this.productItemService.getItemPurchaseAmount();
+    this.itemAmountList = this.productItemService.getItemPurchaseAmountList();
   }
 
   // Submits Chosen Item to "product-item" Component
@@ -45,13 +45,13 @@ export class ProductList implements OnInit {
     this.router.navigate(['item-details'], {relativeTo: this.route});
   }
 
-  increaseAmount(): void {
-    this.productItemService.increaseItemPurchaseAmount();
-    this.itemAmount = this.productItemService.getItemPurchaseAmount();
-  }
+  // Does NOT RECORD Item Purchase Amount
+  // Defaults Back to Zero IF "Add to cart" Button is NOT PRESSED
+  increaseAmount(id: number): void { this.itemAmountList[id - 1] = this.productItemService.increaseItemPurchaseAmount(id); }
 
-  decreaseAmount(): void {
-    this.productItemService.decreaseItemPurchaseAmount();
-    this.itemAmount = this.productItemService.getItemPurchaseAmount();
-  }
+  // Does NOT RECORD Item Purchase Amount
+  // Defaults Back to Zero IF "Add to cart" Button is NOT PRESSED
+  decreaseAmount(id: number): void { this.itemAmountList[id - 1] = this.productItemService.decreaseItemPurchaseAmount(id); }
+
+  // TEMP: Create "recordItemPurchaseAmount()" Function to RECORD Item Purchase Amount
 }
