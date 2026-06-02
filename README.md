@@ -213,11 +213,19 @@ mahalaxmi. “How to Link a Button to Another Page in HTML?” _GeeksforGeeks_, 
 
 “Navigate to Routes.” _Angular_, angular.dev/guide/routing/navigate-to-routes. Accessed 25 May 2026.
 
+“NgIf.” _Angular_, angular.dev/api/common/NgIf. Accessed 30 May 2026.
+
+“ngIf.” _AngularJS_, docs.angularjs.org/api/ng/directive/ngIf. Accessed 30 May 2026.
+
+“NgSwitch.” _Angular_, angular.dev/api/common/NgSwitch. Accessed 31 May 2026.
+
 POV, and Charly Sosa. “How to Read Json File and Use in Everywhere as Service?” Edited by POV, _Stack Overflow_, stackoverflow.com/#organization, 3 Oct. 2019, stackoverflow.com/questions/58225939/how-to-read-json-file-and-use-in-everywhere-as-service. Accessed 10 May 2026.
 
 “Sharing Data between Child and Parent Directives and Components.” _Angular_, v17.angular.io/guide/inputs-outputs. Accessed 8 May 2026.
 
 Simon, and LocalPCGuy. “Angular routerLink with Automatic Href.” Edited by LocalPCGuy, _Stack Overflow_, stackoverflow.com/#organization, 12 May 2022, stackoverflow.com/questions/72220258/angular-routerlink-with-automatic-href. Accessed 11 May 2026.
+
+Singh, Tarandeep. “Angular10 NgSwitch Directive.” _GeeksforGeeks_, GeeksforGeeks, 23 July 2025, www.geeksforgeeks.org/angular-js/angular10-ngswitch-directive/. Accessed 31 May 2026.
 
 Udacity. “Nd-0067-C3-Angular-Fundamentals-Project-Starter.” _GitHub_, github.com/udacity/nd-0067-c3-angular-fundamentals-project-starter. Accessed 7 May 2026.
 
