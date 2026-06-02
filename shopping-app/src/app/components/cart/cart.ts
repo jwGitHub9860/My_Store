@@ -33,11 +33,14 @@ export class Cart implements OnInit {
     this.full_name = '';
   }
 
-    
   // TEMP: Change into "addToCart()" Function
   // TEMP: Use as Function to Make Parent-Child Relationship with "cart" & "product-item" Components?
   // TEMP: OR use in Service File?
   itemPurchaseAmount(/*chosenItem: Item[]*/): void {
     //this.chosenItem = chosenItem;
   }
+  
+  // TEMP: Reset "itemAmountList" HERE?
+  // TEMP: use "<button>" Tag to Reset Item Purchase Amounts?
+  // TEMP: use "Submit" Feature?
 }

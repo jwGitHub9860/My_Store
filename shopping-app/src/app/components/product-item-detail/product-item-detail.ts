@@ -46,7 +46,6 @@ export class ProductItemDetail implements OnInit {
     };
   }
 
-  // TEMP: find Way to JUST INCREASE "itemAmount", NOT RECORD
   // Defaults Back to Zero IF "Add to cart" Button is NOT PRESSED
   increaseAmount(id: number): void {
     const newAmount = this.productItemService.increaseItemPurchaseAmount(id);
@@ -54,7 +53,6 @@ export class ProductItemDetail implements OnInit {
     this.itemAmount = this.productItemService.getItemPurchaseAmount(id);
   }
 
-  // TEMP: find Way to JUST INCREASE "itemAmount", NOT RECORD
   // Defaults Back to Zero IF "Add to cart" Button is NOT PRESSED
   decreaseAmount(id: number): void {
     const newAmount = this.productItemService.decreaseItemPurchaseAmount(id);
@@ -62,5 +60,5 @@ export class ProductItemDetail implements OnInit {
     this.itemAmount = this.productItemService.getItemPurchaseAmount(id);
   }
 
-  // TEMP: Create "recordItemPurchaseAmount()" Function to RECORD Item Purchase Amount
+  recordItemPurchaseAmount(id: number): void { this.productItemService.setItemPurchaseAmount(this.itemAmount, id); }
 }

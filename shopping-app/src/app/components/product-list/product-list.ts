@@ -45,13 +45,11 @@ export class ProductList implements OnInit {
     this.router.navigate(['item-details'], {relativeTo: this.route});
   }
 
-  // Does NOT RECORD Item Purchase Amount
   // Defaults Back to Zero IF "Add to cart" Button is NOT PRESSED
   increaseAmount(id: number): void { this.itemAmountList[id - 1] = this.productItemService.increaseItemPurchaseAmount(id); }
 
-  // Does NOT RECORD Item Purchase Amount
   // Defaults Back to Zero IF "Add to cart" Button is NOT PRESSED
   decreaseAmount(id: number): void { this.itemAmountList[id - 1] = this.productItemService.decreaseItemPurchaseAmount(id); }
 
-  // TEMP: Create "recordItemPurchaseAmount()" Function to RECORD Item Purchase Amount
+  recordItemPurchaseAmount(id: number): void { this.productItemService.setItemPurchaseAmount(this.itemAmountList[id - 1], id); }
 }

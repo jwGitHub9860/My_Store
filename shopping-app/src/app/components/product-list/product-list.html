@@ -35,6 +35,12 @@
                 <button class="btn btn-primary" (click)="increaseAmount(item.id)">+</button>
                 <button class="btn btn-primary" (click)="decreaseAmount(item.id)">-</button>
             </div>
+
+            <div class="product-container">
+                <div class="button-spacing">
+                    <button class="btn btn-primary" (click)="recordItemPurchaseAmount(item.id)">Add to cart</button>
+                </div>
+            </div>
         </ul>
     </div>
 </div>

@@ -39,18 +39,16 @@ export class ProductItemService {
 
   getItemPurchaseAmountList(): number[] { return this.itemPurchaseAmountList; }
 
-  // TEMP: use in "recordItemPurchaseAmount()" Function for "Add to cart" Button
-  // Assign "itemPurchaseAmount" to "itemPurchaseAmountList" Array ELEMENT
+  // Assigns "itemPurchaseAmount" to "itemPurchaseAmountList" Array ELEMENT
   setItemPurchaseAmount(amount: number, id: number): void {
     // TEMP: do I still Need this?
     // Ensures "itemPurchaseAmount" is NOT Changed during Setting Process
     this.itemPurchaseAmount = amount;
 
-    // TEMP: figure out how to Reset "itemPurchaseAmountList" Elements Back to Zero LATER
     this.itemPurchaseAmountList[id - 1] = this.itemPurchaseAmount;
   }
 
-  // TEMP: use in "recordItemPurchaseAmount()" Function for "Add to cart" Button?
+  // TEMP: use in "addToCart()" Function to Obtain Items in "cart" Webpage?
   getItemPurchaseAmount(id: number): number {
     for (let index = 0; index < this.itemPurchaseAmountList.length; index++) {
       const currentAmountElement = this.itemPurchaseAmountList[index];
@@ -61,7 +59,10 @@ export class ProductItemService {
     return this.itemPurchaseAmount;
   }
 
+  // TEMP: Create NEW FUNCTION that Resets "itemPurchaseAmountList" Elements Back to Zero
+
   increaseItemPurchaseAmount(id: number): number {
+    // TEMP: do I still Need this?
     // Ensures "currentItemAmount" is NOT CHANGED during Increasing Process
     let currentItemAmount = this.itemPurchaseAmountList[id - 1];
 
@@ -70,6 +71,7 @@ export class ProductItemService {
   }
 
   decreaseItemPurchaseAmount(id: number): number {
+    // TEMP: do I still Need this?
     // Ensures "currentItemAmount" is NOT CHANGED during Decreasing Process
     let currentItemAmount = this.itemPurchaseAmountList[id - 1];
 

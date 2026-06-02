@@ -43,4 +43,8 @@ export class ProductItem implements OnInit {
     // TEMP: Rename "itemPurchaseAmount" to "chosenItemDetails" LATER
     //this.itemPurchaseAmount.emit(chosenItem);
   }
+  
+  // TEMP: Reset "itemAmountList" HERE?
+  // TEMP: use "<button>" Tag to Reset Item Purchase Amounts?
+  // TEMP: use "Submit" Feature?
 }
