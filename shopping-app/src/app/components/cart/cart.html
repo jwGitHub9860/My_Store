@@ -1,3 +1,3 @@
-<!--TEMP: Send "purchaseItemList" to "cart" Parent Component with "product-item" AS Child Component-->
+<app-product-item (chosenPurchaseItems)="obtainPurchaseList($event)"></app-product-item>
 
 <app-billing-information (obtainBillingInfo)="obtainBillingInfo($event)"></app-billing-information>

@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Billing_Info } from "../../models/Billing-Info";
 import { BillingInformation } from "../../components/billing-information/billing-information";
 import { Item } from '../../models/Item';
@@ -12,8 +12,7 @@ import { ProductItem } from "../../components/product-item/product-item";
 })
 export class Cart implements OnInit {
   // Parent Component of "billing-information" & "product-item" Components
-  chosenItem: Item[] = [];
-
+  purchaseList: Item[] = [];
   full_name: string = '';
   thankYouMessage: string = "Thank you, " + this.full_name + " !";
 
@@ -21,10 +20,7 @@ export class Cart implements OnInit {
 
   ngOnInit(): void { }
 
-  // TEMP: Change into "findAllPurchaseItems()" Function
-  // TEMP: Use as Function to Make Parent-Child Relationship with "cart" & "product-item" Components?
-  // TEMP: Send "purchaseItemList" Array IF Making Parent-Child Relationship
-  // Obtains Customer Name to Use in "confirmation" Webpage
+  // Function for Parent-Child Relationship between "cart" & "billing-information" Components
   obtainBillingInfo(customerInfo: Billing_Info): void {
     this.full_name = customerInfo.full_name;
     this.thankYouMessage = "Thank you, " + this.full_name + " !";
@@ -33,14 +29,13 @@ export class Cart implements OnInit {
     this.full_name = '';
   }
 
-  // TEMP: Change into "addToCart()" Function
-  // TEMP: Use as Function to Make Parent-Child Relationship with "cart" & "product-item" Components?
-  // TEMP: OR use in Service File?
-  itemPurchaseAmount(/*chosenItem: Item[]*/): void {
-    //this.chosenItem = chosenItem;
+  // Function for Parent-Child Relationship between "cart" & "product-item" Components
+  obtainPurchaseList(chosenItem: Item[]): void {
+    // Must Add purchase items INDIVIDUALLY
+    // CANNOT use "=" to Add "chosenItem"
+    for (let index = 0; index < chosenItem.length; index++) {
+      const currentChosenItem = chosenItem[index];
+      this.purchaseList.push(currentChosenItem);
+    }
   }
-  
-  // TEMP: Reset "itemAmountList" HERE?
-  // TEMP: use "<button>" Tag to Reset Item Purchase Amounts?
-  // TEMP: use "Submit" Feature?
 }

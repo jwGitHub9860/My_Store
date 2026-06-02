@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { Item } from "../../models/Item";
 import { ProductItemService } from "../../services/product-item/product-item";
@@ -11,7 +11,6 @@ import { ProductListService } from "../../services/product-list/product-list";
   styleUrl: './product-item.component.css',
 })
 export class ProductItem implements OnInit {
-  // TEMP: use to Display ALL ITEMS BEING PURCHASED?
   allItems: Item[] = [];
   
   // Child Component of "cart" Parent Component
@@ -20,13 +19,8 @@ export class ProductItem implements OnInit {
   // Holds All Items being Purchased
   purchaseItemList: Item[] = [];
 
-  // TEMP: Do NOT NEED this "@Output"
-  // Sends Data to "cart" Component
-  @Output() itemPurchaseAmount: EventEmitter<Item> = new EventEmitter();
-
-  // TEMP: Use to Send "purchaseItemList" to "cart" Parent Component with "product-item" AS Child Component
-  // Sends Data to "product-item-detail" Component
-  @Output() itemDescription: EventEmitter<Item> = new EventEmitter();
+  // Sends "purchaseItemList" to "cart" Parent Component with "product-item" AS Child Component
+  @Output() chosenPurchaseItems: EventEmitter<Item[]> = new EventEmitter();
 
   constructor(private productItemService: ProductItemService, private productListService: ProductListService) {}
 
@@ -43,20 +37,11 @@ export class ProductItem implements OnInit {
     }
   }
 
-  // TEMP: use to Send "purchaseItemList" to "cart" Webpage
-  // TEMP: Rename "submitChosenItem" to "submitPurchaseItemList"
-  // TEMP: use for "parent-child" Component Relationship WITH "cart" Component
-  // Obtains Chosen Item & Sends it to "cart" & "item-details" Webpages
-  submitChosenItem(chosenItem: Item): void {
-    // TEMP: Use to Reset "itemAmountList"
-    // Ensures "chosenItem" is Empty BEFORE Inputting New Chosen Item
-    //this.chosenItem.pop();
+  // Obtains List of Chosen Purchase Items & Sends it to "cart" Webpage
+  submitPurchaseItemList(): void {
+    this.chosenPurchaseItems.emit(this.purchaseItemList);
     
-    // TEMP: Do NOT Need this
-    // CANNOT use "=" to Add "chosenItem"
-    //this.chosenItem.push(chosenItem);
-    
-    // TEMP: Rename "itemPurchaseAmount" to "chosenPurchaseItems" LATER
-    //this.itemPurchaseAmount.emit(chosenItem);
+    // Resets "purchaseItemList" Back to Empty Array
+    this.purchaseItemList.pop();
   }
 }
