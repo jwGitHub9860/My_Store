@@ -30,11 +30,11 @@ export class Cart implements OnInit {
   }
 
   // Function for Parent-Child Relationship between "cart" & "product-item" Components
-  obtainPurchaseList(chosenItem: Item[]): void {
+  obtainPurchaseList(purchaseItems: Item[]): void {
     // Must Add purchase items INDIVIDUALLY
-    // CANNOT use "=" to Add "chosenItem"
-    for (let index = 0; index < chosenItem.length; index++) {
-      const currentChosenItem = chosenItem[index];
+    // CANNOT use "=" to Add "purchaseItems"
+    for (let index = 0; index < purchaseItems.length; index++) {
+      const currentChosenItem = purchaseItems[index];
       this.purchaseList.push(currentChosenItem);
     }
   }
