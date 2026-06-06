@@ -47,17 +47,14 @@ export class ProductItemDetail implements OnInit {
   }
 
   // Defaults Back to Zero IF "Add to cart" Button is NOT PRESSED
-  increaseAmount(id: number): void {
-    const newAmount = this.productItemService.increaseItemPurchaseAmount(id);
-    this.productItemService.setItemPurchaseAmount(newAmount, id);
-    this.itemAmount = this.productItemService.getItemPurchaseAmount(id);
-  }
+  increaseAmount(): void { this.itemAmount += 1; }
 
   // Defaults Back to Zero IF "Add to cart" Button is NOT PRESSED
-  decreaseAmount(id: number): void {
-    const newAmount = this.productItemService.decreaseItemPurchaseAmount(id);
-    this.productItemService.setItemPurchaseAmount(newAmount, id);
-    this.itemAmount = this.productItemService.getItemPurchaseAmount(id);
+  decreaseAmount(): void {
+    // CANNOT be NEGATIVE Item Amount
+    if (this.itemAmount > 0) {
+      this.itemAmount -= 1;
+    }
   }
 
   recordItemPurchaseAmount(id: number): void { this.productItemService.setItemPurchaseAmount(this.itemAmount, id); }

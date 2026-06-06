@@ -46,10 +46,15 @@ export class ProductList implements OnInit {
   }
 
   // Defaults Back to Zero IF "Add to cart" Button is NOT PRESSED
-  increaseAmount(id: number): void { this.itemAmountList[id - 1] = this.productItemService.increaseItemPurchaseAmount(id); }
+  increaseAmount(id: number): void { this.itemAmountList[id - 1] += 1; }
 
   // Defaults Back to Zero IF "Add to cart" Button is NOT PRESSED
-  decreaseAmount(id: number): void { this.itemAmountList[id - 1] = this.productItemService.decreaseItemPurchaseAmount(id); }
+  decreaseAmount(id: number): void {
+    // CANNOT be NEGATIVE Item Amount
+    if (this.itemAmountList[id - 1] > 0) {
+      this.itemAmountList[id - 1] -= 1;
+    }
+  }
 
   recordItemPurchaseAmount(id: number): void { this.productItemService.setItemPurchaseAmount(this.itemAmountList[id - 1], id); }
 }

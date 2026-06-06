@@ -54,20 +54,6 @@ export class ProductItemService {
 
   // TEMP: Create NEW FUNCTION that Resets "itemPurchaseAmountList" Elements Back to Zero
 
-  increaseItemPurchaseAmount(id: number): number {
-    this.itemPurchaseAmountList[id - 1] += 1;
-    return this.itemPurchaseAmountList[id - 1];
-  }
-
-  decreaseItemPurchaseAmount(id: number): number {
-    // CANNOT be NEGATIVE Item Amount
-    if (this.itemPurchaseAmountList[id - 1] > 0) {
-      this.itemPurchaseAmountList[id - 1] -= 1;
-    }
-    
-    return this.itemPurchaseAmountList[id - 1];
-  }
-
   // TEMP: CALCULATE Total Item Purchase Amount in This Function?
   setTotalPurchaseCost(cost: number): void { this.totalPurchaseCost = cost; }
 
