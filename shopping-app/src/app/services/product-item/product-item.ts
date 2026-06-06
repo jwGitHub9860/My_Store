@@ -52,7 +52,13 @@ export class ProductItemService {
     return this.itemPurchaseAmount;
   }
 
-  // TEMP: Create NEW FUNCTION that Resets "itemPurchaseAmountList" Elements Back to Zero
+  // TEMP: use in "cart" Webpage when "Submit" Button is Pressed?
+  // TEMP: OR use in "confirmation" Webpage when "Back to product list" Button is Pressed? (to Prevent Accidental Changes)
+  resetItemPurchaseAmountList(): void {
+    for (let index = 0; index < this.itemPurchaseAmountList.length; index++) {
+      this.itemPurchaseAmountList[index] = 0;
+    }
+  }
 
   // TEMP: CALCULATE Total Item Purchase Amount in This Function?
   setTotalPurchaseCost(cost: number): void { this.totalPurchaseCost = cost; }
