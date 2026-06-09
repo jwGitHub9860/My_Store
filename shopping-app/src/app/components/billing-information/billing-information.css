@@ -4,6 +4,7 @@ img {
 }
 
 .form-margin {
+  margin-left: 450px;
   margin-bottom: 12px;
 }
 
@@ -42,4 +43,13 @@ img {
   display: flex;
   justify-content: center;
   margin-top: 64px;
+}
+
+.button {
+  text-align: center;
+  background: #33B5E5;
+  color: #fff;
+  padding: 6px;
+  margin-left: 450px;
+  margin-bottom: 12px;
 }

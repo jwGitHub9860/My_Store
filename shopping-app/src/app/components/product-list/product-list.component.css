@@ -2,11 +2,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 1024px;
+  max-width: 1224px;
+  margin-top: 94px;
   margin-bottom: 64px;
 }
 
 .product-container {
   display: flex;
   justify-content: center;
+}
+
+.button-spacing {
+  margin-top: 7px;
 }
