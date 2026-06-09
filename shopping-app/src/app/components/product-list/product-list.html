@@ -1,10 +1,9 @@
-<!--TEMP: use "app-product-item" or "app-product-item-detail"?-->
-
 <div class="product-container">
     <div class="product-index">
         <ul *ngFor="let item of items">
             <!--Links item images to "product-item-detail" Webpage-->
-            <a href="http://localhost:4200/item-details" routerLink="/item-details">
+            <!--(click)="submitChosenItem(item.id)" - Submits Chosen Item to "product-item" Component once item Image is Clicked On-->
+            <a (click)="submitChosenItem(item.id)" routerLink="/item-details">
                 <img src="{{ item.url }}" alt="Image URL" style="width: 300px;">
             </a>
             <br>
@@ -19,8 +18,29 @@
             <div class="product-container">
                 <a>${{ item.price }}</a>
             </div>
+
+            <div class="product-container">
+                <div [ngSwitch]="item.id">
+                    <div *ngSwitchCase="1">Purchase Amount: {{ itemAmountList[0] }}</div>
+                    <div *ngSwitchCase="2">Purchase Amount: {{ itemAmountList[1] }}</div>
+                    <div *ngSwitchCase="3">Purchase Amount: {{ itemAmountList[2] }}</div>
+                    <div *ngSwitchCase="4">Purchase Amount: {{ itemAmountList[3] }}</div>
+                    <div *ngSwitchCase="5">Purchase Amount: {{ itemAmountList[4] }}</div>
+                    <div *ngSwitchCase="6">Purchase Amount: {{ itemAmountList[5] }}</div>
+                </div>
+            </div>
+
+            <!--TEMP: KEEP "button" for Increasing & Decreasing items for cart OR CHANGE it?-->
+            <div class="product-container">
+                <button class="btn btn-primary" (click)="increaseAmount(item.id)">+</button>
+                <button class="btn btn-primary" (click)="decreaseAmount(item.id)">-</button>
+            </div>
+
+            <div class="product-container">
+                <div class="button-spacing">
+                    <button class="btn btn-primary" (click)="recordItemPurchaseAmount(item.id)">Add to cart</button>
+                </div>
+            </div>
         </ul>
     </div>
 </div>
-
-<!--TEMP: use "button" for Increasing & Decreasing items for cart?-->

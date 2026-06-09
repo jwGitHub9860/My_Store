@@ -1,11 +1,12 @@
 img {
   border-radius: 10px;
   width: 320px;
+  margin-right: 46px;
 }
 
 .select-input {
   width: 108px; 
-  margin-bottom: 8px;
+  margin-bottom: 18px;
 }
 
 .detail-container {

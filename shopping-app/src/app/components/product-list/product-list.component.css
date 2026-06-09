@@ -11,3 +11,7 @@
   display: flex;
   justify-content: center;
 }
+
+.button-spacing {
+  margin-top: 7px;
+}
