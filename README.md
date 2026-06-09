@@ -185,6 +185,10 @@ One challenge faced was sending ID of item that was clicked on in the webpage to
 
 Amrmsmb, et al. “Argument of Type ‘Event’ Is Not Assignable to Parameter of Type ‘String.’” Edited by Yuri and Ramanathan Chockalingam, _Stack Overflow_, stackoverflow.com/#organization, 6 Jan. 2022, stackoverflow.com/questions/66938398/argument-of-type-event-is-not-assignable-to-parameter-of-type-string. Accessed 22 May 2026.
 
+“Angular - Routing Module.” _Tutorials Point_, www.tutorialspoint.com/angular/angular-routing-module.htm. Accessed 25 May 2026.
+
+Assistant Bot. “What Is the Difference between the Files ‘App.Module.TS’ and ‘App-Routing.Module.TS’ in Angular?” _Quora_, Oct. 2025, www.quora.com/What-is-the-difference-between-the-files-app-module-TS-and-app-routing-module-TS-in-angular. Accessed 7 Jun. 2026.
+
 bensalerno, et al. “Running Angular App Only Shows Angular Default Homepage.” _Stack Overflow_, stackoverflow.com/#organization, 1 June 1964, stackoverflow.com/questions/64215177/running-angular-app-only-shows-angular-default-homepage. Accessed 8 May 2026.
 
 Danioss, and Robin Dijkhof. “Angular 2 ‘component’ Is Not a Known Element.” _Stack Overflow_, stackoverflow.com/#organization, 2 May 2019, stackoverflow.com/questions/44429996/angular-2-component-is-not-a-known-element/44430230#44430230. Accessed 8 May 2026.
@@ -221,11 +225,17 @@ mahalaxmi. “How to Link a Button to Another Page in HTML?” _GeeksforGeeks_, 
 
 POV, and Charly Sosa. “How to Read Json File and Use in Everywhere as Service?” Edited by POV, _Stack Overflow_, stackoverflow.com/#organization, 3 Oct. 2019, stackoverflow.com/questions/58225939/how-to-read-json-file-and-use-in-everywhere-as-service. Accessed 10 May 2026.
 
+“ROUTING.” _Angular v2 Archive_, v2.angular.io/docs/ts/latest/tutorial/toh-pt5.html. Accessed 7 June 2026.
+
 “Sharing Data between Child and Parent Directives and Components.” _Angular_, v17.angular.io/guide/inputs-outputs. Accessed 8 May 2026.
+
+Sharma, Himanshu. “What Is the AppModule in Angular ?” _GeeksforGeeks_, GeeksforGeeks, 4 Apr. 2024, www.geeksforgeeks.org/angular-js/what-is-the-appmodule-in-angular/. Accessed 7 Jun. 2026.
 
 Simon, and LocalPCGuy. “Angular routerLink with Automatic Href.” Edited by LocalPCGuy, _Stack Overflow_, stackoverflow.com/#organization, 12 May 2022, stackoverflow.com/questions/72220258/angular-routerlink-with-automatic-href. Accessed 11 May 2026.
 
 Singh, Tarandeep. “Angular10 NgSwitch Directive.” _GeeksforGeeks_, GeeksforGeeks, 23 July 2025, www.geeksforgeeks.org/angular-js/angular10-ngswitch-directive/. Accessed 31 May 2026.
+
+Tripathi, Saumya. “App.Config.Ts vs App.Module.Ts in Angular.” _Medium_, 21 Feb. 2025, medium.com/@saumya.tripathi05062000/app-config-ts-vs-app-module-ts-in-angular-1e096876dea4. Accessed 7 Jun. 2026.
 
 Udacity. “Nd-0067-C3-Angular-Fundamentals-Project-Starter.” _GitHub_, github.com/udacity/nd-0067-c3-angular-fundamentals-project-starter. Accessed 7 May 2026.
 
