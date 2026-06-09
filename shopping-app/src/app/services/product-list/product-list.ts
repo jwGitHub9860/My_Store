@@ -1,27 +1,30 @@
 import { Injectable } from '@angular/core';
 
-// TEMP: use "Observable" or Not?
+import { Item } from '../../models/Item';
+import { Observable } from 'rxjs';
+
 // Allows Requests to be Made
 import { HttpClient } from "@angular/common/http";
-
-// TEMP: use "Observable" or Not?
-import { Observable } from 'rxjs';
-import { Item } from '../../models/Item';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductListService {
-  // TEMP: use "Observable" or Not?
-  constructor(private http: HttpClient) { }
+  //
+  private jsonUrl = 'assets/data.json';
 
-  // TEMP: use "Observable" or Not?
-  // Return Item List AS IT IS
-  getItemList() {//: Observable<Item[]> {
-    // TEMP: use "Observable" or Not?
-    //return this.http.get<Item[]>('assets/data.json');
+  constructor(private readonly http: HttpClient) { }
 
-    return [
+  // Obtains Item List from "data.json" File
+  getItemList(): Observable<Item[]> {
+    return this.http.get<Item[]>(this.jsonUrl);
+
+    /*this.http.get('assets/data.json', {
+      params: {filter: 'all'},
+    })
+    .subscribe((config) => {})*/
+
+    /*return [
       {
         "id": 1,
         "name": "Book",
@@ -64,6 +67,6 @@ export class ProductListService {
         "url": "https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80",
         "description": "Wear it with style!"
       }
-    ]
+    ]*/
   }
 }

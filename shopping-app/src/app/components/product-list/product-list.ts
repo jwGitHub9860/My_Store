@@ -7,29 +7,48 @@ import { Item } from '../../models/Item';
 
 @Component({
   selector: 'app-product-list',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './product-list.html',
   styleUrl: './product-list.component.css',
 })
 export class ProductList implements OnInit {
   items: Item[] = [];
+
+  // TESTING CODE
+  //items$!: Observable<Item[]>;
+  
   itemAmountList: number[] = [ 0, 0, 0, 0, 0, 0 ];
+
+  private productListServiceTest = inject(ProductListService);
 
   // ONLY WAY to Move from "product-list" Webpage to "product-item-detail" Webpage WITHOUT RESETTING Chosen Item ID
   private route = inject(ActivatedRoute);
   private router = inject(Router);
 
-  constructor(private productItemService: ProductItemService, private productListService: ProductListService) { }
+  constructor(private productItemService: ProductItemService, private productListService: ProductListService) {
+    // TESTING CODE
+    /*effect(() => {
+      this.items$ = this.productListService.getItemList();
+    })*/
+  }
   
   ngOnInit() {
-    this.items = this.productListService.getItemList();
-    
-    // TEMP: use Data in "data.json" file or Not?
+    console.log("ngOnInit START");
+    //this.items = this.productListService.getItemList();
+
     // Returns "Observable" (stream of data)
     // Does NOT Return raw data anymore
-    /*this.productListService.getItemList().subscribe(res => {
-      this.items = res;
-    });*/
+    this.productListService.getItemList().subscribe(/*res =>*/ {
+      //this.items = res;
+      next: (res) => {
+        console.log("Received items:", res);
+        this.items = res;
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });/**/
 
     this.itemAmountList = this.productItemService.getItemPurchaseAmountList();
   }

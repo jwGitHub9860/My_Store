@@ -24,9 +24,11 @@ import { AppComponent } from "./app";
     BrowserModule,
     AppRoutingModule,
     AppComponent,
-    HttpClientModule,
-    NgbModule,
-    FormsModule
+    HttpClientModule//,
+
+    // TEMP: do I still Need this?
+    /*NgbModule,
+    FormsModule*/
   ],
   providers: [],
 

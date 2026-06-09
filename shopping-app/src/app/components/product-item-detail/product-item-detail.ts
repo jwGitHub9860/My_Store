@@ -26,7 +26,13 @@ export class ProductItemDetail implements OnInit {
   }
 
   ngOnInit(): void {
-    this.allItems = this.productListService.getItemList();
+    //this.allItems = this.productListService.getItemList();
+
+    // Returns "Observable" (stream of data)
+    // Does NOT Return raw data anymore
+    this.productListService.getItemList().subscribe(res => {
+      this.allItems = res;
+    });
     
     // Obtains Chosen Item ID
     this.chosenItemId = this.productItemService.getChosenItemId();

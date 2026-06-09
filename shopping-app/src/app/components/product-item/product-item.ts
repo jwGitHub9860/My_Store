@@ -25,7 +25,14 @@ export class ProductItem implements OnInit {
   constructor(private productItemService: ProductItemService, private productListService: ProductListService) {}
 
   ngOnInit() {
-    this.allItems = this.productListService.getItemList();
+    //this.allItems = this.productListService.getItemList();
+
+    // Returns "Observable" (stream of data)
+    // Does NOT Return raw data anymore
+    this.productListService.getItemList().subscribe(res => {
+      this.allItems = res;
+    });
+    
     this.itemAmountList = this.productItemService.getItemPurchaseAmountList();
 
     // Pushes Items being Purchased into EMPTY "purchaseItemList" Array
