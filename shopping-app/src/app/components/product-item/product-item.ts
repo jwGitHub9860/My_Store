@@ -1,5 +1,8 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+// "NgZone" - Prevents Angular Applications from being Zoneless
+// "NgZone" - Performs Change Detection for "Observable"
+import { Component, OnInit, Output, EventEmitter, NgZone } from '@angular/core';
 import { FormsModule } from "@angular/forms";
+import { Observable } from "rxjs";
 import { Item } from "../../models/Item";
 import { ProductItemService } from "../../services/product-item/product-item";
 import { ProductListService } from "../../services/product-list/product-list";
@@ -11,7 +14,8 @@ import { ProductListService } from "../../services/product-list/product-list";
   styleUrl: './product-item.component.css',
 })
 export class ProductItem implements OnInit {
-  allItems: Item[] = [];
+  // Receives Item List from "Observable"
+  allItems$!: Observable<Item[]>;
   
   // Child Component of "cart" Parent Component
   itemAmountList: number[] = [];
@@ -22,24 +26,28 @@ export class ProductItem implements OnInit {
   // Sends "purchaseItemList" to "cart" Parent Component with "product-item" AS Child Component
   @Output() chosenPurchaseItems: EventEmitter<Item[]> = new EventEmitter();
 
-  constructor(private productItemService: ProductItemService, private productListService: ProductListService) {}
+  constructor(private productItemService: ProductItemService, private productListService: ProductListService, private ngZone: NgZone) {
+    // Checks if Application is Currently Running in Zoneless Mode
+    console.log('Constructor zone:', this.ngZone.constructor.name);
+  }
 
   ngOnInit() {
-    //this.allItems = this.productListService.getItemList();
+    // Ensures items$ is an "Observable" for the "async pipe"
+    // If the service returns a plain array, wrap it with `of()` to convert to Observable.
+    this.allItems$ = this.productListService.getItemList();
 
-    // Returns "Observable" (stream of data)
-    // Does NOT Return raw data anymore
-    this.productListService.getItemList().subscribe(res => {
-      this.allItems = res;
-    });
-    
     this.itemAmountList = this.productItemService.getItemPurchaseAmountList();
 
     // Pushes Items being Purchased into EMPTY "purchaseItemList" Array
     for (let index = 0; index < this.itemAmountList.length; index++) {
-      // TEMP: use "!==" OR "!="?
       if (this.itemAmountList[index] !== 0) {
-        this.purchaseItemList.push(this.allItems[index + 1]);
+        // CANNOT USE "index" Because "allItems" Uses "any" Type ("!")
+        this.allItems$.subscribe(items => {
+          const currentItem = items.find(item => item.id === (index + 1));
+          if (currentItem) {
+            this.purchaseItemList.push(currentItem);
+          }
+        })
       }
     }
   }

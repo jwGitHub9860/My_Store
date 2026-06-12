@@ -1,9 +1,12 @@
-import { Component, OnInit, inject } from '@angular/core';
+// "NgZone" - Prevents Angular Applications from being Zoneless
+// "NgZone" - Performs Change Detection for "Observable"
+import { Component, OnInit, inject, NgZone } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { Router, ActivatedRoute } from "@angular/router";
-import { ProductListService } from "../../services/product-list/product-list";
-import { ProductItemService } from "../../services/product-item/product-item";
+import { Observable } from 'rxjs';
 import { Item } from '../../models/Item';
+import { ProductItemService } from "../../services/product-item/product-item";
+import { ProductListService } from "../../services/product-list/product-list";
 
 @Component({
   selector: 'app-product-list',
@@ -13,11 +16,9 @@ import { Item } from '../../models/Item';
   styleUrl: './product-list.component.css',
 })
 export class ProductList implements OnInit {
-  items: Item[] = [];
+  // Receives Item List from "Observable"
+  items$!: Observable<Item[]>;
 
-  // TESTING CODE
-  //items$!: Observable<Item[]>;
-  
   itemAmountList: number[] = [ 0, 0, 0, 0, 0, 0 ];
 
   private productListServiceTest = inject(ProductListService);
@@ -26,31 +27,25 @@ export class ProductList implements OnInit {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
 
-  constructor(private productItemService: ProductItemService, private productListService: ProductListService) {
-    // TESTING CODE
-    /*effect(() => {
-      this.items$ = this.productListService.getItemList();
-    })*/
+  constructor(private productItemService: ProductItemService, private productListService: ProductListService, private ngZone: NgZone) {
+    // Checks if Application is Currently Running in Zoneless Mode
+    console.log('Constructor zone:', this.ngZone.constructor.name);
   }
   
   ngOnInit() {
-    console.log("ngOnInit START");
-    //this.items = this.productListService.getItemList();
+    // Uses "AsyncPipe" to Refresh User Interface
+    // "AsyncPipe" -> Receives New Value from "Observable"
+    // Do NOT NEED "subscribe" Call
 
-    // Returns "Observable" (stream of data)
-    // Does NOT Return raw data anymore
-    this.productListService.getItemList().subscribe(/*res =>*/ {
-      //this.items = res;
-      next: (res) => {
-        console.log("Received items:", res);
-        this.items = res;
-      },
-      error: (err) => {
-        console.error(err);
-      }
-    });/**/
+    // Ensures items$ is an "Observable" for the "async pipe"
+    // If the service returns a plain array, wrap it with `of()` to convert to Observable.
+    
+    // TEMP: Attempt 1
+    this.items$ = this.productListService.getItemList();
 
-    this.itemAmountList = this.productItemService.getItemPurchaseAmountList();
+    // TEMP: Attempt 2
+    /*const itemList = this.productListService.getItemList();
+    this.items$ = Array.isArray(itemList) ? of(itemList) : itemList;*/
   }
 
   // Submits Chosen Item to "product-item" Component

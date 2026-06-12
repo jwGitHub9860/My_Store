@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+// "NgZone" - Prevents Angular Applications from being Zoneless
+// "NgZone" - Performs Change Detection for "Observable"
+import { Component, OnInit, NgZone } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Item } from "../../models/Item";
 import { ProductItemService } from "../../services/product-item/product-item";
 import { ProductListService } from "../../services/product-list/product-list";
@@ -13,9 +16,11 @@ export class ProductItemDetail implements OnInit {
   chosenItemId: number = 0;
   chosenItem: Item;
   itemAmount: number = 0;
-  allItems: Item[] = [];
 
-  constructor(private productItemService: ProductItemService, private productListService: ProductListService) {
+  // Receives Item List from "Observable"
+  allItems$!: Observable<Item[]>;
+
+  constructor(private productItemService: ProductItemService, private productListService: ProductListService, private ngZone: NgZone) {
     this.chosenItem = {
       id: 0,
       name: '',
@@ -23,24 +28,30 @@ export class ProductItemDetail implements OnInit {
       url: '',
       description: ''
     };
+
+    // Checks if Application is Currently Running in Zoneless Mode
+    console.log('Constructor zone:', this.ngZone.constructor.name);
   }
 
   ngOnInit(): void {
-    //this.allItems = this.productListService.getItemList();
+    // Ensures items$ is an "Observable" for the "async pipe"
+    // If the service returns a plain array, wrap it with `of()` to convert to Observable.
 
-    // Returns "Observable" (stream of data)
-    // Does NOT Return raw data anymore
-    this.productListService.getItemList().subscribe(res => {
-      this.allItems = res;
-    });
+    // TEMP: Attempt 1
+    this.allItems$ = this.productListService.getItemList();
+
+    // TEMP: Attempt 2
+    /*const itemList = this.productListService.getItemList();
+    this.allItems$ = Array.isArray(itemList) ? of(itemList) : itemList;*/
     
     // Obtains Chosen Item ID
     this.chosenItemId = this.productItemService.getChosenItemId();
 
-    // Prevents "chosenItem" from Resetting
-    for (let index = 0; index < this.allItems.length; index++) {
-      const currentItem = this.allItems[index];
-      if (currentItem.id === this.chosenItemId) {
+    // Obtains Details of Chosen Item WHILE Preventing "chosenItem" from Resetting
+    this.allItems$.subscribe(items => {
+      // CANNOT USE "index" Because "allItems" Uses "any" Type ("!")
+      const currentItem = items.find(item => item.id === this.chosenItemId);
+      if (currentItem) {
         this.chosenItem = {
           id: currentItem.id,
           name: currentItem.name,
@@ -48,8 +59,8 @@ export class ProductItemDetail implements OnInit {
           url: currentItem.url,
           description: currentItem.description
         };
-      };
-    };
+      }
+    });
   }
 
   // Defaults Back to Zero IF "Add to cart" Button is NOT PRESSED
