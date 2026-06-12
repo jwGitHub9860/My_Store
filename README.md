@@ -191,6 +191,8 @@ Assistant Bot. “What Is the Difference between the Files ‘App.Module.TS’ a
 
 bensalerno, et al. “Running Angular App Only Shows Angular Default Homepage.” _Stack Overflow_, stackoverflow.com/#organization, 1 June 1964, stackoverflow.com/questions/64215177/running-angular-app-only-shows-angular-default-homepage. Accessed 8 May 2026.
 
+Chautard, Alain. “What Does Zoneless Angular Mean?” _Medium_, 11 June 2025, blog.angulartraining.com/what-does-zoneless-angular-mean-0a3a9d2a047d?gi=45de611c4b1c. Accessed 10 Jun. 2026.
+
 Danioss, and Robin Dijkhof. “Angular 2 ‘component’ Is Not a Known Element.” _Stack Overflow_, stackoverflow.com/#organization, 2 May 2019, stackoverflow.com/questions/44429996/angular-2-component-is-not-a-known-element/44430230#44430230. Accessed 8 May 2026.
 
 ErinDab, and Jignesh Panchal. “ERROR NG8001: ‘courses’ Is Not a Known Element.” Edited by ErinDab and Jignesh Panchal, _Stack Overflow_, stackoverflow.com/#organization, 13 May 2024, stackoverflow.com/questions/78472566/error-ng8001-courses-is-not-a-known-element. Accessed 8 May 2026.
@@ -234,6 +236,8 @@ Sharma, Himanshu. “What Is the AppModule in Angular ?” _GeeksforGeeks_, Ge
 Simon, and LocalPCGuy. “Angular routerLink with Automatic Href.” Edited by LocalPCGuy, _Stack Overflow_, stackoverflow.com/#organization, 12 May 2022, stackoverflow.com/questions/72220258/angular-routerlink-with-automatic-href. Accessed 11 May 2026.
 
 Singh, Tarandeep. “Angular10 NgSwitch Directive.” _GeeksforGeeks_, GeeksforGeeks, 23 July 2025, www.geeksforgeeks.org/angular-js/angular10-ngswitch-directive/. Accessed 31 May 2026.
+
+Team, Angular. “AsyncPipe.” _Angular_, angular.dev/api/common/AsyncPipe. Accessed 10 Jun. 2026.
 
 Tripathi, Saumya. “App.Config.Ts vs App.Module.Ts in Angular.” _Medium_, 21 Feb. 2025, medium.com/@saumya.tripathi05062000/app-config-ts-vs-app-module-ts-in-angular-1e096876dea4. Accessed 7 Jun. 2026.
 
