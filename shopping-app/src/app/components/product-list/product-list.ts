@@ -1,9 +1,12 @@
-import { Component, OnInit, inject } from '@angular/core';
+// "NgZone" - Prevents Angular Applications from being Zoneless
+// "NgZone" - Performs Change Detection for "Observable"
+import { Component, OnInit, inject, NgZone } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { Router, ActivatedRoute } from "@angular/router";
-import { ProductListService } from "../../services/product-list/product-list";
-import { ProductItemService } from "../../services/product-item/product-item";
+import { Observable } from 'rxjs';
 import { Item } from '../../models/Item';
+import { ProductItemService } from "../../services/product-item/product-item";
+import { ProductListService } from "../../services/product-list/product-list";
 
 @Component({
   selector: 'app-product-list',
@@ -12,26 +15,25 @@ import { Item } from '../../models/Item';
   styleUrl: './product-list.component.css',
 })
 export class ProductList implements OnInit {
-  items: Item[] = [];
+  // Receives Item List from "Observable"
+  items$!: Observable<Item[]>;
+
   itemAmountList: number[] = [ 0, 0, 0, 0, 0, 0 ];
 
   // ONLY WAY to Move from "product-list" Webpage to "product-item-detail" Webpage WITHOUT RESETTING Chosen Item ID
   private route = inject(ActivatedRoute);
   private router = inject(Router);
 
-  constructor(private productItemService: ProductItemService, private productListService: ProductListService) { }
+  constructor(private productItemService: ProductItemService, private productListService: ProductListService, private ngZone: NgZone) {
+    // Checks if Application is Currently Running in Zoneless Mode
+    console.log('Constructor zone:', this.ngZone.constructor.name);
+  }
   
   ngOnInit() {
-    this.items = this.productListService.getItemList();
-    
-    // TEMP: use Data in "data.json" file or Not?
-    // Returns "Observable" (stream of data)
-    // Does NOT Return raw data anymore
-    /*this.productListService.getItemList().subscribe(res => {
-      this.items = res;
-    });*/
-
-    this.itemAmountList = this.productItemService.getItemPurchaseAmountList();
+    // Uses "AsyncPipe" to Refresh User Interface
+    // "AsyncPipe" -> Receives New Value from "Observable"
+    // Do NOT NEED "subscribe" Call
+    this.items$ = this.productListService.getItemList();
   }
 
   // Submits Chosen Item to "product-item" Component

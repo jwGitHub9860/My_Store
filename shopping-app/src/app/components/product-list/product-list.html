@@ -1,6 +1,7 @@
 <div class="product-container">
     <div class="product-index">
-        <ul *ngFor="let item of items">
+        <!--Uses "AsyncPipe" Observable-->
+        <ul *ngFor="let item of (items$ | async)">
             <!--Links item images to "product-item-detail" Webpage-->
             <!--(click)="submitChosenItem(item.id)" - Submits Chosen Item to "product-item" Component once item Image is Clicked On-->
             <a (click)="submitChosenItem(item.id)" routerLink="/item-details">

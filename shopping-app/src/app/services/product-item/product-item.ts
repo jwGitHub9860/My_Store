@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
 
-// TEMP: use "Observable" or Not?
-// Allows Requests to be Made
-import { HttpClient } from "@angular/common/http";
-
-// TEMP: use "Observable" or Not?
-import { Observable } from 'rxjs';
+// TEMP: use "getItemList()" Service Function to Obtain Item List or Not?
+// TEMP: use "Item" Model or Not?
 import { Item } from '../../models/Item';
 
 @Injectable({
@@ -19,8 +15,7 @@ export class ProductItemService {
   // Keep SEPARATE from ORIGINAL Item List Data to Prevent Accidental Changes to Item List
   itemPurchaseAmountList: number[];
 
-  // TEMP: use "Observable" or Not?
-  constructor(private http: HttpClient) {
+  constructor() {
     this.chosenItemId = 0;
     this.totalPurchaseCost = 0;
 
