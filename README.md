@@ -183,6 +183,8 @@ One challenge faced was sending ID of item that was clicked on in the webpage to
 ## Credits
 ###### References used while making project
 
+Ahmed, Naveed, and Günter Zöchbauer. “How to Check the Length of an Observable Array.” Edited by Tobias47n9e and Günter Zöchbauer, _Stack Overflow_, stackoverflow.com/#organization, 27 June 2016, stackoverflow.com/questions/38057537/how-to-check-the-length-of-an-observable-array. Accessed 15 Jun. 2026.
+
 Amrmsmb, et al. “Argument of Type ‘Event’ Is Not Assignable to Parameter of Type ‘String.’” Edited by Yuri and Ramanathan Chockalingam, _Stack Overflow_, stackoverflow.com/#organization, 6 Jan. 2022, stackoverflow.com/questions/66938398/argument-of-type-event-is-not-assignable-to-parameter-of-type-string. Accessed 22 May 2026.
 
 “Angular - Routing Module.” _Tutorials Point_, www.tutorialspoint.com/angular/angular-routing-module.htm. Accessed 25 May 2026.
@@ -216,6 +218,8 @@ Leichtos, and Mojtaba Nejad Poor Esmaeili. “Angular-NG8001 Not Known Element E
 mahalaxmi. “How to Link a Button to Another Page in HTML?” _GeeksforGeeks_, GeeksforGeeks, 23 July 2025, www.geeksforgeeks.org/html/how-to-link-a-button-to-another-page-in-html/. Accessed 12 May 2026.
 
 “MLA Works Cited: Electronic Sources (Web Publications).” _MLA Works Cited: Electronic Sources - Purdue OWL® - Purdue University_, owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_works_cited_electronic_sources.html. Accessed 7 May 2026.
+
+Motto, Todd. “Handling Observables with NgFor and the Async Pipe.” _Ultimate Courses_, 7 June 2020, ultimatecourses.com/blog/angular-ngfor-async-pipe. Accessed 15 Jun. 2026.
 
 “Navigate to Routes.” _Angular_, angular.dev/guide/routing/navigate-to-routes. Accessed 25 May 2026.
 
