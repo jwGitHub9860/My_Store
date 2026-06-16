@@ -143,6 +143,9 @@ http://localhost:4200/
 
 One challenge faced was sending ID of item that was clicked on in the webpage to the ```item-details``` webpage. When the item image was clicked on, the ID of the chosen item was reset back to the default value of zero before it reached the ```product-item-detail``` component. This was resolved by creating a service file called ```product-item.ts``` in the ```services``` folder that stores the ID while the ```product-list``` component and all of its values reset after the code exits the component and adding navigation code that opens ```item-details``` webpage when the item image is clicked on.
 
+Another challenge that was faced was accessing the "data.json" file in "product-list" service file. This was resolved by first adding a new asset to the "assets" section in "angular.json" file. The new asset ensures that when the "data.json" file in the "assets" folder is accessed, the "data.json" file will be received. AsyncPipe was then used to automatically refresh the user interface to ensure that the data was updated and appeared on the application.
+
+
 ## Udacity Mentors Who Have Answered Questions In Knowledge To Help With Project
 - Ananta
 - Ahmed L
