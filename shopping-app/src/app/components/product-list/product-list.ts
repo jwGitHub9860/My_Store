@@ -2,6 +2,7 @@
 // "NgZone" - Performs Change Detection for "Observable"
 import { Component, OnInit, inject, NgZone } from '@angular/core';
 import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
 import { Observable } from 'rxjs';
 import { Item } from '../../models/Item';
@@ -10,7 +11,7 @@ import { ProductListService } from "../../services/product-list/product-list";
 
 @Component({
   selector: 'app-product-list',
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './product-list.html',
   styleUrl: './product-list.component.css',
 })
@@ -18,7 +19,10 @@ export class ProductList implements OnInit {
   // Receives Item List from "Observable"
   items$!: Observable<Item[]>;
 
-  itemAmountList: number[] = [ 0, 0, 0, 0, 0, 0 ];
+  // TEMP: Change into "Observable"?
+  // TEMP: use "!" to Define or Not?
+  // TEMP: Define in "constructor" or Not?
+  itemAmountList: number[];
 
   // ONLY WAY to Move from "product-list" Webpage to "product-item-detail" Webpage WITHOUT RESETTING Chosen Item ID
   private route = inject(ActivatedRoute);
@@ -27,6 +31,8 @@ export class ProductList implements OnInit {
   constructor(private productItemService: ProductItemService, private productListService: ProductListService, private ngZone: NgZone) {
     // Checks if Application is Currently Running in Zoneless Mode
     console.log('Constructor zone:', this.ngZone.constructor.name);
+
+    this.itemAmountList = [ 1, 1, 1, 1, 1, 1 ];
   }
   
   ngOnInit() {
@@ -47,16 +53,5 @@ export class ProductList implements OnInit {
     this.router.navigate(['item-details'], {relativeTo: this.route});
   }
 
-  // Defaults Back to Zero IF "Add to cart" Button is NOT PRESSED
-  increaseAmount(id: number): void { this.itemAmountList[id - 1] += 1; }
-
-  // Defaults Back to Zero IF "Add to cart" Button is NOT PRESSED
-  decreaseAmount(id: number): void {
-    // CANNOT be NEGATIVE Item Amount
-    if (this.itemAmountList[id - 1] > 0) {
-      this.itemAmountList[id - 1] -= 1;
-    }
-  }
-
-  recordItemPurchaseAmount(id: number): void { this.productItemService.setItemPurchaseAmount(this.itemAmountList[id - 1], id); }
+  addItemsToCart(id: number): void { this.productItemService.setItemPurchaseAmount(this.itemAmountList[id - 1], id); }
 }

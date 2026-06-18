@@ -20,28 +20,36 @@
                 <a>${{ item.price }}</a>
             </div>
 
-            <div class="product-container">
-                <div [ngSwitch]="item.id">
-                    <div *ngSwitchCase="1">Purchase Amount: {{ itemAmountList[0] }}</div>
-                    <div *ngSwitchCase="2">Purchase Amount: {{ itemAmountList[1] }}</div>
-                    <div *ngSwitchCase="3">Purchase Amount: {{ itemAmountList[2] }}</div>
-                    <div *ngSwitchCase="4">Purchase Amount: {{ itemAmountList[3] }}</div>
-                    <div *ngSwitchCase="5">Purchase Amount: {{ itemAmountList[4] }}</div>
-                    <div *ngSwitchCase="6">Purchase Amount: {{ itemAmountList[5] }}</div>
+            <form (ngSubmit)="addItemsToCart(item.id)" #form="ngForm">
+                <div class="product-container">
+                    <div [ngSwitch]="item.id">
+                        <div *ngSwitchCase="1">
+                            <input type="number" name="itemAmountList[0]" title="itemAmountList[0]" required min="1" value="1" placeholder="" [(ngModel)]="itemAmountList[0]">
+                        </div>
+                        <div *ngSwitchCase="2">
+                            <input type="number" name="itemAmountList[1]" title="itemAmountList[1]" required min="1" value="1" placeholder="" [(ngModel)]="itemAmountList[1]">
+                        </div>
+                        <div *ngSwitchCase="3">
+                            <input type="number" name="itemAmountList[2]" title="itemAmountList[2]" required min="1" value="1" placeholder="" [(ngModel)]="itemAmountList[2]">
+                        </div>
+                        <div *ngSwitchCase="4">
+                            <input type="number" name="itemAmountList[3]" title="itemAmountList[3]" required min="1" value="1" placeholder="" [(ngModel)]="itemAmountList[3]">
+                        </div>
+                        <div *ngSwitchCase="5">
+                            <input type="number" name="itemAmountList[4]" title="itemAmountList[4]" required min="1" value="1" placeholder="" [(ngModel)]="itemAmountList[4]">
+                        </div>
+                        <div *ngSwitchCase="6">
+                            <input type="number" name="itemAmountList[5]" title="itemAmountList[5]" required min="1" value="1" placeholder="" [(ngModel)]="itemAmountList[5]">
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!--TEMP: KEEP "button" for Increasing & Decreasing items for cart OR CHANGE it?-->
-            <div class="product-container">
-                <button class="btn btn-primary" (click)="increaseAmount(item.id)">+</button>
-                <button class="btn btn-primary" (click)="decreaseAmount(item.id)">-</button>
-            </div>
-
-            <div class="product-container">
-                <div class="button-spacing">
-                    <button class="btn btn-primary" (click)="recordItemPurchaseAmount(item.id)">Add to cart</button>
+                <div class="product-container">
+                    <div class="button-spacing">
+                        <input type="submit" [disabled]="form.invalid" class="btn btn-primary" value="Add to cart">
+                    </div>
                 </div>
-            </div>
+            </form>
         </ul>
     </div>
 </div>
