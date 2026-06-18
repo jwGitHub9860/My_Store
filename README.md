@@ -209,6 +209,8 @@ Habib, Ahmad, et al. “Passing Parameter Onclick, in a Loop Using Angular8.” 
 
 Holeczek, Łukasz. “How to Create a Dropdown in Angular.” _CoreUI_, coreui.io/answers/how-to-create-a-dropdown-in-angular/. Accessed 17 June 2026.
 
+“How TO - Hide Arrows From Input Number.” _W3Schools_, www.w3schools.com/howto/howto_css_hide_arrow_number.asp. Accessed 17 June 2026.
+
 “HTML <small> Tag</Small>.” _W3Schools.com_, www.w3schools.com/tags/tag_small.asp. Accessed 13 May 2026.
 
 “HTML Images.” _W3Schools.com_, www.w3schools.com/html/html_images.asp. Accessed 13 May 2026.
