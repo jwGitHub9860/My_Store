@@ -207,6 +207,8 @@ ErinDab, and Jignesh Panchal. “ERROR NG8001: ‘courses’ Is Not a Known Elem
 
 Habib, Ahmad, et al. “Passing Parameter Onclick, in a Loop Using Angular8.” Edited by Ahmad Habib and Mihai Alexandru-Ionut, _Stack Overflow_, stackoverflow.com/#organization, 8 Jan. 2020, stackoverflow.com/questions/59640400/passing-parameter-onclick-in-a-loop-using-angular8. Accessed 20 May 2026.
 
+Holeczek, Łukasz. “How to Create a Dropdown in Angular.” _CoreUI_, coreui.io/answers/how-to-create-a-dropdown-in-angular/. Accessed 17 June 2026.
+
 “HTML <small> Tag</Small>.” _W3Schools.com_, www.w3schools.com/tags/tag_small.asp. Accessed 13 May 2026.
 
 “HTML Images.” _W3Schools.com_, www.w3schools.com/html/html_images.asp. Accessed 13 May 2026.
@@ -236,6 +238,8 @@ Motto, Todd. “Handling Observables with NgFor and the Async Pipe.” _Ultimate
 POV, and Charly Sosa. “How to Read Json File and Use in Everywhere as Service?” Edited by POV, _Stack Overflow_, stackoverflow.com/#organization, 3 Oct. 2019, stackoverflow.com/questions/58225939/how-to-read-json-file-and-use-in-everywhere-as-service. Accessed 10 May 2026.
 
 “ROUTING.” _Angular v2 Archive_, v2.angular.io/docs/ts/latest/tutorial/toh-pt5.html. Accessed 7 June 2026.
+
+“Select.” _Angular_, angular.dev/guide/aria/select. Accessed 17 June 2026.
 
 “Sharing Data between Child and Parent Directives and Components.” _Angular_, v17.angular.io/guide/inputs-outputs. Accessed 8 May 2026.
 
