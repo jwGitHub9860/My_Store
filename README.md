@@ -195,6 +195,8 @@ Amrmsmb, et al. “Argument of Type ‘Event’ Is Not Assignable to Parameter o
 
 Assistant Bot. “What Is the Difference between the Files ‘App.Module.TS’ and ‘App-Routing.Module.TS’ in Angular?” _Quora_, Oct. 2025, www.quora.com/What-is-the-difference-between-the-files-app-module-TS-and-app-routing-module-TS-in-angular. Accessed 7 Jun. 2026.
 
+B, Hemanth. “What Is the Difference Between BehaviorSubject and Observable in Angular ?” _GeeksforGeeks_, 26 July 2024, www.geeksforgeeks.org/angular-js/what-is-the-difference-between-behaviorsubject-and-observable-in-angular/. Accessed 18 Jun. 2026.
+
 bensalerno, et al. “Running Angular App Only Shows Angular Default Homepage.” _Stack Overflow_, stackoverflow.com/#organization, 1 June 1964, stackoverflow.com/questions/64215177/running-angular-app-only-shows-angular-default-homepage. Accessed 8 May 2026.
 
 Chautard, Alain. “What Does Zoneless Angular Mean?” _Medium_, 11 June 2025, blog.angulartraining.com/what-does-zoneless-angular-mean-0a3a9d2a047d?gi=45de611c4b1c. Accessed 10 Jun. 2026.
@@ -240,6 +242,8 @@ Motto, Todd. “Handling Observables with NgFor and the Async Pipe.” _Ultimate
 “NgSwitch.” _Angular_, angular.dev/api/common/NgSwitch. Accessed 31 May 2026.
 
 Nidhi, and Kavya. “How to Change the Value of an Observable in TypeScript Angular.” _Edureka Community_, 26 Nov. 2024, www.edureka.co/community/292261/how-to-change-the-value-of-observable-in-typescript-angular. Accessed 18 Jun. 2026.
+
+Patil, Jaydeep. “Observable and Subjects in Angular.” _Medium_, 4 Aug. 2023, medium.com/@jaydeepvpatil225/observables-and-subjects-in-angular-a4d73dfa5bb. Accessed 18 Jun. 2026.
 
 POV, and Charly Sosa. “How to Read Json File and Use in Everywhere as Service?” Edited by POV, _Stack Overflow_, stackoverflow.com/#organization, 3 Oct. 2019, stackoverflow.com/questions/58225939/how-to-read-json-file-and-use-in-everywhere-as-service. Accessed 10 May 2026.
 
