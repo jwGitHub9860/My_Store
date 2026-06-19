@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 
-// TEMP: use "getItemList()" Service Function to Obtain Item List or Not?
 // TEMP: use "Item" Model or Not?
 import { Item } from '../../models/Item';
 
@@ -19,10 +18,12 @@ export class ProductItemService {
     this.chosenItemId = 0;
     this.totalPurchaseCost = 0;
 
-    // Used for "item-details" Webpage
+    // Use for "item-details" Webpage
+    // Initialize as Zero since "Add to cart" Button will NOT be PRESSED when Application Starts
     this.itemPurchaseAmount = 0;
     
-    // Used for "product-list" Webpage
+    // Use for "product-list" Webpage
+    // Initialize as Zero since "Add to cart" Button will NOT be PRESSED when Application Starts
     this.itemPurchaseAmountList = [ 0, 0, 0, 0, 0, 0 ];
   }
 
@@ -30,22 +31,17 @@ export class ProductItemService {
 
   getChosenItemId(): number { return this.chosenItemId; }
 
-  // TEMP: will I Need Setter for "itemPurchaseAmountList"?
-
-  getItemPurchaseAmountList(): number[] { return this.itemPurchaseAmountList; }
+  // MUST OBTAIN All Purchase Amounts INDIVIDUALLY or Amounts Obtained will be ZERO
+  // Only be Obtaining ENTIRE List in "cart" Webpage
+  getItemPurchaseAmountList(): number[] {
+    let newItemPurchaseAmountList: number[] = [];
+    for (let index = 0; index < this.itemPurchaseAmountList.length; index++) {
+      newItemPurchaseAmountList[index] = this.itemPurchaseAmountList[index];
+    }
+    return newItemPurchaseAmountList;
+  }
 
   setItemPurchaseAmount(amount: number, id: number): void { this.itemPurchaseAmountList[id - 1] = amount; }
-
-  // TEMP: use in "addToCart()" Function to Obtain Items in "cart" Webpage?
-  getItemPurchaseAmount(id: number): number {
-    for (let index = 0; index < this.itemPurchaseAmountList.length; index++) {
-      const currentAmountElement = this.itemPurchaseAmountList[index];
-      if (index === (id - 1)) {
-        this.itemPurchaseAmount = currentAmountElement;
-      }
-    }
-    return this.itemPurchaseAmount;
-  }
 
   // TEMP: use in "cart" Webpage when "Submit" Button is Pressed?
   // TEMP: OR use in "confirmation" Webpage when "Back to product list" Button is Pressed? (to Prevent Accidental Changes)

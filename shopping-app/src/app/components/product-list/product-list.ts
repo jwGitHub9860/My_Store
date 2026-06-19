@@ -19,9 +19,8 @@ export class ProductList implements OnInit {
   // Receives Item List from "Observable"
   items$!: Observable<Item[]>;
 
-  // TEMP: Change into "Observable"?
-  // TEMP: use "!" to Define or Not?
-  // TEMP: Define in "constructor" or Not?
+  // Ensures "itemAmountList" is Updated once "Add to cart" Button is Pressed
+  // Ensures "itemAmountList" is SEPARATE from "itemPurchaseAmountList" Array in "product-item" Service File
   itemAmountList: number[];
 
   // ONLY WAY to Move from "product-list" Webpage to "product-item-detail" Webpage WITHOUT RESETTING Chosen Item ID
