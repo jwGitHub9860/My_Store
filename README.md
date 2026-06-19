@@ -217,6 +217,8 @@ Holeczek, Łukasz. “How to Create a Dropdown in Angular.” _CoreUI_, coreui.i
 
 Jaouadirabeb. “Passing Data Between Angular Components: Mastering @Input, @Output, and Signal-Based Inputs.” _Medium_, 7 Nov. 2025, medium.com/@jaouadirabeb/passing-data-between-angular-components-mastering-input-output-and-signal-based-inputs-decee874a609. Accessed 22 May 2026.
 
+Jus10, and jonrsharpe. “Using an Observable to Detect a Change in a Variable.” Edited by Mave, _Stack Overflow_, stackoverflow.com/questions/46132012/using-an-observable-to-detect-a-change-in-a-variable. Accessed 18 June 2026.
+
 Krunals. “Different Ways To Read Local JSON Files In Angular Application.” _Medium_, 2 Oct. 2024, medium.com/@krunals/different-ways-to-read-local-json-files-in-angular-application-c3ecd545fd37. Accessed 10 May 2026.
 
 Kumari, Anni. “How to Turn an Image into a Link in HTML?” _GeeksforGeeks_, GeeksforGeeks, 23 July 2025, www.geeksforgeeks.org/html/how-to-turn-an-image-into-a-link-in-html/. Accessed 14 May 2026.
@@ -236,6 +238,8 @@ Motto, Todd. “Handling Observables with NgFor and the Async Pipe.” _Ultimate
 “ngIf.” _AngularJS_, docs.angularjs.org/api/ng/directive/ngIf. Accessed 30 May 2026.
 
 “NgSwitch.” _Angular_, angular.dev/api/common/NgSwitch. Accessed 31 May 2026.
+
+Nidhi, and Kavya. “How to Change the Value of an Observable in TypeScript Angular.” _Edureka Community_, 26 Nov. 2024, www.edureka.co/community/292261/how-to-change-the-value-of-observable-in-typescript-angular. Accessed 18 Jun. 2026.
 
 POV, and Charly Sosa. “How to Read Json File and Use in Everywhere as Service?” Edited by POV, _Stack Overflow_, stackoverflow.com/#organization, 3 Oct. 2019, stackoverflow.com/questions/58225939/how-to-read-json-file-and-use-in-everywhere-as-service. Accessed 10 May 2026.
 
