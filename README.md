@@ -187,9 +187,9 @@ Another challenge that was faced was accessing the "data.json" file in "product-
 ## Credits
 ###### References used while making project
 
-Ahmed, Naveed, and Günter Zöchbauer. “How to Check the Length of an Observable Array.” Edited by Tobias47n9e and Günter Zöchbauer, _Stack Overflow_, stackoverflow.com/#organization, 27 June 2016, stackoverflow.com/questions/38057537/how-to-check-the-length-of-an-observable-array. Accessed 15 Jun. 2026.
+Ahmed, Naveed, and Günter Zöchbauer. “How to Check the Length of an Observable Array.” Edited by Tobias47n9e and Günter Zöchbauer, _Stack Overflow_, 2026 Stack Exchange Inc, 27 June 2016, stackoverflow.com/questions/38057537/how-to-check-the-length-of-an-observable-array. Accessed 15 Jun. 2026.
 
-Amrmsmb, et al. “Argument of Type ‘Event’ Is Not Assignable to Parameter of Type ‘String.’” Edited by Yuri and Ramanathan Chockalingam, _Stack Overflow_, stackoverflow.com/#organization, 6 Jan. 2022, stackoverflow.com/questions/66938398/argument-of-type-event-is-not-assignable-to-parameter-of-type-string. Accessed 22 May 2026.
+Amrmsmb, et al. “Argument of Type ‘Event’ Is Not Assignable to Parameter of Type ‘String.’” Edited by Yuri and Ramanathan Chockalingam, _Stack Overflow_, 2026 Stack Exchange Inc, 4 Apr. 2021, stackoverflow.com/questions/66938398/argument-of-type-event-is-not-assignable-to-parameter-of-type-string. Accessed 22 May 2026.
 
 “Angular - Routing Module.” _Tutorials Point_, www.tutorialspoint.com/angular/angular-routing-module.htm. Accessed 25 May 2026.
 
@@ -197,17 +197,17 @@ Assistant Bot. “What Is the Difference between the Files ‘App.Module.TS’ a
 
 B, Hemanth. “What Is the Difference Between BehaviorSubject and Observable in Angular ?” _GeeksforGeeks_, 26 July 2024, www.geeksforgeeks.org/angular-js/what-is-the-difference-between-behaviorsubject-and-observable-in-angular/. Accessed 18 Jun. 2026.
 
-bensalerno, et al. “Running Angular App Only Shows Angular Default Homepage.” _Stack Overflow_, stackoverflow.com/#organization, 1 June 1964, stackoverflow.com/questions/64215177/running-angular-app-only-shows-angular-default-homepage. Accessed 8 May 2026.
+bensalerno, et al. “Running Angular App Only Shows Angular Default Homepage.” _Stack Overflow_, 2026 Stack Exchange Inc, 5 Oct. 2020, stackoverflow.com/questions/64215177/running-angular-app-only-shows-angular-default-homepage. Accessed 8 May 2026.
 
 Chautard, Alain. “What Does Zoneless Angular Mean?” _Medium_, 11 June 2025, blog.angulartraining.com/what-does-zoneless-angular-mean-0a3a9d2a047d?gi=45de611c4b1c. Accessed 10 Jun. 2026.
 
-Danioss, and Robin Dijkhof. “Angular 2 ‘component’ Is Not a Known Element.” _Stack Overflow_, stackoverflow.com/#organization, 2 May 2019, stackoverflow.com/questions/44429996/angular-2-component-is-not-a-known-element/44430230#44430230. Accessed 8 May 2026.
+Danioss, and Robin Dijkhof. “Angular 2 ‘component’ Is Not a Known Element.” _Stack Overflow_, 2026 Stack Exchange Inc, 2 May 2019, stackoverflow.com/questions/44429996/angular-2-component-is-not-a-known-element/44430230#44430230. Accessed 8 May 2026.
 
-ErinDab, and Jignesh Panchal. “ERROR NG8001: ‘courses’ Is Not a Known Element.” Edited by ErinDab and Jignesh Panchal, _Stack Overflow_, stackoverflow.com/#organization, 13 May 2024, stackoverflow.com/questions/78472566/error-ng8001-courses-is-not-a-known-element. Accessed 8 May 2026.
+ErinDab, and Jignesh Panchal. “ERROR NG8001: ‘courses’ Is Not a Known Element.” Edited by ErinDab and Jignesh Panchal, _Stack Overflow_, 2026 Stack Exchange Inc, 13 May 2024, stackoverflow.com/questions/78472566/error-ng8001-courses-is-not-a-known-element. Accessed 8 May 2026.
 
 “GitHub Profile README Generator.” _GitHub Profile Readme Generator | GitHub Profile Readme Generator_, rahuldkjain.github.io/gh-profile-readme-generator/. Accessed 7 May 2026.
 
-Habib, Ahmad, et al. “Passing Parameter Onclick, in a Loop Using Angular8.” Edited by Ahmad Habib and Mihai Alexandru-Ionut, _Stack Overflow_, stackoverflow.com/#organization, 8 Jan. 2020, stackoverflow.com/questions/59640400/passing-parameter-onclick-in-a-loop-using-angular8. Accessed 20 May 2026.
+Habib, Ahmad, et al. “Passing Parameter Onclick, in a Loop Using Angular8.” Edited by Ahmad Habib and Mihai Alexandru-Ionut, _Stack Overflow_, 2026 Stack Exchange Inc, 8 Jan. 2020, stackoverflow.com/questions/59640400/passing-parameter-onclick-in-a-loop-using-angular8. Accessed 20 May 2026.
 
 Holeczek, Łukasz. “How to Create a Dropdown in Angular.” _CoreUI_, coreui.io/answers/how-to-create-a-dropdown-in-angular/. Accessed 17 Jun. 2026.
 
@@ -219,13 +219,13 @@ Holeczek, Łukasz. “How to Create a Dropdown in Angular.” _CoreUI_, coreui.i
 
 Jaouadirabeb. “Passing Data Between Angular Components: Mastering @Input, @Output, and Signal-Based Inputs.” _Medium_, 7 Nov. 2025, medium.com/@jaouadirabeb/passing-data-between-angular-components-mastering-input-output-and-signal-based-inputs-decee874a609. Accessed 22 May 2026.
 
-Jus10, and jonrsharpe. “Using an Observable to Detect a Change in a Variable.” Edited by Mave, _Stack Overflow_, stackoverflow.com/questions/46132012/using-an-observable-to-detect-a-change-in-a-variable. Accessed 18 Jun. 2026.
+Jus10, and jonrsharpe. “Using an Observable to Detect a Change in a Variable.” Edited by Mave, _Stack Overflow_, 2026 Stack Exchange Inc, 9 Sept. 2017, stackoverflow.com/questions/46132012/using-an-observable-to-detect-a-change-in-a-variable. Accessed 18 Jun. 2026.
 
 Krunals. “Different Ways To Read Local JSON Files In Angular Application.” _Medium_, 2 Oct. 2024, medium.com/@krunals/different-ways-to-read-local-json-files-in-angular-application-c3ecd545fd37. Accessed 10 May 2026.
 
 Kumari, Anni. “How to Turn an Image into a Link in HTML?” _GeeksforGeeks_, GeeksforGeeks, 23 July 2025, www.geeksforgeeks.org/html/how-to-turn-an-image-into-a-link-in-html/. Accessed 14 May 2026.
 
-Leichtos, and Mojtaba Nejad Poor Esmaeili. “Angular-NG8001 Not Known Element Error. How Solve It?” _Stack Overflow_, stackoverflow.com/#organization, 12 Jan. 2024, stackoverflow.com/questions/77808592/angular-ng8001-not-known-element-error-how-solve-it. Accessed 8 May 2026.
+Leichtos, and Mojtaba Nejad Poor Esmaeili. “Angular-NG8001 Not Known Element Error. How Solve It?” _Stack Overflow_, 2026 Stack Exchange Inc, 12 Jan. 2024, stackoverflow.com/questions/77808592/angular-ng8001-not-known-element-error-how-solve-it. Accessed 8 May 2026.
 
 mahalaxmi. “How to Link a Button to Another Page in HTML?” _GeeksforGeeks_, GeeksforGeeks, 23 July 2025, www.geeksforgeeks.org/html/how-to-link-a-button-to-another-page-in-html/. Accessed 12 May 2026.
 
@@ -245,7 +245,7 @@ Nidhi, and Kavya. “How to Change the Value of an Observable in TypeScript Angu
 
 Patil, Jaydeep. “Observable and Subjects in Angular.” _Medium_, 4 Aug. 2023, medium.com/@jaydeepvpatil225/observables-and-subjects-in-angular-a4d73dfa5bb. Accessed 18 Jun. 2026.
 
-POV, and Charly Sosa. “How to Read Json File and Use in Everywhere as Service?” Edited by POV, _Stack Overflow_, stackoverflow.com/#organization, 3 Oct. 2019, stackoverflow.com/questions/58225939/how-to-read-json-file-and-use-in-everywhere-as-service. Accessed 10 May 2026.
+POV, and Charly Sosa. “How to Read Json File and Use in Everywhere as Service?” Edited by POV, _Stack Overflow_, 2026 Stack Exchange Inc, 3 Oct. 2019, stackoverflow.com/questions/58225939/how-to-read-json-file-and-use-in-everywhere-as-service. Accessed 10 May 2026.
 
 “ROUTING.” _Angular v2 Archive_, v2.angular.io/docs/ts/latest/tutorial/toh-pt5.html. Accessed 7 Jun. 2026.
 
@@ -255,7 +255,7 @@ POV, and Charly Sosa. “How to Read Json File and Use in Everywhere as Service?
 
 Sharma, Himanshu. “What Is the AppModule in Angular ?” _GeeksforGeeks_, GeeksforGeeks, 4 Apr. 2024, www.geeksforgeeks.org/angular-js/what-is-the-appmodule-in-angular/. Accessed 7 Jun. 2026.
 
-Simon, and LocalPCGuy. “Angular routerLink with Automatic Href.” Edited by LocalPCGuy, _Stack Overflow_, stackoverflow.com/#organization, 12 May 2022, stackoverflow.com/questions/72220258/angular-routerlink-with-automatic-href. Accessed 11 May 2026.
+Simon, and LocalPCGuy. “Angular routerLink with Automatic Href.” Edited by LocalPCGuy, _Stack Overflow_, 2026 Stack Exchange Inc, 12 May 2022, stackoverflow.com/questions/72220258/angular-routerlink-with-automatic-href. Accessed 11 May 2026.
 
 Singh, Tarandeep. “Angular10 NgSwitch Directive.” _GeeksforGeeks_, GeeksforGeeks, 23 July 2025, www.geeksforgeeks.org/angular-js/angular10-ngswitch-directive/. Accessed 31 May 2026.
 
