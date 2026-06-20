@@ -1,8 +1,9 @@
 // "NgZone" - Prevents Angular Applications from being Zoneless
 // "NgZone" - Performs Change Detection for "Observable"
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, inject, NgZone } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { FormsModule } from '@angular/forms';
+import { Router } from "@angular/router";
 import { Observable } from 'rxjs';
 import { Item } from "../../models/Item";
 import { ProductItemService } from "../../services/product-item/product-item";
@@ -21,6 +22,9 @@ export class ProductItemDetail implements OnInit {
   // Receives Item List from "Observable"
   allItems$!: Observable<Item[]>;
 
+  // ONLY WAY to Move to "product-list" Webpage WITHOUT RESETTING Purchase Item Amounts
+  private router = inject(Router);
+
   constructor(private productItemService: ProductItemService, private productListService: ProductListService, private ngZone: NgZone) {
     // Checks if Application is Currently Running in Zoneless Mode
     console.log('Constructor zone:', this.ngZone.constructor.name);
@@ -36,4 +40,6 @@ export class ProductItemDetail implements OnInit {
   }
 
   addItemsToCart(id: number): void { this.productItemService.setItemPurchaseAmount(this.itemAmount, id); }
+
+  navigateToProductList() { this.router.navigate(['/']); }
 }
