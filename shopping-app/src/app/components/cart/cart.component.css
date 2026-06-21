@@ -4,7 +4,8 @@ img {
 }
 
 .form-margin {
-  margin-left: 450px;
+  margin-left: 0px;
+  margin-right: 650px;
   margin-bottom: 12px;
 }
 
@@ -31,12 +32,12 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 64px;
 }
 
 .cart-panel {
   margin-left: 50px;
   margin-right: 50px;
+  margin-top: 64px;
 }
 
 .empty-cart-message {

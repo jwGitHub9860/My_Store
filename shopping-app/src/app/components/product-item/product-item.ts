@@ -1,7 +1,11 @@
 // "NgZone" - Prevents Angular Applications from being Zoneless
 // "NgZone" - Performs Change Detection for "Observable"
 import { Component, OnInit, Output, EventEmitter, NgZone } from '@angular/core';
+
+// TEMP: Remove this Import Statement LATER
 import { FormsModule } from "@angular/forms";
+
+// TEMP: do I Still Need these Import Statements?
 import { Observable } from "rxjs";
 import { Item } from "../../models/Item";
 import { ProductItemService } from "../../services/product-item/product-item";
@@ -14,15 +18,19 @@ import { ProductListService } from "../../services/product-list/product-list";
   styleUrl: './product-item.component.css',
 })
 export class ProductItem implements OnInit {
+  // TEMP: do I Stil Need this?
   // Receives Item List from "Observable"
   allItems$!: Observable<Item[]>;
-  
+
+  // TEMP: do I Still Need this?  
   // Child Component of "cart" Parent Component
   itemAmountList: number[] = [];
 
+  // TEMP: do I Still Need this?
   // Holds All Items being Purchased
   purchaseItemList: Item[] = [];
 
+  // TEMP: Remove this LATER
   // Sends "purchaseItemList" to "cart" Parent Component with "product-item" AS Child Component
   @Output() chosenPurchaseItems: EventEmitter<Item[]> = new EventEmitter();
 
@@ -31,6 +39,7 @@ export class ProductItem implements OnInit {
     console.log('Constructor zone:', this.ngZone.constructor.name);
   }
 
+  // TEMP: REMOVE EVERYTHING in "ngOnInit()" & Leave EMPTY LATER
   ngOnInit() {
     this.allItems$ = this.productListService.getItemList();
     this.itemAmountList = this.productItemService.getItemPurchaseAmountList();
@@ -49,6 +58,7 @@ export class ProductItem implements OnInit {
     }
   }
 
+  // TEMP: Remove this LATER
   // Obtains List of Chosen Purchase Items & Sends it to "cart" Webpage
   submitPurchaseItemList(): void {
     this.chosenPurchaseItems.emit(this.purchaseItemList);

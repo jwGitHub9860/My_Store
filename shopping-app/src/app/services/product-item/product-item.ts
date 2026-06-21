@@ -43,8 +43,9 @@ export class ProductItemService {
 
   setItemPurchaseAmount(amount: number, id: number): void { this.itemPurchaseAmountList[id - 1] = amount; }
 
-  // TEMP: use in "cart" Webpage when "Submit" Button is Pressed?
-  // TEMP: OR use in "confirmation" Webpage when "Back to product list" Button is Pressed? (to Prevent Accidental Changes)
+  // TEMP: Remove LATER
+  // TEMP: "href" in "confirmation" Webpage when "Back to product list" Button is Pressed AUTOMATICALLY RESETS Purchase Amount List
+  // TEMP: ^(to Prevent Accidental Changes)
   resetItemPurchaseAmountList(): void {
     for (let index = 0; index < this.itemPurchaseAmountList.length; index++) {
       this.itemPurchaseAmountList[index] = 0;
