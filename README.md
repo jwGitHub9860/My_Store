@@ -193,6 +193,8 @@ Amrmsmb, et al. “Argument of Type ‘Event’ Is Not Assignable to Parameter o
 
 “Angular - Routing Module.” _Tutorials Point_, www.tutorialspoint.com/angular/angular-routing-module.htm. Accessed 25 May 2026.
 
+Angular University. “Angular @for: Complete Guide.” _Angular University_, Angular-University.io, 2026, blog.angular-university.io/angular-for/. Accessed 20 Jun. 2026.
+
 Assistant Bot. “What Is the Difference between the Files ‘App.Module.TS’ and ‘App-Routing.Module.TS’ in Angular?” _Quora_, Oct. 2025, www.quora.com/What-is-the-difference-between-the-files-app-module-TS-and-app-routing-module-TS-in-angular. Accessed 7 Jun. 2026.
 
 B, Hemanth. “What Is the Difference Between BehaviorSubject and Observable in Angular ?” _GeeksforGeeks_, 26 July 2024, www.geeksforgeeks.org/angular-js/what-is-the-difference-between-behaviorsubject-and-observable-in-angular/. Accessed 18 Jun. 2026.
