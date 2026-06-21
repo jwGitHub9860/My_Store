@@ -29,7 +29,7 @@ export class ProductItemDetail implements OnInit {
     // Checks if Application is Currently Running in Zoneless Mode
     console.log('Constructor zone:', this.ngZone.constructor.name);
 
-    this.itemAmount = 1;
+    this.itemAmount = 0;
   }
 
   ngOnInit(): void {
