@@ -249,6 +249,8 @@ Patil, Jaydeep. “Observable and Subjects in Angular.” _Medium_, 4 Aug. 2023,
 
 POV, and Charly Sosa. “How to Read Json File and Use in Everywhere as Service?” Edited by POV, _Stack Overflow_, 2026 Stack Exchange Inc, 3 Oct. 2019, stackoverflow.com/questions/58225939/how-to-read-json-file-and-use-in-everywhere-as-service. Accessed 10 May 2026.
 
+RC07JNR, and Eliseo. “How to Get Data from an Observable Array?” _Stack Overflow_, 2026 Stack Exchange Inc, 13 Dec. 2021, stackoverflow.com/questions/70339008/how-to-get-data-from-an-observable-array/70339593. Accessed 21 Jun. 2026.
+
 “ROUTING.” _Angular v2 Archive_, v2.angular.io/docs/ts/latest/tutorial/toh-pt5.html. Accessed 7 Jun. 2026.
 
 “Select.” _Angular_, angular.dev/guide/aria/select. Accessed 17 Jun. 2026.
