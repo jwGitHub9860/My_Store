@@ -31,6 +31,9 @@ export class Cart implements OnInit {
   // Holds All Items being Purchased
   purchaseItemList: Item[] = [];
 
+  // Obtains Total Purchase Cost
+  totalPurchaseCost: number;
+
   // Parent Component of "billing-information" Component
   full_name: string = '';
   thankYouMessage: string = "Thank you, " + this.full_name + " !";
@@ -38,11 +41,14 @@ export class Cart implements OnInit {
   constructor(private productItemService: ProductItemService, private productListService: ProductListService, private ngZone: NgZone) {
     // Checks if Application is Currently Running in Zoneless Mode
     console.log('Constructor zone:', this.ngZone.constructor.name);
+
+    this.totalPurchaseCost = 0;
   }
 
   ngOnInit(): void {
     this.allItems$ = this.productListService.getItemList();
     this.itemAmountList = this.productItemService.getItemPurchaseAmountList();
+    this.totalPurchaseCost = this.productItemService.getTotalPurchaseCost();
 
     // Obtains Index Array Values of NON-ZERO "itemAmountList" Array Elements
     for (let index = 0; index < this.itemAmountList.length; index++) {

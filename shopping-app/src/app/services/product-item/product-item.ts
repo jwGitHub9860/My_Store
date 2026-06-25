@@ -41,10 +41,19 @@ export class ProductItemService {
     return newItemPurchaseAmountList;
   }
 
-  setItemPurchaseAmount(amount: number, id: number): void { this.itemPurchaseAmountList[id - 1] = amount; }
+  setItemPurchaseAmount(amount: number, id: number, price: number): void {
+    // Part Of RECALCULATING TOTAL Purchase COST when Item Purchase AMOUNT(S) are CHANGED
+    // Checks if Purchase Amount Used To Be Zero BEFORE Total Purchase Cost is Calculated
+    if (this.itemPurchaseAmountList[id - 1] !== 0) {
+      // Subtracts PREVIOUS Calculated Amount to Prevent Incorrect purchase cost Calculation
+      this.totalPurchaseCost -= this.itemPurchaseAmountList[id - 1] * price;
+    }
 
-  // TEMP: CALCULATE Total Item Purchase Amount in This Function?
-  setTotalPurchaseCost(cost: number): void { this.totalPurchaseCost = cost; }
+    this.itemPurchaseAmountList[id - 1] = amount;
+  }
+
+  // CALCULATES & Sets Total Purchase Cost
+  setTotalPurchaseCost(itemAmount: number, itemPrice: number): void { this.totalPurchaseCost += itemAmount * itemPrice; }
 
   getTotalPurchaseCost(): number { return this.totalPurchaseCost; }
 }

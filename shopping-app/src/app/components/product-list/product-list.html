@@ -20,7 +20,7 @@
                 <a>${{ item.price }}</a>
             </div>
 
-            <form (ngSubmit)="addItemsToCart(item.id)" #form="ngForm">
+            <form (ngSubmit)="addItemsToCart(item.id, item.price)" #form="ngForm">
                 <div class="product-container">
                     <div [ngSwitch]="item.id">
                         <div *ngSwitchCase="1">

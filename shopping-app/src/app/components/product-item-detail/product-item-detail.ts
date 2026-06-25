@@ -39,7 +39,12 @@ export class ProductItemDetail implements OnInit {
     this.chosenItemId = this.productItemService.getChosenItemId();
   }
 
-  addItemsToCart(id: number): void { this.productItemService.setItemPurchaseAmount(this.itemAmount, id); }
+  addItemsToCart(id: number, price: number): void {
+    this.productItemService.setItemPurchaseAmount(this.itemAmount, id, price);
+    
+    // Obtains item Price for Calculating Total Purchase Cost
+    this.productItemService.setTotalPurchaseCost(this.itemAmount, price);
+  }
 
   navigateToProductList() { this.router.navigate(['/']); }
 }

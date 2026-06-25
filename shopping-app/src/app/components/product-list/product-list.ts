@@ -52,5 +52,10 @@ export class ProductList implements OnInit {
     this.router.navigate(['item-details'], {relativeTo: this.route});
   }
 
-  addItemsToCart(id: number): void { this.productItemService.setItemPurchaseAmount(this.itemAmountList[id - 1], id); }
+  addItemsToCart(id: number, price: number): void {
+    this.productItemService.setItemPurchaseAmount(this.itemAmountList[id - 1], id, price);
+
+    // Obtains item Price for Calculating Total Purchase Cost
+    this.productItemService.setTotalPurchaseCost(this.itemAmountList[id - 1], price);
+  }
 }

@@ -24,7 +24,7 @@
                 </div>
                 <h6>{{ chosenItem.description }}</h6>
                 
-                <form (ngSubmit)="addItemsToCart(chosenItem.id)" #form="ngForm">
+                <form (ngSubmit)="addItemsToCart(chosenItem.id, chosenItem.price)" #form="ngForm">
                     <div class="select-input">
                         <input type="number" name="itemAmount" title="itemAmount" required min="1" value="1" placeholder="" [(ngModel)]="itemAmount">
                     </div>
