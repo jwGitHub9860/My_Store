@@ -1,59 +1,66 @@
-<!--TEMP: Use "empty-cart-message" and/or "button" Tags?-->
-<!--TEMP: ^Use "ngIf" for "empty-cart-message" Tag-->
-<!--TEMP: ^Put "ngIf" BEFORE 1st "<ul>" Tag-->
-
 <!--TEMP: use "Submit" Feature to submit Purchase Cost?-->
 
 <!--"form-margin" - Outer Boundary Around Elements on Webpage-->
 <div class="form-margin">
     <!--"cart-panel" - Displays ENTIRE Order (involves Subtotal, Checkout Button, and Overall Shipping Information)-->
     <div class="cart-panel">
-        <ul *ngFor="let chosenItem of (allItems$ | async)">
-            <ul *ngFor="let ID of purchaseItemIDsList">
-                <div *ngIf="chosenItem.id === (ID + 1)">
-                    <!--MUST PUT "cart-container" HERE-->
-                        <!--^(Only place where Items are):-->
-                            <!--1. Arranged in COLUMN LIST Form-->
-                            <!--2. ALIGNED-->
-                            <!--3. Billing Information is NOT PUSHED FURTHER DOWN Webpage-->
-                    <!--"cart-container" - ALL Items being Ordered & Purchased-->
-                    <div class="cart-container">
-                        <!--"cart-item" - SPECIFIC item Ordered (NOT INCLUDING item Image)-->
-                        <div class="cart-item">
-                            <!--Item "img" should be Placed in "cart-item" Tag-->
-                            <div class="img">
-                                <img src="{{ chosenItem.url }}" alt="Image URL">
-                            </div>
+        <!--MUST USE "purchaseItemIDsList.length" to Check if Cart is Empty-->
+        <!--"itemAmountList.length" ALWAYS EQUALS "6" Whenever Items in Cart Change-->
+        <div *ngIf="purchaseItemIDsList.length !== 0; else elseBlock">
+            <ul *ngFor="let chosenItem of (allItems$ | async)">
+                <ul *ngFor="let ID of purchaseItemIDsList">
+                    <div *ngIf="chosenItem.id === (ID + 1)">
+                        <!--MUST PUT "cart-container" HERE-->
+                            <!--^(Only place where Items are):-->
+                                <!--1. Arranged in COLUMN LIST Form-->
+                                <!--2. ALIGNED-->
+                                <!--3. Billing Information is NOT PUSHED FURTHER DOWN Webpage-->
+                        <!--"cart-container" - ALL Items being Ordered & Purchased-->
+                        <div class="cart-container">
+                            <!--"cart-item" - SPECIFIC item Ordered (NOT INCLUDING item Image)-->
+                            <div class="cart-item">
+                                <!--Item "img" should be Placed in "cart-item" Tag-->
+                                <div class="img">
+                                    <img src="{{ chosenItem.url }}" alt="Image URL">
+                                </div>
 
-                            <!--"cart-item-details" - item Attributes-->
-                            <div class="cart-item-details">
-                                <h6>{{ chosenItem.name }}</h6>
-                                <a>${{ chosenItem.price }}</a>
-                                <ul *ngFor="let amount of itemAmountList; let i = index">
-                                    <div *ngIf="i === ID">
-                                        <!--TEMP: use "<form>" Tag to recalculate total purchase amount if ANY Item Amounts are CHANGED-->
-                                        
-                                        <!--"number-input" - Quantity of Item being Purchased-->
-                                        <div class="number-input">
-                                            <!--TEMP: figure out how to Realign "amount" LATER-->
-                                            <a>Amount: {{amount}}</a>
-                                            <!--TEMP: ^IF Using "<form>" Tag, use "<input>" to Obtain New Amount-->
-                                            <!--TEMP: ^IF Using "<input>" Tag, in "number-input" CSS file, use "width: 263px"-->
-                                            <!--TEMP: ^use "[(ngModel)]="itemAmountList[0]"" to Connect Values for Price?-->
+                                <!--"cart-item-details" - item Attributes-->
+                                <div class="cart-item-details">
+                                    <h6>{{ chosenItem.name }}</h6>
+                                    <a>${{ chosenItem.price }}</a>
+                                    <ul *ngFor="let amount of itemAmountList; let i = index">
+                                        <div *ngIf="i === ID">
+                                            <!--TEMP: use "<form>" Tag to recalculate total purchase amount if ANY Item Amounts are CHANGED-->
+                                            
+                                            <!--"number-input" - Quantity of Item being Purchased-->
+                                            <div class="number-input">
+                                                <!--TEMP: figure out how to Realign "amount" LATER-->
+                                                <a>Amount: {{amount}}</a>
+                                                <!--TEMP: ^IF Using "<form>" Tag, use "<input>" to Obtain New Amount-->
+                                                <!--TEMP: ^IF Using "<input>" Tag, in "number-input" CSS file, use "width: 263px"-->
+                                                <!--TEMP: ^use "[(ngModel)]="itemAmountList[0]"" to Connect Values for Price?-->
+                                            </div>
                                         </div>
-                                    </div>
-                                </ul>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    </div>
                 </ul>
             </ul>
-        <!--"cart-container" - ALL Items being Ordered & Purchased-->
-        <div class="cart-container">
-            <!--MUST PUT HERE to Ensure Total Purchase Cost Only Appears ONCE-->
-            <h3>Total: ${{ totalPurchaseCost }}</h3>
+            <!--"cart-container" - ALL Items being Ordered & Purchased-->
+            <div class="cart-container">
+                <!--MUST PUT HERE to Ensure Total Purchase Cost Only Appears ONCE-->
+                <h3>Total: ${{ totalPurchaseCost }}</h3>
+            </div>
         </div>
+
+        <!--Displays Empty Cart Message if Cart is Empty-->
+        <ng-template #elseBlock>
+            <div class="empty-cart-message">
+                <h3>Your Cart is Empty</h3>
+            </div>
+        </ng-template>
     </div>
 </div>
 
