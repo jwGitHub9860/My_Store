@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BillingInformationService } from "../../services/billing-information/billing-information";
+import { ProductItemService } from "../../services/product-item/product-item";
 
 @Component({
   selector: 'app-confirmation',
@@ -9,14 +10,15 @@ import { BillingInformationService } from "../../services/billing-information/bi
 })
 export class Confirmation implements OnInit {
   customerName: string;
+  totalPurchaseCost: number;
   
-  constructor(private billingInformationService: BillingInformationService) {
+  constructor(private billingInformationService: BillingInformationService, private productItemService: ProductItemService) {
     this.customerName = '';
+    this.totalPurchaseCost = 0;
   }
 
   ngOnInit(): void {
     this.customerName = this.billingInformationService.getCustomerName();
-
-    // TEMP: get "total_purchase_cost" HERE
+    this.totalPurchaseCost = this.productItemService.getTotalPurchaseCost();
   }
 }
