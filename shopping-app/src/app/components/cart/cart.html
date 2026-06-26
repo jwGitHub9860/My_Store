@@ -54,9 +54,13 @@
                 <!--Limits Cents of "totalPurchaseCost" to Two Decimal Places-->
                 <h3>Total: ${{ totalPurchaseCost | number : '1.2-2' }}</h3>
             </div>
+
+            <!--MUST PUT HERE to PREVENT Making Purchase with ZERO ITEMS-->
+            <app-billing-information (obtainBillingInfo)="obtainBillingInfo($event)"></app-billing-information>
         </div>
 
         <!--Displays Empty Cart Message if Cart is Empty-->
+        <!--ONLY DISPLAYS Empty Cart Message in ENTIRE "cart" Webpage to PREVENT Making Purchase with ZERO ITEMS-->
         <ng-template #elseBlock>
             <div class="empty-cart-message">
                 <h3>Your Cart is Empty</h3>
@@ -64,8 +68,3 @@
         </ng-template>
     </div>
 </div>
-
-<!--TEMP: Figure out how to Fix Billing Information ALIGNMENT LATER-->
-<!--TEMP: Put Inside "form-margin" AND "cart-panel" Tags?-->
-<!--TEMP: Put AFTER "<ul>" Tags WITHOUT "<div class=>" Tags Surrounding "<app-billing-information>" Tag LATER-->
-<app-billing-information (obtainBillingInfo)="obtainBillingInfo($event)"></app-billing-information>
