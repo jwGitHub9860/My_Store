@@ -51,7 +51,8 @@
             <!--"cart-container" - ALL Items being Ordered & Purchased-->
             <div class="cart-container">
                 <!--MUST PUT HERE to Ensure Total Purchase Cost Only Appears ONCE-->
-                <h3>Total: ${{ totalPurchaseCost }}</h3>
+                <!--Limits Cents of "totalPurchaseCost" to Two Decimal Places-->
+                <h3>Total: ${{ totalPurchaseCost | number : '1.2-2' }}</h3>
             </div>
         </div>
 
