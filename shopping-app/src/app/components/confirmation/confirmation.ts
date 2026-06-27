@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { DecimalPipe } from "@angular/common";
 import { BillingInformationService } from "../../services/billing-information/billing-information";
 import { ProductItemService } from "../../services/product-item/product-item";
 
 @Component({
   selector: 'app-confirmation',
-  imports: [],
+  imports: [DecimalPipe],
   templateUrl: './confirmation.html',
   styleUrl: './confirmation.component.css',
 })
