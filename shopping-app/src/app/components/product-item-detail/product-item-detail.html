@@ -26,7 +26,7 @@
                 
                 <form (ngSubmit)="addItemsToCart(chosenItem.id, chosenItem.price)" #form="ngForm">
                     <div class="select-input">
-                        <input type="number" name="itemAmount" title="itemAmount" required min="1" value="1" placeholder="" [(ngModel)]="itemAmount">
+                        <input type="number" name="itemAmount" title="itemAmount" required min="0" value="0" placeholder="" [(ngModel)]="itemAmount">
                     </div>
 
                     <div class="select-input">
