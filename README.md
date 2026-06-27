@@ -221,6 +221,8 @@ Holeczek, Łukasz. “How to Create a Dropdown in Angular.” _CoreUI_, coreui.i
 
 “HTML Images.” _W3Schools.com_, www.w3schools.com/html/html_images.asp. Accessed 13 May 2026.
 
+“HTML Text Formatting.” _W3Schools_, www.w3schools.com/html/html_formatting.asp. Accessed 26 June 2026.
+
 Jaouadirabeb. “Passing Data Between Angular Components: Mastering @Input, @Output, and Signal-Based Inputs.” _Medium_, 7 Nov. 2025, medium.com/@jaouadirabeb/passing-data-between-angular-components-mastering-input-output-and-signal-based-inputs-decee874a609. Accessed 22 May 2026.
 
 Jus10, and jonrsharpe. “Using an Observable to Detect a Change in a Variable.” Edited by Mave, _Stack Overflow_, 2026 Stack Exchange Inc, 9 Sept. 2017, stackoverflow.com/questions/46132012/using-an-observable-to-detect-a-change-in-a-variable. Accessed 18 Jun. 2026.
