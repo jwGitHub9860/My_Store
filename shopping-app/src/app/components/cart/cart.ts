@@ -67,14 +67,15 @@ export class Cart implements OnInit {
     this.full_name = '';
   }
 
-  // TEMP: do I still need this?
-  // Function for Parent-Child Relationship between "cart" & "product-item" Components
-  obtainPurchaseList(purchaseItems: Item[]): void {
-    // Must Add purchase items INDIVIDUALLY
-    // CANNOT use "=" to Add "purchaseItems"
-    for (let index = 0; index < purchaseItems.length; index++) {
-      const currentChosenItem = purchaseItems[index];
-      //this.purchaseList.push(currentChosenItem);
-    }
+  // Obtains New Amount(s) of Each Item being Purchased
+  obtainNewPurchaseAmountList(newAmount: number, id: number, price: number): void {
+    // Sets NEW AMOUNT of Purchase Item
+    this.productItemService.setItemPurchaseAmount(newAmount, id, price);
+
+    // Obtains NEW item Price for Calculating NEW Total Purchase Cost
+    this.productItemService.setTotalPurchaseCost(newAmount, price);
+
+    // Obtains NEW Total Purchase Cost
+    this.totalPurchaseCost = this.productItemService.getTotalPurchaseCost();
   }
 }

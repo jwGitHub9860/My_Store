@@ -28,16 +28,16 @@
                                             <a>${{ chosenItem.price }}</a>
                                             <ul *ngFor="let amount of itemAmountList; let i = index">
                                                 <div *ngIf="i === ID">
-                                                    <!--TEMP: use "<form>" Tag to recalculate total purchase amount if ANY Item Amounts are CHANGED-->
-                                                        
-                                                    <!--"number-input" - Quantity of Item being Purchased-->
-                                                    <div class="number-input">
-                                                        <!--TEMP: figure out how to Realign "amount" LATER-->
-                                                        <a>Amount: {{amount}}</a>
-                                                        <!--TEMP: ^IF Using "<form>" Tag, use "<input>" to Obtain New Amount-->
-                                                        <!--TEMP: ^IF Using "<input>" Tag, in "number-input" CSS file, use "width: 263px"-->
-                                                        <!--TEMP: ^use "[(ngModel)]="itemAmountList[0]"" to Connect Values for Price?-->
-                                                    </div>
+                                                    <!--Recalculates Total Purchase Amount IF ANY Item Amounts are CHANGED-->
+                                                    <form (submit)="obtainNewPurchaseAmountList(amount, chosenItem.id, chosenItem.price)" id="inputForm" class="form-group" class="row">
+                                                        <!--TEMP: Fix Realign "amount" Issue LATER-->
+                                                        <!--TEMP: "<div class="number-input">" is CAUSING Realign "amount" ISSUE-->
+                                                        <a>Amount: </a>
+                                                        <!--"number-input" - Quantity of Item being Purchased-->
+                                                        <div class="number-input">
+                                                            <input type="number" name="itemAmountList[i]" title="itemAmountList[i]" required min="0" value="itemAmountList[i]" [(ngModel)]="itemAmountList[i]" (ngModelChange)="obtainNewPurchaseAmountList(amount, chosenItem.id, chosenItem.price)">
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </ul>
                                         </div>
