@@ -1,25 +1,5 @@
-.form-margin {
-  margin-left: 450px;
-  margin-bottom: 12px;
-}
-
-.cart-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 64px;
-}
-
-.cart-panel {
-  margin-left: 50px;
+.billing-spacing {
+  margin-left: 42px;
   margin-right: 50px;
-}
-
-.button {
-  text-align: center;
-  background: #33B5E5;
-  color: #fff;
-  padding: 6px;
-  margin-left: 450px;
   margin-bottom: 12px;
 }

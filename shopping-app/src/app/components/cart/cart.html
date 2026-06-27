@@ -1,62 +1,66 @@
-<!--TEMP: Move "<div class="cart-container">" Below "<div class="cart-panel">" to Fix Purchasing Items List in Center?-->
-
 <!--"form-margin" - Outer Boundary Around Elements on Webpage-->
 <div class="form-margin">
-    <!--"cart-panel" - Displays ENTIRE Order (involves Subtotal, Checkout Button, and Overall Shipping Information)-->
-    <div class="cart-panel">
-        <!--MUST USE "purchaseItemIDsList.length" to Check if Cart is Empty-->
-        <!--"itemAmountList.length" ALWAYS EQUALS "6" Whenever Items in Cart Change-->
-        <div *ngIf="purchaseItemIDsList.length !== 0; else elseBlock">
-            <ul *ngFor="let chosenItem of (allItems$ | async)">
-                <ul *ngFor="let ID of purchaseItemIDsList">
-                    <div *ngIf="chosenItem.id === (ID + 1)">
-                        <!--MUST PUT "cart-container" HERE-->
-                            <!--^(Only place where Items are):-->
-                                <!--1. Arranged in COLUMN LIST Form-->
-                                <!--2. ALIGNED-->
-                                <!--3. Billing Information is NOT PUSHED FURTHER DOWN Webpage-->
-                        <!--"cart-container" - ALL Items being Ordered & Purchased-->
-                        <div class="cart-container">
-                            <!--"cart-item" - SPECIFIC item Ordered (NOT INCLUDING item Image)-->
-                            <div class="cart-item">
-                                <!--Item "img" should be Placed in "cart-item" Tag-->
-                                <div class="img">
-                                    <img src="{{ chosenItem.url }}" alt="Image URL">
-                                </div>
-
-                                <!--"cart-item-details" - item Attributes-->
-                                <div class="cart-item-details">
-                                    <h6>{{ chosenItem.name }}</h6>
-                                    <a>${{ chosenItem.price }}</a>
-                                    <ul *ngFor="let amount of itemAmountList; let i = index">
-                                        <div *ngIf="i === ID">
-                                            <!--TEMP: use "<form>" Tag to recalculate total purchase amount if ANY Item Amounts are CHANGED-->
-                                            
-                                            <!--"number-input" - Quantity of Item being Purchased-->
-                                            <div class="number-input">
-                                                <!--TEMP: figure out how to Realign "amount" LATER-->
-                                                <a>Amount: {{amount}}</a>
-                                                <!--TEMP: ^IF Using "<form>" Tag, use "<input>" to Obtain New Amount-->
-                                                <!--TEMP: ^IF Using "<input>" Tag, in "number-input" CSS file, use "width: 263px"-->
-                                                <!--TEMP: ^use "[(ngModel)]="itemAmountList[0]"" to Connect Values for Price?-->
-                                            </div>
+    <!--"cart-container" - ALL Items being Ordered & Purchased-->
+    <div class="cart-container">
+        <!--"cart-panel" - Displays ENTIRE Order (involves Subtotal, Checkout Button, and Overall Shipping Information)-->
+        <div class="cart-panel">
+            <!--MUST USE "purchaseItemIDsList.length" to Check if Cart is Empty-->
+            <!--"itemAmountList.length" ALWAYS EQUALS "6" Whenever Items in Cart Change-->
+            <div *ngIf="purchaseItemIDsList.length !== 0; else elseBlock">
+                <!--MUST USE "cart-column-start-point", "cart-column", and "billing-column" to Ensure Billing Information Section is NOT PUSHED FURTHER DOWN Webpage as New Items are Added to Item Purchase List-->
+                <!--Flex Layout that Aligns "cart-column" to the Left & "billing-column" to the Right of the "cart" Webpage-->
+                <div class="cart-column-start-point">
+                    <!--MUST USE "cart-column" with "<div class>" Tag to SEPARATE & ALIGN Item Purchase List FROM Billing Information-->
+                    <div class="cart-column">
+                        <ul *ngFor="let chosenItem of (allItems$ | async)">
+                            <ul *ngFor="let ID of purchaseItemIDsList">
+                                <div *ngIf="chosenItem.id === (ID + 1)">
+                                    <!--"cart-item" - SPECIFIC item Ordered (NOT INCLUDING item Image)-->
+                                    <div class="cart-item">
+                                        <!--Item "img" should be Placed in "cart-item" Tag-->
+                                        <div class="img">
+                                            <img src="{{ chosenItem.url }}" alt="Image URL">
                                         </div>
-                                    </ul>
+
+                                        <!--"cart-item-details" - item Attributes-->
+                                        <div class="cart-item-details">
+                                            <h6>{{ chosenItem.name }}</h6>
+                                            <a>${{ chosenItem.price }}</a>
+                                            <ul *ngFor="let amount of itemAmountList; let i = index">
+                                                <div *ngIf="i === ID">
+                                                    <!--TEMP: use "<form>" Tag to recalculate total purchase amount if ANY Item Amounts are CHANGED-->
+                                                        
+                                                    <!--"number-input" - Quantity of Item being Purchased-->
+                                                    <div class="number-input">
+                                                        <!--TEMP: figure out how to Realign "amount" LATER-->
+                                                        <a>Amount: {{amount}}</a>
+                                                        <!--TEMP: ^IF Using "<form>" Tag, use "<input>" to Obtain New Amount-->
+                                                        <!--TEMP: ^IF Using "<input>" Tag, in "number-input" CSS file, use "width: 263px"-->
+                                                        <!--TEMP: ^use "[(ngModel)]="itemAmountList[0]"" to Connect Values for Price?-->
+                                                    </div>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </ul>
+                        </ul>
+
+                        <!--MUST USE "total-purchase-cost" with "<div class>" Tag to ALIGN Total Purchase Cost-->
+                        <div class="total-purchase-cost">
+                            <!--MUST PUT HERE to Ensure Total Purchase Cost Only Appears ONCE-->
+                            <!--Limits Cents of "totalPurchaseCost" to Two Decimal Places-->
+                            <h3>Total: ${{ totalPurchaseCost | number : '1.2-2' }}</h3>
                         </div>
                     </div>
-                </ul>
-            </ul>
-            <!--"cart-container" - ALL Items being Ordered & Purchased-->
-            <div class="cart-container">
-                <!--MUST PUT HERE to Ensure Total Purchase Cost Only Appears ONCE-->
-                <!--Limits Cents of "totalPurchaseCost" to Two Decimal Places-->
-                <h3>Total: ${{ totalPurchaseCost | number : '1.2-2' }}</h3>
-            </div>
 
-            <!--MUST PUT HERE to PREVENT Making Purchase with ZERO ITEMS-->
-            <app-billing-information (obtainBillingInfo)="obtainBillingInfo($event)"></app-billing-information>
+                    <!--MUST PUT HERE to PREVENT Making Purchase with ZERO ITEMS-->
+                    <div class="billing-column">
+                        <!--MUST PUT HERE to Ensure Billing Information section is ALIGNED-->
+                        <app-billing-information (obtainBillingInfo)="obtainBillingInfo($event)"></app-billing-information>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!--Displays Empty Cart Message if Cart is Empty-->

@@ -4,8 +4,6 @@ img {
 }
 
 .form-margin {
-  margin-left: 0px;
-  margin-right: 650px;
   margin-bottom: 12px;
 }
 
@@ -32,12 +30,12 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 64px;
 }
 
 .cart-panel {
   margin-left: 50px;
   margin-right: 50px;
-  margin-top: 64px;
 }
 
 .empty-cart-message {
@@ -53,4 +51,27 @@ img {
   padding: 6px;
   margin-left: 450px;
   margin-bottom: 12px;
+}
+
+.total-purchase-cost {
+  margin-left: 67px;
+  margin-right: 67px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.cart-column-start-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.cart-column {
+  flex: 1;
+}
+
+.billing-column {
+  width: 400px;
+  align-items: flex-start;
+  top: 40px;
 }
