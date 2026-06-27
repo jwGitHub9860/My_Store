@@ -217,9 +217,9 @@ Holeczek, Łukasz. “How to Create a Dropdown in Angular.” _CoreUI_, coreui.i
 
 “How TO - Hide Arrows From Input Number.” _W3Schools_, www.w3schools.com/howto/howto_css_hide_arrow_number.asp. Accessed 17 Jun. 2026.
 
-“HTML <small> Tag</Small>.” _W3Schools.com_, www.w3schools.com/tags/tag_small.asp. Accessed 13 May 2026.
+“HTML <small> Tag</Small>.” _W3Schools_, www.w3schools.com/tags/tag_small.asp. Accessed 13 May 2026.
 
-“HTML Images.” _W3Schools.com_, www.w3schools.com/html/html_images.asp. Accessed 13 May 2026.
+“HTML Images.” _W3Schools_, www.w3schools.com/html/html_images.asp. Accessed 13 May 2026.
 
 “HTML Text Formatting.” _W3Schools_, www.w3schools.com/html/html_formatting.asp. Accessed 26 June 2026.
 
