@@ -13,7 +13,7 @@
                     <!--MUST USE "cart-column" with "<div class>" Tag to SEPARATE & ALIGN Item Purchase List FROM Billing Information-->
                     <div class="cart-column">
                         <ul *ngFor="let chosenItem of (allItems$ | async)">
-                            <ul *ngFor="let ID of purchaseItemIDsList">
+                            <ul *ngFor="let ID of purchaseItemIDsList; let j = index">
                                 <div *ngIf="chosenItem.id === (ID + 1)">
                                     <!--"cart-item" - SPECIFIC item Ordered (NOT INCLUDING item Image)-->
                                     <div class="cart-item">
@@ -36,9 +36,16 @@
                                                         <!--"amount-row" Class & "<span>" Tag ~ Ensures amount Text AND Input APPEAR ON SAME LINE-->
                                                         <div class="amount-row">
                                                             <span>Amount: </span>
-                                                            <input type="number" name="itemAmountList[i]" title="itemAmountList[i]" required min="0" [(ngModel)]="itemAmountList[i]" (ngModelChange)="obtainNewPurchaseAmountList($event, chosenItem.id, chosenItem.price)">
+                                                            <input type="number" name="itemAmountList[i]" title="itemAmountList[i]" required min="1" [(ngModel)]="itemAmountList[i]" (ngModelChange)="obtainNewPurchaseAmountList($event, chosenItem.id, chosenItem.price)">
                                                         </div>
                                                     </form>
+
+                                                    <!--Creates ACCEPTABLE SPACING AMOUNT Between "Amount" & "Remove Item" Button-->
+                                                    <h6> </h6>
+                                                    
+                                                    <!--MUST PUT HERE to Ensure "Remove Item" Button Only Appears ONCE & Button has Acceptable Size-->
+                                                    <button class="btn btn-primary" title="removeItem" (click)="removeItem(itemAmountList[i], i, j, chosenItem.price)">Remove Item</button>
+
                                                 </div>
                                             </ng-container>
                                         </div>

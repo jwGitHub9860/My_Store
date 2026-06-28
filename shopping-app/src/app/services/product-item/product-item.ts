@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
 
-// TEMP: use "Item" Model or Not?
-import { Item } from '../../models/Item';
-
 @Injectable({
   providedIn: 'root',
 })
@@ -39,6 +36,12 @@ export class ProductItemService {
       newItemPurchaseAmountList[index] = this.itemPurchaseAmountList[index];
     }
     return newItemPurchaseAmountList;
+  }
+
+  // Resets Chosen Item Purchase Amount back to Zero AND Sets NEW Total Purchase Cost
+  removePurchaseItem(newAmount: number, removeId: number, price: number): void {
+    this.itemPurchaseAmountList[removeId] = 0;
+    this.totalPurchaseCost -= newAmount * price;
   }
 
   setItemPurchaseAmount(amount: number, id: number, price: number): void {

@@ -78,4 +78,18 @@ export class Cart implements OnInit {
     // Obtains NEW Total Purchase Cost
     this.totalPurchaseCost = this.productItemService.getTotalPurchaseCost();
   }
+
+  removeItem(newAmount: number, removeItemId: number, removePurchaseItemId: number, price: number): void {
+    // Remove Chosen Purchase Item from Purchase List on "cart" webpage
+    this.purchaseItemIDsList.splice(removePurchaseItemId, 1);
+
+    // Resets Chosen Item Amount back to Zero & Sets NEW Total Purchase Cost
+    this.productItemService.removePurchaseItem(newAmount, removeItemId, price);
+
+    // Obtains NEW Item Amount List
+    this.itemAmountList = this.productItemService.getItemPurchaseAmountList();
+
+    // Obtains NEW Total Purchase Cost
+    this.totalPurchaseCost = this.productItemService.getTotalPurchaseCost();
+  }
 }
