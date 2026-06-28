@@ -1,13 +1,13 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Billing_Info } from "../../models/Billing-Info";
 import { BillingInformation } from "../../components/billing-information/billing-information";
-import { Confirmation } from "../../components/confirmation/confirmation";
+// import { Confirmation } from "../../components/confirmation/confirmation";
 import { Item } from '../../models/Item';
 import { ProductItem } from "../../components/product-item/product-item";
 
 @Component({
   selector: 'app-cart',
-  imports: [BillingInformation, Confirmation, ProductItem],
+  imports: [BillingInformation,  ProductItem],
   templateUrl: './cart.html',
   styleUrl: './cart.component.css',
 })
@@ -45,7 +45,7 @@ export class Cart implements OnInit {
 
     // Resets "full_name" Back to Empty String
     this.full_name = '';
-    
+
     // TEMP: option 1
     this.customer_full_name = customerInfo.full_name;
     this.message = "Thank you, " + this.customer_full_name + " !";/**/
