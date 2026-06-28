@@ -249,6 +249,8 @@ Motto, Todd. “Handling Observables with NgFor and the Async Pipe.” _Ultimate
 
 Nidhi, and Kavya. “How to Change the Value of an Observable in TypeScript Angular.” _Edureka Community_, 26 Nov. 2024, www.edureka.co/community/292261/how-to-change-the-value-of-observable-in-typescript-angular. Accessed 18 Jun. 2026.
 
+Patel, Sonali. “What Is the Difference between Change and ngModelChange in Angular?” _GeeksforGeeks_, GeeksforGeeks, 16 Dec. 2020, www.geeksforgeeks.org/angular-js/what-is-the-difference-between-change-and-ngmodelchange-in-angular/. Accessed 26 Jun. 2026.
+
 Patil, Jaydeep. “Observable and Subjects in Angular.” _Medium_, 4 Aug. 2023, medium.com/@jaydeepvpatil225/observables-and-subjects-in-angular-a4d73dfa5bb. Accessed 18 Jun. 2026.
 
 POV, and Charly Sosa. “How to Read Json File and Use in Everywhere as Service?” Edited by POV, _Stack Overflow_, 2026 Stack Exchange Inc, 3 Oct. 2019, stackoverflow.com/questions/58225939/how-to-read-json-file-and-use-in-everywhere-as-service. Accessed 10 May 2026.
