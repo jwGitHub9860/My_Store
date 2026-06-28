@@ -257,6 +257,8 @@ RC07JNR, and Eliseo. “How to Get Data from an Observable Array?” _Stack Over
 
 “ROUTING.” _Angular v2 Archive_, v2.angular.io/docs/ts/latest/tutorial/toh-pt5.html. Accessed 7 Jun. 2026.
 
+Samadder, Sabyasachi. “Remove Elements From a JavaScript Array.” _GeeksforGeeks_, GeeksforGeeks, 12 July 2025, www.geeksforgeeks.org/javascript/remove-elements-from-a-javascript-array/. Accessed 27 Jun. 2026.
+
 “Select.” _Angular_, angular.dev/guide/aria/select. Accessed 17 Jun. 2026.
 
 “Sharing Data between Child and Parent Directives and Components.” _Angular_, v17.angular.io/guide/inputs-outputs. Accessed 8 May 2026.
