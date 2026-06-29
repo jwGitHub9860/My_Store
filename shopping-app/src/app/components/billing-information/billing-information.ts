@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import { Billing_Info } from "../../models/Billing-Info";
 
@@ -15,19 +16,20 @@ export class BillingInformation implements OnInit {
 
   @Output() obtainBillingInfo: EventEmitter<Billing_Info> = new EventEmitter();
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void { }
-  
+
   submitBillingInfo(): void {
     const customerInfo = {
       full_name: this.full_name,
       address: this.address,
       credit_card_number: this.credit_card_number
     }
+    this.router.navigate(['/confirmation'], {
+      queryParams: customerInfo
+    });
 
-    this.obtainBillingInfo.emit(customerInfo);
-    
     // Resets "full_name", "address", and "credit_card_number" Back to Empty Strings
     this.full_name = '';
     this.address = '';
