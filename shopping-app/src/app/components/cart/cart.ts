@@ -8,13 +8,9 @@ import { Item } from '../../models/Item';
 import { ProductItemService } from "../../services/product-item/product-item";
 import { ProductListService } from "../../services/product-list/product-list";
 
-// TEMP: Remove Parent-Child Relationship between "cart" & "billing-information" Components?
-// TEMP: ^to Make code Simpler?
-import { ProductItem } from "../../components/product-item/product-item";
-
 @Component({
   selector: 'app-cart',
-  imports: [CommonModule, FormsModule, BillingInformation, ProductItem],
+  imports: [CommonModule, FormsModule, BillingInformation],
   templateUrl: './cart.html',
   styleUrl: './cart.component.css',
 })
