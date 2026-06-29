@@ -1,0 +1,31 @@
+<form (ngSubmit)="submitBillingInfo()" #form="ngForm" routerLink="/confirmation">
+    <!--MUST KEEP to Ensure Billing Information section is ALIGNED-->
+    <div class="billing-spacing">
+        <p>Full name</p>
+        <div class="number-item">
+            <input type="text" name="full_name" required minlength="3" placeholder="(minimum 3 characters)" [(ngModel)]="full_name">
+        </div>
+    </div>
+    <!--MUST KEEP to Ensure Billing Information section is ALIGNED-->
+    <div class="billing-spacing">
+        <p>Address</p>
+        <div class="number-item">
+            <input type="text" name="address" required minlength="6" placeholder="(minimum 6 characters)" [(ngModel)]="address">
+        </div>
+    </div>
+    <!--MUST KEEP to Ensure Billing Information section is ALIGNED-->
+    <div class="billing-spacing">
+        <p>Credit card number</p>
+        <div class="number-item">
+            <input type="text" name="credit_card_number" required minlength="16" required maxlength="16" placeholder="(16-digit characters)" [(ngModel)]="credit_card_number">
+        </div>
+    </div>
+    <!--MUST KEEP to Ensure Billing Information section is ALIGNED-->
+    <div class="billing-spacing">
+        <p><small>We'll never share your payment details with anyone else.</small></p>
+    </div>
+    <!--MUST KEEP to Ensure Billing Information section is ALIGNED-->
+    <div class="billing-spacing">
+        <input type="submit" [disabled]="form.invalid" class="btn btn-primary" value="Submit">
+    </div>
+</form>

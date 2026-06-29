@@ -1,0 +1,43 @@
+<!--Child HTML Files ALWAYS Display Content for Parent HTML Files-->
+<!--Parent HTML Files Access Child HTML Files to Display their Content-->
+
+<!--MUST Iterate Through List of All Items HERE to Obtain Chosen Item Details-->
+<!--Iterating Through List of All Items in "product-item-detail.ts" File Requires MORE COMPLEX CODE-->
+<!--Uses "AsyncPipe" Observable-->
+<ul *ngFor="let chosenItem of (allItems$ | async)">
+
+    <!--Obtains Details of Chosen Item WHILE Preventing "chosenItem" from Resetting-->
+    <div *ngIf="chosenItem.id == chosenItemId">
+
+        <div class="detail-container">
+            <div class="img">
+                <img src="{{ chosenItem.url }}" alt="Image URL">
+            </div>
+            
+            <!--MUST KEEP Image & Details WITHIN SAME class="detail-container" to Display Webpage as Shown-->
+            <div class="detail-item">
+                <div class="select-input">
+                    <h2>{{ chosenItem.name }}</h2>
+                </div>
+                <div class="select-input">
+                    <h6>${{ chosenItem.price }}</h6>
+                </div>
+                <h6>{{ chosenItem.description }}</h6>
+                
+                <form (ngSubmit)="addItemsToCart(chosenItem.id, chosenItem.price)" #form="ngForm">
+                    <div class="select-input">
+                        <input type="number" name="itemAmount" title="itemAmount" required min="0" value="0" placeholder="" [(ngModel)]="itemAmount">
+                    </div>
+
+                    <div class="select-input">
+                        <input type="submit" [disabled]="form.invalid" class="btn btn-primary" value="Add to cart">
+                    </div>
+                </form>
+
+                <div class="back-link">
+                    <a (click)="navigateToProductList()" routerLink="/">Back to product list</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</ul>

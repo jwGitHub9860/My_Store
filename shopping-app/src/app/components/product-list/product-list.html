@@ -1,0 +1,7 @@
+<div class="product-container">
+    <div class="product-index">
+        <!--Uses "AsyncPipe" Observable-->
+        <!--Sends EACH Item from List of All Items ONE AT A TIME from "product-list" Component to "product-item" Component-->
+        <app-product-item *ngFor="let item of (items$ | async)" [item]="item"></app-product-item>
+    </div>
+</div>
