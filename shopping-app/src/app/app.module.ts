@@ -1,14 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from "@angular/platform-browser";
 
-// TEMP: keep or Remove?
-//import { FormsModule } from "@angular/forms";
-
 // Gains Access to HTTP Client
 import { HttpClientModule } from "@angular/common/http";
-
-// TEMP: keep or Remove?
-//import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app";
@@ -24,9 +18,7 @@ import { AppComponent } from "./app";
     BrowserModule,
     AppRoutingModule,
     AppComponent,
-    HttpClientModule,
-    //NgbModule,
-    //FormsModule
+    HttpClientModule
   ],
   providers: [],
 
