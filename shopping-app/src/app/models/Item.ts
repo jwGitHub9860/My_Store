@@ -1,4 +1,3 @@
-// TEMP: Rename to "Product-list.ts" or Keep as "Item.ts"?
 export class Item {
     id: number;
     name: string;
