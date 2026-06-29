@@ -6,7 +6,7 @@ img {
 
 .select-input {
   width: 108px; 
-  margin-bottom: 18px;
+  margin-bottom: 13px;
 }
 
 .detail-container {
@@ -22,5 +22,6 @@ img {
 }
 
 .back-link {
+  color: #0055ff;
   margin-top: 8px;
 }

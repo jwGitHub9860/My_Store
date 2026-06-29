@@ -4,7 +4,6 @@ img {
 }
 
 .form-margin {
-  margin-left: 450px;
   margin-bottom: 12px;
 }
 
@@ -52,4 +51,37 @@ img {
   padding: 6px;
   margin-left: 450px;
   margin-bottom: 12px;
+}
+
+.total-purchase-cost {
+  margin-left: 67px;
+  margin-right: 67px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.cart-column-start-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.cart-column {
+  flex: 1;
+}
+
+.billing-column {
+  width: 400px;
+  align-items: flex-start;
+  top: 40px;
+}
+
+.amount-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.amount-row input {
+  width: 80px;
 }

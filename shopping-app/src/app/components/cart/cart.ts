@@ -1,24 +1,62 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
+import { Observable } from "rxjs";
 import { Billing_Info } from "../../models/Billing-Info";
 import { BillingInformation } from "../../components/billing-information/billing-information";
 import { Item } from '../../models/Item';
+import { ProductItemService } from "../../services/product-item/product-item";
+import { ProductListService } from "../../services/product-list/product-list";
+
+// TEMP: Remove Parent-Child Relationship between "cart" & "billing-information" Components?
+// TEMP: ^to Make code Simpler?
 import { ProductItem } from "../../components/product-item/product-item";
 
 @Component({
   selector: 'app-cart',
-  imports: [BillingInformation, ProductItem],
+  imports: [CommonModule, FormsModule, BillingInformation, ProductItem],
   templateUrl: './cart.html',
   styleUrl: './cart.component.css',
 })
 export class Cart implements OnInit {
-  // Parent Component of "billing-information" & "product-item" Components
-  purchaseList: Item[] = [];
+  // Receives Item List from "Observable"
+  allItems$!: Observable<Item[]>;
+    
+  // Holds Amount of EACH Item being Purchased
+  itemAmountList: number[] = [];
+
+  // Holds IDs of All Items being Purchased
+  purchaseItemIDsList: number[] = [];
+
+  // Holds All Items being Purchased
+  purchaseItemList: Item[] = [];
+
+  // Obtains Total Purchase Cost
+  totalPurchaseCost: number;
+
+  // Parent Component of "billing-information" Component
   full_name: string = '';
   thankYouMessage: string = "Thank you, " + this.full_name + " !";
 
-  constructor() {}
+  constructor(private productItemService: ProductItemService, private productListService: ProductListService, private ngZone: NgZone) {
+    // Checks if Application is Currently Running in Zoneless Mode
+    console.log('Constructor zone:', this.ngZone.constructor.name);
 
-  ngOnInit(): void { }
+    this.totalPurchaseCost = 0;
+  }
+
+  ngOnInit(): void {
+    this.allItems$ = this.productListService.getItemList();
+    this.itemAmountList = this.productItemService.getItemPurchaseAmountList();
+    this.totalPurchaseCost = this.productItemService.getTotalPurchaseCost();
+
+    // Obtains Index Array Values of NON-ZERO "itemAmountList" Array Elements
+    for (let index = 0; index < this.itemAmountList.length; index++) {
+      if (this.itemAmountList[index] !== 0) {
+        this.purchaseItemIDsList.push(index);
+      }
+    }
+  }
 
   // Function for Parent-Child Relationship between "cart" & "billing-information" Components
   obtainBillingInfo(customerInfo: Billing_Info): void {
@@ -29,13 +67,29 @@ export class Cart implements OnInit {
     this.full_name = '';
   }
 
-  // Function for Parent-Child Relationship between "cart" & "product-item" Components
-  obtainPurchaseList(purchaseItems: Item[]): void {
-    // Must Add purchase items INDIVIDUALLY
-    // CANNOT use "=" to Add "purchaseItems"
-    for (let index = 0; index < purchaseItems.length; index++) {
-      const currentChosenItem = purchaseItems[index];
-      this.purchaseList.push(currentChosenItem);
-    }
+  // Obtains New Amount(s) of Each Item being Purchased
+  obtainNewPurchaseAmountList(newAmount: number, id: number, price: number): void {
+    // Sets NEW AMOUNT of Purchase Item
+    this.productItemService.setItemPurchaseAmount(newAmount, id, price);
+
+    // Obtains NEW item Price for Calculating NEW Total Purchase Cost
+    this.productItemService.setTotalPurchaseCost(newAmount, price);
+
+    // Obtains NEW Total Purchase Cost
+    this.totalPurchaseCost = this.productItemService.getTotalPurchaseCost();
+  }
+
+  removeItem(newAmount: number, removeItemId: number, removePurchaseItemId: number, price: number): void {
+    // Remove Chosen Purchase Item from Purchase List on "cart" webpage
+    this.purchaseItemIDsList.splice(removePurchaseItemId, 1);
+
+    // Resets Chosen Item Amount back to Zero & Sets NEW Total Purchase Cost
+    this.productItemService.removePurchaseItem(newAmount, removeItemId, price);
+
+    // Obtains NEW Item Amount List
+    this.itemAmountList = this.productItemService.getItemPurchaseAmountList();
+
+    // Obtains NEW Total Purchase Cost
+    this.totalPurchaseCost = this.productItemService.getTotalPurchaseCost();
   }
 }

@@ -6,9 +6,14 @@
                 <h1>Success!</h1>
             </div>
         </div>
-        <p>Thank you, {{ customerName }}!</p>
-        <p>Your _total_cost_ order is confirmed!</p>
+        <p>Thank you, <b>{{ customerName }}</b>!</p>
+        
+        <!--Limits Cents of "totalPurchaseCost" to Two Decimal Places-->
+        <p>Your <b>${{ totalPurchaseCost | number : '1.2-2' }}</b> order is confirmed!</p>
+        
         <p>Please allow 1-3 business day(s) for shipping.</p>
+
+        <!--AUTOMATICALLY RESETS Item Purchase Amounts once Pressed-->
         <button class="button" onclick="location.href='http://localhost:4200/'">Back to product list</button>
     </div>
 </div>

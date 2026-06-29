@@ -1,13 +1,5 @@
 import { Injectable } from '@angular/core';
 
-// TEMP: use "Observable" or Not?
-// Allows Requests to be Made
-import { HttpClient } from "@angular/common/http";
-
-// TEMP: use "Observable" or Not?
-import { Observable } from 'rxjs';
-import { Item } from '../../models/Item';
-
 @Injectable({
   providedIn: 'root',
 })
@@ -19,15 +11,16 @@ export class ProductItemService {
   // Keep SEPARATE from ORIGINAL Item List Data to Prevent Accidental Changes to Item List
   itemPurchaseAmountList: number[];
 
-  // TEMP: use "Observable" or Not?
-  constructor(private http: HttpClient) {
+  constructor() {
     this.chosenItemId = 0;
     this.totalPurchaseCost = 0;
 
-    // Used for "item-details" Webpage
+    // Use for "item-details" Webpage
+    // Initialize as Zero since "Add to cart" Button will NOT be PRESSED when Application Starts
     this.itemPurchaseAmount = 0;
     
-    // Used for "product-list" Webpage
+    // Use for "product-list" Webpage
+    // Initialize as Zero since "Add to cart" Button will NOT be PRESSED when Application Starts
     this.itemPurchaseAmountList = [ 0, 0, 0, 0, 0, 0 ];
   }
 
@@ -35,33 +28,35 @@ export class ProductItemService {
 
   getChosenItemId(): number { return this.chosenItemId; }
 
-  // TEMP: will I Need Setter for "itemPurchaseAmountList"?
-
-  getItemPurchaseAmountList(): number[] { return this.itemPurchaseAmountList; }
-
-  setItemPurchaseAmount(amount: number, id: number): void { this.itemPurchaseAmountList[id - 1] = amount; }
-
-  // TEMP: use in "addToCart()" Function to Obtain Items in "cart" Webpage?
-  getItemPurchaseAmount(id: number): number {
+  // MUST OBTAIN All Purchase Amounts INDIVIDUALLY or Amounts Obtained will be ZERO
+  // Only be Obtaining ENTIRE List in "cart" Webpage
+  getItemPurchaseAmountList(): number[] {
+    let newItemPurchaseAmountList: number[] = [];
     for (let index = 0; index < this.itemPurchaseAmountList.length; index++) {
-      const currentAmountElement = this.itemPurchaseAmountList[index];
-      if (index === (id - 1)) {
-        this.itemPurchaseAmount = currentAmountElement;
-      }
+      newItemPurchaseAmountList[index] = this.itemPurchaseAmountList[index];
     }
-    return this.itemPurchaseAmount;
+    return newItemPurchaseAmountList;
   }
 
-  // TEMP: use in "cart" Webpage when "Submit" Button is Pressed?
-  // TEMP: OR use in "confirmation" Webpage when "Back to product list" Button is Pressed? (to Prevent Accidental Changes)
-  resetItemPurchaseAmountList(): void {
-    for (let index = 0; index < this.itemPurchaseAmountList.length; index++) {
-      this.itemPurchaseAmountList[index] = 0;
-    }
+  // Resets Chosen Item Purchase Amount back to Zero AND Sets NEW Total Purchase Cost
+  removePurchaseItem(newAmount: number, removeId: number, price: number): void {
+    this.itemPurchaseAmountList[removeId] = 0;
+    this.totalPurchaseCost -= newAmount * price;
   }
 
-  // TEMP: CALCULATE Total Item Purchase Amount in This Function?
-  setTotalPurchaseCost(cost: number): void { this.totalPurchaseCost = cost; }
+  setItemPurchaseAmount(amount: number, id: number, price: number): void {
+    // Part Of RECALCULATING TOTAL Purchase COST when Item Purchase AMOUNT(S) are CHANGED
+    // Checks if Purchase Amount Used To Be Zero BEFORE Total Purchase Cost is Calculated
+    if (this.itemPurchaseAmountList[id - 1] !== 0) {
+      // Subtracts PREVIOUS Calculated Amount to Prevent Incorrect purchase cost Calculation
+      this.totalPurchaseCost -= this.itemPurchaseAmountList[id - 1] * price;
+    }
+
+    this.itemPurchaseAmountList[id - 1] = amount;
+  }
+
+  // CALCULATES & Sets Total Purchase Cost
+  setTotalPurchaseCost(itemAmount: number, itemPrice: number): void { this.totalPurchaseCost += itemAmount * itemPrice; }
 
   getTotalPurchaseCost(): number { return this.totalPurchaseCost; }
 }

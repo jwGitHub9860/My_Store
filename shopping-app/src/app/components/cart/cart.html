@@ -1,3 +1,82 @@
-<app-product-item (chosenPurchaseItems)="obtainPurchaseList($event)"></app-product-item>
+<!--"form-margin" - Outer Boundary Around Elements on Webpage-->
+<div class="form-margin">
+    <!--"cart-container" - ALL Items being Ordered & Purchased-->
+    <div class="cart-container">
+        <!--"cart-panel" - Displays ENTIRE Order (involves Subtotal, Checkout Button, and Overall Shipping Information)-->
+        <div class="cart-panel">
+            <!--MUST USE "purchaseItemIDsList.length" to Check if Cart is Empty-->
+            <!--"itemAmountList.length" ALWAYS EQUALS "6" Whenever Items in Cart Change-->
+            <div *ngIf="purchaseItemIDsList.length !== 0; else elseBlock">
+                <!--MUST USE "cart-column-start-point", "cart-column", and "billing-column" to Ensure Billing Information Section is NOT PUSHED FURTHER DOWN Webpage as New Items are Added to Item Purchase List-->
+                <!--Flex Layout that Aligns "cart-column" to the Left & "billing-column" to the Right of the "cart" Webpage-->
+                <div class="cart-column-start-point">
+                    <!--MUST USE "cart-column" with "<div class>" Tag to SEPARATE & ALIGN Item Purchase List FROM Billing Information-->
+                    <div class="cart-column">
+                        <ul *ngFor="let chosenItem of (allItems$ | async)">
+                            <ul *ngFor="let ID of purchaseItemIDsList; let j = index">
+                                <div *ngIf="chosenItem.id === (ID + 1)">
+                                    <!--"cart-item" - SPECIFIC item Ordered (NOT INCLUDING item Image)-->
+                                    <div class="cart-item">
+                                        <!--Item "img" should be Placed in "cart-item" Tag-->
+                                        <div class="img">
+                                            <img src="{{ chosenItem.url }}" alt="Image URL">
+                                        </div>
 
-<app-billing-information (obtainBillingInfo)="obtainBillingInfo($event)"></app-billing-information>
+                                        <!--"cart-item-details" - item Attributes-->
+                                        <div class="cart-item-details">
+                                            <h6>{{ chosenItem.name }}</h6>
+                                            <a>${{ chosenItem.price }}</a>
+
+                                            <!--"ng-container" ~ Ensures "Amount" is ALIGNED With "chosenItem.name" & "chosenItem.price"-->
+                                            <!--Using "<ul>" Tag CAUSES "Amount" MISALIGNMENT Because "<ul>" Tag puts Elements in LIST FORM-->
+                                            <ng-container *ngFor="let amount of itemAmountList; let i = index">
+                                                <div *ngIf="i === ID">
+                                                    <!--Recalculates Total Purchase Amount IF ANY Item Amounts are CHANGED-->
+                                                    <form (submit)="obtainNewPurchaseAmountList(amount, chosenItem.id, chosenItem.price)" id="inputForm" class="form-group" class="row">
+                                                        <!--"amount-row" Class & "<span>" Tag ~ Ensures amount Text AND Input APPEAR ON SAME LINE-->
+                                                        <div class="amount-row">
+                                                            <span>Amount: </span>
+                                                            <input type="number" name="itemAmountList[i]" title="itemAmountList[i]" required min="1" [(ngModel)]="itemAmountList[i]" (ngModelChange)="obtainNewPurchaseAmountList($event, chosenItem.id, chosenItem.price)">
+                                                        </div>
+                                                    </form>
+
+                                                    <!--Creates ACCEPTABLE SPACING AMOUNT Between "Amount" & "Remove Item" Button-->
+                                                    <h6> </h6>
+                                                    
+                                                    <!--MUST PUT HERE to Ensure "Remove Item" Button Only Appears ONCE & Button has Acceptable Size-->
+                                                    <button class="btn btn-primary" title="removeItem" (click)="removeItem(itemAmountList[i], i, j, chosenItem.price)">Remove Item</button>
+
+                                                </div>
+                                            </ng-container>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ul>
+                        </ul>
+
+                        <!--MUST USE "total-purchase-cost" with "<div class>" Tag to ALIGN Total Purchase Cost-->
+                        <div class="total-purchase-cost">
+                            <!--MUST PUT HERE to Ensure Total Purchase Cost Only Appears ONCE-->
+                            <!--Limits Cents of "totalPurchaseCost" to Two Decimal Places-->
+                            <h3>Total: ${{ totalPurchaseCost | number : '1.2-2' }}</h3>
+                        </div>
+                    </div>
+
+                    <!--MUST PUT HERE to PREVENT Making Purchase with ZERO ITEMS-->
+                    <div class="billing-column">
+                        <!--MUST PUT HERE to Ensure Billing Information section is ALIGNED-->
+                        <app-billing-information (obtainBillingInfo)="obtainBillingInfo($event)"></app-billing-information>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Displays Empty Cart Message if Cart is Empty-->
+        <!--ONLY DISPLAYS Empty Cart Message in ENTIRE "cart" Webpage to PREVENT Making Purchase with ZERO ITEMS-->
+        <ng-template #elseBlock>
+            <div class="empty-cart-message">
+                <h3>Your Cart is Empty</h3>
+            </div>
+        </ng-template>
+    </div>
+</div>

@@ -1,61 +1,50 @@
-import { Component, OnInit } from '@angular/core';
+// "NgZone" - Prevents Angular Applications from being Zoneless
+// "NgZone" - Performs Change Detection for "Observable"
+import { Component, OnInit, inject, NgZone } from '@angular/core';
+import { CommonModule } from "@angular/common";
+import { FormsModule } from '@angular/forms';
+import { Router } from "@angular/router";
+import { Observable } from 'rxjs';
 import { Item } from "../../models/Item";
 import { ProductItemService } from "../../services/product-item/product-item";
 import { ProductListService } from "../../services/product-list/product-list";
 
 @Component({
   selector: 'app-product-item-detail',
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './product-item-detail.html',
   styleUrl: './product-item-detail.component.css',
 })
 export class ProductItemDetail implements OnInit {
   chosenItemId: number = 0;
-  chosenItem: Item;
-  itemAmount: number = 0;
-  allItems: Item[] = [];
+  itemAmount: number;
 
-  constructor(private productItemService: ProductItemService, private productListService: ProductListService) {
-    this.chosenItem = {
-      id: 0,
-      name: '',
-      price: 1,
-      url: '',
-      description: ''
-    };
+  // Receives Item List from "Observable"
+  allItems$!: Observable<Item[]>;
+
+  // ONLY WAY to Move to "product-list" Webpage WITHOUT RESETTING Purchase Item Amounts
+  private router = inject(Router);
+
+  constructor(private productItemService: ProductItemService, private productListService: ProductListService, private ngZone: NgZone) {
+    // Checks if Application is Currently Running in Zoneless Mode
+    console.log('Constructor zone:', this.ngZone.constructor.name);
+
+    this.itemAmount = 0;
   }
 
   ngOnInit(): void {
-    this.allItems = this.productListService.getItemList();
+    this.allItems$ = this.productListService.getItemList();
     
     // Obtains Chosen Item ID
     this.chosenItemId = this.productItemService.getChosenItemId();
-
-    // Prevents "chosenItem" from Resetting
-    for (let index = 0; index < this.allItems.length; index++) {
-      const currentItem = this.allItems[index];
-      if (currentItem.id === this.chosenItemId) {
-        this.chosenItem = {
-          id: currentItem.id,
-          name: currentItem.name,
-          price: currentItem.price,
-          url: currentItem.url,
-          description: currentItem.description
-        };
-      };
-    };
   }
 
-  // Defaults Back to Zero IF "Add to cart" Button is NOT PRESSED
-  increaseAmount(): void { this.itemAmount += 1; }
-
-  // Defaults Back to Zero IF "Add to cart" Button is NOT PRESSED
-  decreaseAmount(): void {
-    // CANNOT be NEGATIVE Item Amount
-    if (this.itemAmount > 0) {
-      this.itemAmount -= 1;
-    }
+  addItemsToCart(id: number, price: number): void {
+    this.productItemService.setItemPurchaseAmount(this.itemAmount, id, price);
+    
+    // Obtains item Price for Calculating Total Purchase Cost
+    this.productItemService.setTotalPurchaseCost(this.itemAmount, price);
   }
 
-  recordItemPurchaseAmount(id: number): void { this.productItemService.setItemPurchaseAmount(this.itemAmount, id); }
+  navigateToProductList() { this.router.navigate(['/']); }
 }

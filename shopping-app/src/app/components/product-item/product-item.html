@@ -1,8 +1,29 @@
-<!--Leave Empty, EXCEPT for Child Selector Tags, to Prevent "product-item.html" File from Displaying Unused code-->
 <!--Child HTML Files ALWAYS Display Content for Parent HTML Files-->
 <!--Parent HTML Files Access Child HTML Files to Display their Content-->
 
+<div class="product-container">
+    <div class="product-image">
+        <!--Links item images to "product-item-detail" Webpage-->
+        <!--(click)="submitChosenItem(item.id)" - Submits Chosen Item to "product-item" Component once item Image is Clicked On-->
+        <a (click)="submitChosenItem(item.id)" routerLink="/item-details">
+            <img src="{{ item.url }}" alt="Image URL" style="width: 300px;">
+        </a>
+    </div>
 
-<!--TEMP: Display ALL ITEMS BEING PURCHASED-->
-<!--TEMP: use "<button>" Tag to Reset Item Purchase Amounts?-->
-<!--TEMP: use "Submit" Feature?-->
+    <a>{{ item.name }}</a>
+
+    <div class="select-input">
+        <div class="button-spacing">
+            <a>${{ item.price }}</a>
+        </div>
+    </div>
+    
+    <form (ngSubmit)="addItemsToCart(item.id, item.price)" #form="ngForm">
+        <!--MUST USE "required min="0"" for "<input>" Tag to Enable Removal of Items from Purchase List-->
+        <input type="number" name="itemAmountList{{item.id - 1}}" title="itemAmountList[item.id - 1]" required min="0" value="0" placeholder="" [(ngModel)]="itemAmountList[item.id - 1]">
+
+        <div class="button-spacing">
+            <input type="submit" [disabled]="form.invalid" class="btn btn-primary" value="Add to cart">
+        </div>
+    </form>
+</div>
