@@ -1,56 +1,7 @@
 <div class="product-container">
     <div class="product-index">
         <!--Uses "AsyncPipe" Observable-->
-        <ul *ngFor="let item of (items$ | async)">
-            <!--Links item images to "product-item-detail" Webpage-->
-            <!--(click)="submitChosenItem(item.id)" - Submits Chosen Item to "product-item" Component once item Image is Clicked On-->
-            <a (click)="submitChosenItem(item.id)" routerLink="/item-details">
-                <img src="{{ item.url }}" alt="Image URL" style="width: 300px;">
-            </a>
-            <br>
-
-            <!--MUST USE "<div class="product-container">" for item Name & Price SEPARATELY-->
-            <!--Otherwise Item Name & Price will be on Same Line-->
-            <!--Or Only Item Name will Only Be Centered whereas Price will be Aligned to the Left-->
-            <div class="product-container">
-                <a>{{ item.name }}</a>
-                <br>
-            </div>
-            <div class="product-container">
-                <a>${{ item.price }}</a>
-            </div>
-
-            <form (ngSubmit)="addItemsToCart(item.id, item.price)" #form="ngForm">
-                <div class="product-container">
-                    <!--MUST USE "required min="1"" for "<input>" Tag to Enable Removal of Items from Purchase List-->
-                    <div [ngSwitch]="item.id">
-                        <div *ngSwitchCase="1">
-                            <input type="number" name="itemAmountList[0]" title="itemAmountList[0]" required min="0" value="0" placeholder="" [(ngModel)]="itemAmountList[0]">
-                        </div>
-                        <div *ngSwitchCase="2">
-                            <input type="number" name="itemAmountList[1]" title="itemAmountList[1]" required min="0" value="0" placeholder="" [(ngModel)]="itemAmountList[1]">
-                        </div>
-                        <div *ngSwitchCase="3">
-                            <input type="number" name="itemAmountList[2]" title="itemAmountList[2]" required min="0" value="0" placeholder="" [(ngModel)]="itemAmountList[2]">
-                        </div>
-                        <div *ngSwitchCase="4">
-                            <input type="number" name="itemAmountList[3]" title="itemAmountList[3]" required min="0" value="0" placeholder="" [(ngModel)]="itemAmountList[3]">
-                        </div>
-                        <div *ngSwitchCase="5">
-                            <input type="number" name="itemAmountList[4]" title="itemAmountList[4]" required min="0" value="0" placeholder="" [(ngModel)]="itemAmountList[4]">
-                        </div>
-                        <div *ngSwitchCase="6">
-                            <input type="number" name="itemAmountList[5]" title="itemAmountList[5]" required min="0" value="0" placeholder="" [(ngModel)]="itemAmountList[5]">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-container">
-                    <div class="button-spacing">
-                        <input type="submit" [disabled]="form.invalid" class="btn btn-primary" value="Add to cart">
-                    </div>
-                </div>
-            </form>
-        </ul>
+        <!--Sends EACH Item from List of All Items ONE AT A TIME from "product-list" Component to "product-item" Component-->
+        <app-product-item *ngFor="let item of (items$ | async)" [item]="item"></app-product-item>
     </div>
 </div>
