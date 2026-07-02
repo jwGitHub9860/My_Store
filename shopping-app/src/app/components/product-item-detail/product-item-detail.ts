@@ -34,15 +34,11 @@ export class ProductItemDetail implements OnInit {
 
   ngOnInit(): void {
     this.allItems$ = this.productListService.getItemList();
-    
-    // Obtains Chosen Item ID
     this.chosenItemId = this.productItemService.getChosenItemId();
   }
 
   addItemsToCart(id: number, price: number): void {
     this.productItemService.setItemPurchaseAmount(this.itemAmount, id, price);
-    
-    // Obtains item Price for Calculating Total Purchase Cost
     this.productItemService.setTotalPurchaseCost(this.itemAmount, price);
   }
 

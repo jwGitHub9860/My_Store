@@ -14,8 +14,6 @@ import { ProductItemService } from "../../services/product-item/product-item";
   styleUrl: './product-item.component.css',
 })
 export class ProductItem implements OnInit {
-  // Ensures "itemAmountList" is Updated once "Add to cart" Button is Pressed
-  // Ensures "itemAmountList" is SEPARATE from "itemPurchaseAmountList" Array in "product-item" Service File
   itemAmountList: number[];
   
   // Values for Parent-Child Relationship between "product-list" & "product-item" Components
@@ -43,7 +41,6 @@ export class ProductItem implements OnInit {
 
   // Submits Chosen Item to "product-item" Service File AND Moves to "product-item-detail" Webpage
   submitChosenItem(id: number): void {
-    // Stores Chosen Item ID in "product-item" Service File
     this.productItemService.setChosenItemId(id);
 
     // Navigates to Item Details Webpage
@@ -54,8 +51,6 @@ export class ProductItem implements OnInit {
 
   addItemsToCart(id: number, price: number): void {
     this.productItemService.setItemPurchaseAmount(this.itemAmountList[id - 1], id, price);
-
-    // Obtains item Price for Calculating Total Purchase Cost
     this.productItemService.setTotalPurchaseCost(this.itemAmountList[id - 1], price);
   }
 }
