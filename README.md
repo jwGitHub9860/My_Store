@@ -189,6 +189,8 @@ Another challenge that was faced was accessing the "data.json" file in "product-
 
 21mcs1081. “How to Limit to 2 Decimal Place with a Angular Pipe ?” _GeeksforGeeks_, GeeksforGeeks, 28 Apr. 2025, www.geeksforgeeks.org/angular-js/how-to-limit-to-2-decimal-place-with-a-angular-pipe/. Accessed 25 Jun. 2026.
 
+“Adding Event Listeners.” _Angular_, angular.dev/guide/templates/event-listeners. Accessed 21 May 2026.
+
 Ahmed, Naveed, and Günter Zöchbauer. “How to Check the Length of an Observable Array.” Edited by Tobias47n9e and Günter Zöchbauer, _Stack Overflow_, 2026 Stack Exchange Inc, 27 June 2016, stackoverflow.com/questions/38057537/how-to-check-the-length-of-an-observable-array. Accessed 15 Jun. 2026.
 
 Amrmsmb, et al. “Argument of Type ‘Event’ Is Not Assignable to Parameter of Type ‘String.’” Edited by Yuri and Ramanathan Chockalingam, _Stack Overflow_, 2026 Stack Exchange Inc, 4 Apr. 2021, stackoverflow.com/questions/66938398/argument-of-type-event-is-not-assignable-to-parameter-of-type-string. Accessed 22 May 2026.
