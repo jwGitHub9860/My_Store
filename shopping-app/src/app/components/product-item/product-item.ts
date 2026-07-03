@@ -15,6 +15,7 @@ import { ProductItemService } from "../../services/product-item/product-item";
 })
 export class ProductItem implements OnInit {
   itemAmountList: number[];
+  showMessage: boolean = true;
   
   // Values for Parent-Child Relationship between "product-list" & "product-item" Components
   @Input() item: Item;
@@ -52,5 +53,12 @@ export class ProductItem implements OnInit {
   addItemsToCart(id: number, price: number): void {
     this.productItemService.setItemPurchaseAmount(this.itemAmountList[id - 1], id, price);
     this.productItemService.setTotalPurchaseCost(this.itemAmountList[id - 1], price);
+
+    // Displays Feedback when Item is Added to Cart
+    this.showMessage = true;
+    if (this.showMessage) {
+      alert("Added new item to cart!");
+      setTimeout(() => this.showMessage = false, 2000);
+    }
   }
 }

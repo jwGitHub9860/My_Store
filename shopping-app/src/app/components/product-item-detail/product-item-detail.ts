@@ -18,6 +18,7 @@ import { ProductListService } from "../../services/product-list/product-list";
 export class ProductItemDetail implements OnInit {
   chosenItemId: number = 0;
   itemAmount: number;
+  showMessage: boolean = true;
 
   // Receives Item List from "Observable"
   allItems$!: Observable<Item[]>;
@@ -40,6 +41,13 @@ export class ProductItemDetail implements OnInit {
   addItemsToCart(id: number, price: number): void {
     this.productItemService.setItemPurchaseAmount(this.itemAmount, id, price);
     this.productItemService.setTotalPurchaseCost(this.itemAmount, price);
+
+    // Displays Feedback when Item is Added to Cart
+    this.showMessage = true;
+    if (this.showMessage) {
+      alert("Added new item to cart!");
+      setTimeout(() => this.showMessage = false, 2000);
+    }
   }
 
   navigateToProductList() { this.router.navigate(['/']); }

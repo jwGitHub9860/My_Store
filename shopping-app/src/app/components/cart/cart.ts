@@ -22,6 +22,7 @@ export class Cart implements OnInit {
   purchaseItemIDsList: number[] = [];
   purchaseItemList: Item[] = [];
   totalPurchaseCost: number;
+  showMessage: boolean = true;
 
   // Parent Component of "billing-information" Component
   full_name: string = '';
@@ -66,5 +67,12 @@ export class Cart implements OnInit {
     this.productItemService.removePurchaseItem(newAmount, removeItemId, price);
     this.itemAmountList = this.productItemService.getItemPurchaseAmountList();
     this.totalPurchaseCost = this.productItemService.getTotalPurchaseCost();
+
+    // Displays Feedback when Item is Added to Cart
+    this.showMessage = true;
+    if (this.showMessage) {
+      alert("Removed item from cart!");
+      setTimeout(() => this.showMessage = false, 2000);
+    }
   }
 }
