@@ -59,4 +59,10 @@ export class ProductItemService {
   setTotalPurchaseCost(itemAmount: number, itemPrice: number): void { this.totalPurchaseCost += itemAmount * itemPrice; }
 
   getTotalPurchaseCost(): number { return this.totalPurchaseCost; }
+
+  resetItemPurchaseAmountList(): void {
+    for (let index = 0; index < this.itemPurchaseAmountList.length; index++) {
+      this.itemPurchaseAmountList[index] = 0;
+    }
+  }
 }

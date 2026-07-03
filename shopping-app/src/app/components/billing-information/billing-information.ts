@@ -17,7 +17,6 @@ export class BillingInformation implements OnInit {
 
   @Output() obtainBillingInfo: EventEmitter<Billing_Info> = new EventEmitter();
 
-  // "private router: Router" -> ONLY WAY to Move from "cart" Webpage to "confirmation" Webpage WITHOUT RESETTING Customer Name & Credit Card Number
   constructor(private billingInformationService: BillingInformationService, private router: Router) {}
 
   ngOnInit(): void { this.full_name = this.billingInformationService.getCustomerName(); }
@@ -29,7 +28,6 @@ export class BillingInformation implements OnInit {
       credit_card_number: this.credit_card_number
     }
 
-    // Sends Customer Name & Credit Card Number to "billing-information" Service File
     this.billingInformationService.setCustomerName(this.full_name);
 
     // Navigates to Confirmation Webpage
