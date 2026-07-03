@@ -12,8 +12,6 @@
         <p>Your <b>${{ totalPurchaseCost | number : '1.2-2' }}</b> order is confirmed!</p>
         
         <p>Please allow 1-3 business day(s) for shipping.</p>
-
-        <!--AUTOMATICALLY RESETS Item Purchase Amounts once Pressed-->
-        <button class="button" onclick="location.href='http://localhost:4200/'">Back to product list</button>
+        <button class="button" (click)="navigateToProductList()" routerLink="/">Back to product list</button>
     </div>
 </div>

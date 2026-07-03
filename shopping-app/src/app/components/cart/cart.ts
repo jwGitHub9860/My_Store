@@ -17,18 +17,12 @@ import { ProductListService } from "../../services/product-list/product-list";
 export class Cart implements OnInit {
   // Receives Item List from "Observable"
   allItems$!: Observable<Item[]>;
-    
-  // Holds Amount of EACH Item being Purchased
+  
   itemAmountList: number[] = [];
-
-  // Holds IDs of All Items being Purchased
   purchaseItemIDsList: number[] = [];
-
-  // Holds All Items being Purchased
   purchaseItemList: Item[] = [];
-
-  // Obtains Total Purchase Cost
   totalPurchaseCost: number;
+  showMessage: boolean = true;
 
   // Parent Component of "billing-information" Component
   full_name: string = '';
@@ -58,34 +52,27 @@ export class Cart implements OnInit {
   obtainBillingInfo(customerInfo: Billing_Info): void {
     this.full_name = customerInfo.full_name;
     this.thankYouMessage = "Thank you, " + this.full_name + " !";
-
-    // Resets "full_name" Back to Empty String
     this.full_name = '';
   }
 
   // Obtains New Amount(s) of Each Item being Purchased
   obtainNewPurchaseAmountList(newAmount: number, id: number, price: number): void {
-    // Sets NEW AMOUNT of Purchase Item
     this.productItemService.setItemPurchaseAmount(newAmount, id, price);
-
-    // Obtains NEW item Price for Calculating NEW Total Purchase Cost
     this.productItemService.setTotalPurchaseCost(newAmount, price);
-
-    // Obtains NEW Total Purchase Cost
     this.totalPurchaseCost = this.productItemService.getTotalPurchaseCost();
   }
 
   removeItem(newAmount: number, removeItemId: number, removePurchaseItemId: number, price: number): void {
-    // Remove Chosen Purchase Item from Purchase List on "cart" webpage
     this.purchaseItemIDsList.splice(removePurchaseItemId, 1);
-
-    // Resets Chosen Item Amount back to Zero & Sets NEW Total Purchase Cost
     this.productItemService.removePurchaseItem(newAmount, removeItemId, price);
-
-    // Obtains NEW Item Amount List
     this.itemAmountList = this.productItemService.getItemPurchaseAmountList();
-
-    // Obtains NEW Total Purchase Cost
     this.totalPurchaseCost = this.productItemService.getTotalPurchaseCost();
+
+    // Displays Feedback when Item is Added to Cart
+    this.showMessage = true;
+    if (this.showMessage) {
+      alert("Removed item from cart!");
+      setTimeout(() => this.showMessage = false, 2000);
+    }
   }
 }
