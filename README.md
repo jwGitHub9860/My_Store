@@ -26,7 +26,7 @@ The application including the following pages:
 
 ## Project Status
 
-> Active
+> Complete
 
 ## Getting Started
 
